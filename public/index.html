@@ -24,7 +24,7 @@
       theme: { extend: { fontFamily: { sans: ["Inter", "system-ui", "sans-serif"], display: ["Outfit", "Inter", "sans-serif"], mono: ["JetBrains Mono", "monospace"] } } },
     };
   </script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body class="font-sans antialiased">
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -120,10 +120,27 @@
 
   <footer class="mx-auto max-w-7xl px-4 sm:px-6 py-8 text-xs opacity-60 text-center">
     Sources: arXiv, Quanta, Terence Tao, Shtetl-Optimized, vLLM, Hugging Face &amp; GitHub releases ·
-    Built with Python + static JS · Shortcuts: <kbd>/</kbd> search · <kbd>r</kbd> refresh · <kbd>t</kbd> theme
+    Built with Python + static JS · Shortcuts: <kbd>/</kbd> search · <kbd>r</kbd> refresh · <kbd>t</kbd> theme · <kbd>Esc</kbd> close popup
   </footer>
 
+  <!-- Full description popup modal -->
+  <div id="detail-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box" role="document">
+      <div class="modal-header">
+        <div id="modal-badges" class="meta"></div>
+        <button id="modal-close" class="icon-btn" title="Close (Esc)" aria-label="Close popup">✕</button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-meta" class="meta"></div>
+        <div id="modal-description" class="modal-description"></div>
+        <div id="modal-tags" class="flex flex-wrap gap-1.5 pt-2"></div>
+      </div>
+      <div id="modal-actions" class="modal-footer"></div>
+    </div>
+  </div>
+
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="app.js"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

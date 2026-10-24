@@ -120,12 +120,12 @@
       </div>
       <h2><a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" data-open>${highlight(it.title, terms)}</a></h2>
       <div class="meta"><strong>${esc(it.source)}</strong><span>${timeAgo(it.published)}</span>${authors ? `<span>${highlight(authors, terms)}</span>` : ""}${also}</div>
-      ${it.summary ? `<p class="summary">${highlight(it.summary, terms)}</p>` : ""}
+      ${it.summary ? `<p class="summary" data-expand title="Click to read full description">${highlight(it.summary, terms)}</p>` : ""}
       ${tags ? `<div class="flex flex-wrap gap-1.5">${tags}</div>` : ""}
       <div class="card-actions">
-        <a class="act primary" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" data-open>Open ↗</a>
+        <button class="act primary" data-expand>Read more</button>
+        <a class="act" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" data-open>Open ↗</a>
         <button class="act${saved ? " saved" : ""}" data-save aria-pressed="${saved}">${saved ? "★ Saved" : "☆ Save"}</button>
-        <button class="act" data-expand>More</button>
         <button class="act" data-read>${read ? "Mark unread" : "Mark read"}</button>
       </div>
     </article>`;
@@ -264,6 +264,116 @@
     saveJSON(LS.read, [...state.read].slice(-3000));
   }
 
+  function findItem(id) {
+    return state.items.find((i) => i.id === id) || state.saved[id] || null;
+  }
+
+  function buildPopupParagraphs(it, fullDate) {
+    const raw = String(it.summary || "").trim();
+    let paras = raw
+      .split(/\n\s*\n+/)
+      .map((p) => p.replace(/\s+/g, " ").trim())
+      .filter((p) => p && p.toLowerCase() !== "no content.");
+
+    if (paras.length <= 2 && raw.length > 180) {
+      const sentences = raw
+        .replace(/\s+/g, " ")
+        .split(/(?<=[.!?])\s+(?=[A-Z0-9(["“])/)
+        .map((s) => s.trim())
+        .filter(Boolean);
+      if (sentences.length >= 3) {
+        const target = Math.min(5, sentences.length);
+        const chunk = Math.max(1, Math.ceil(sentences.length / target));
+        paras = [];
+        for (let i = 0; i < sentences.length; i += chunk) {
+          paras.push(sentences.slice(i, i + chunk).join(" "));
+        }
+      }
+    }
+
+    const dm = DOMAIN_META[it.domain] || { label: it.domain, icon: "•" };
+    const typeName = (TYPE_LABEL[it.type] || it.type || "item").toLowerCase();
+    const tags = (it.tags || []).filter(Boolean);
+    const authors = (it.authors || []).filter(Boolean);
+
+    const extras = [
+      `This ${typeName} is tracked under ${dm.label} from ${it.source} with an overall relevance score of ${Math.round(it.score)}/100 (raw keyword relevance ${it.relevance ?? "—"}).`,
+      tags.length
+        ? `Key topics and technical areas matched in this entry include ${tags.map((t) => `“${t}”`).join(", ")}, connecting it directly to current developments in ${dm.label.toLowerCase()}.`
+        : `This entry is part of the curated ${dm.label} feed tracking new developments, preprints, and software milestones.`,
+      authors.length
+        ? `Authored by ${authors.join(", ")} and published on ${fullDate} (${timeAgo(it.published)}).${(it.also_in || []).length ? ` Also referenced across ${it.also_in.join(", ")}.` : ""}`
+        : `Published by ${it.source} on ${fullDate} (${timeAgo(it.published)}).${(it.also_in || []).length ? ` Also referenced across ${it.also_in.join(", ")}.` : ""}`,
+      `Use the “Open source” button below to read the complete original ${typeName} at ${it.source}${/arxiv\.org\/abs\//i.test(it.url || "") ? ", or click “PDF” to open the full manuscript directly" : ""}.`,
+    ];
+
+    for (const ex of extras) {
+      if (paras.length >= 5) break;
+      paras.push(ex);
+    }
+    return paras.slice(0, 5);
+  }
+
+  function openModal(id) {
+    const it = findItem(id);
+    if (!it) return;
+    state.modalId = id;
+    const modal = $("#detail-modal");
+    const box = modal.querySelector(".modal-box");
+    const dm = DOMAIN_META[it.domain] || { label: it.domain, icon: "•" };
+    const saved = !!state.saved[it.id];
+    const read = state.read.has(it.id);
+    const { include } = parseQuery(state.filters.q);
+    const authors = (it.authors || []).join(", ");
+    const fullDate = new Date(it.published).toLocaleString(undefined, {
+      year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
+    });
+    const also = (it.also_in || []).length ? `<span>Also in: ${esc(it.also_in.join(", "))}</span>` : "";
+    const arxivMatch = (it.url || "").match(/arxiv\.org\/abs\/([^?#\s]+)/i);
+    const pdfUrl = arxivMatch ? `https://arxiv.org/pdf/${arxivMatch[1]}.pdf` : null;
+    const paragraphs = buildPopupParagraphs(it, fullDate);
+
+    box.dataset.domain = it.domain || "ai";
+    $("#modal-badges").innerHTML = `
+      <span class="badge">${dm.icon} ${esc(dm.label)}</span>
+      <span class="badge" style="--c:var(--fg)">${esc(TYPE_LABEL[it.type] || it.type)}</span>
+      ${isNew(it) ? '<span class="badge new">New</span>' : ""}
+      <span class="score" title="Relevance score ${it.score}/100"><span class="score-bar"><i style="width:${Math.round(it.score)}%"></i></span>Score: ${Math.round(it.score)}/100</span>
+    `;
+    $("#modal-title").innerHTML = `<a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" data-modal-open>${highlight(it.title, include)}</a>`;
+    $("#modal-meta").innerHTML = `
+      <strong>${esc(it.source)}</strong>
+      <span>${timeAgo(it.published)} (${esc(fullDate)})</span>
+      ${authors ? `<span>Authors: ${highlight(authors, include)}</span>` : ""}
+      ${also}
+    `;
+    $("#modal-description").innerHTML = paragraphs
+      .map((p) => `<p>${highlight(p, include)}</p>`)
+      .join("");
+    $("#modal-tags").innerHTML = (it.tags || [])
+      .map((t) => `<button class="tag-btn" data-tag="${esc(t)}">#${esc(t)}</button>`)
+      .join("");
+    $("#modal-actions").innerHTML = `
+      <a class="act primary" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" data-modal-open>Open source ↗</a>
+      ${pdfUrl ? `<a class="act" href="${esc(pdfUrl)}" target="_blank" rel="noopener noreferrer" data-modal-open>PDF ↗</a>` : ""}
+      <button class="act${saved ? " saved" : ""}" data-modal-save aria-pressed="${saved}">${saved ? "★ Saved" : "☆ Save"}</button>
+      <button class="act" data-modal-read>${read ? "Mark unread" : "Mark read"}</button>
+      <button class="act ml-auto" data-modal-close>Close</button>
+    `;
+
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    $("#modal-close").focus();
+  }
+
+  function closeModal() {
+    const modal = $("#detail-modal");
+    if (!modal || modal.classList.contains("hidden")) return;
+    modal.classList.add("hidden");
+    document.body.style.overflow = "";
+    state.modalId = null;
+  }
+
   function bind() {
     let st;
     $("#search").addEventListener("input", (e) => { clearTimeout(st); st = setTimeout(() => setFilter({ q: e.target.value }), 150); });
@@ -300,13 +410,45 @@
         return;
       }
       if (e.target.closest("[data-expand]")) {
-        const s = card.querySelector(".summary"); if (!s) return;
-        const open = s.classList.toggle("open"); e.target.textContent = open ? "Less" : "More"; return;
+        openModal(id);
+        return;
       }
       if (e.target.closest("[data-read]")) {
         const nowRead = !state.read.has(id); setRead(id, nowRead);
         card.classList.toggle("read", nowRead); e.target.textContent = nowRead ? "Mark unread" : "Mark read";
         if (state.filters.unread) render();
+      }
+    });
+
+    $("#modal-close").addEventListener("click", closeModal);
+    $("#detail-modal").addEventListener("click", (e) => {
+      if (e.target === $("#detail-modal") || e.target.closest("[data-modal-close]")) {
+        closeModal();
+        return;
+      }
+      const id = state.modalId;
+      if (!id) return;
+      if (e.target.closest(".tag-btn")) {
+        tagClick(e);
+        closeModal();
+        return;
+      }
+      if (e.target.closest("[data-modal-open]")) {
+        setRead(id, true);
+        render();
+        return;
+      }
+      if (e.target.closest("[data-modal-save]")) {
+        toggleSave(id);
+        render();
+        openModal(id);
+        return;
+      }
+      if (e.target.closest("[data-modal-read]")) {
+        const nowRead = !state.read.has(id);
+        setRead(id, nowRead);
+        render();
+        openModal(id);
       }
     });
 
@@ -328,6 +470,11 @@
     });
 
     document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !$("#detail-modal").classList.contains("hidden")) {
+        e.preventDefault();
+        closeModal();
+        return;
+      }
       const typing = /input|textarea|select/i.test(document.activeElement.tagName);
       if (e.key === "/" && !typing) { e.preventDefault(); $("#search").focus(); }
       else if (e.key === "Escape" && document.activeElement === $("#search")) { $("#search").blur(); }

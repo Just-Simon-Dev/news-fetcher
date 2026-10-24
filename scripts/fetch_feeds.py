@@ -182,9 +182,61 @@ def make_id(url: str) -> str:
     return hashlib.sha1(canonical_url(url).encode()).hexdigest()[:16]
 
 
-def clean_text(html: str, limit: int = 420) -> str:
-    text = BeautifulSoup(html or "", "html.parser").get_text(" ", strip=True)
-    text = re.sub(r"\s+", " ", text)
+def split_into_paragraphs(text: str, target_paras: int = 5) -> str:
+    """Ensure long descriptions are broken into ~5 readable paragraphs."""
+    paras = [p.strip() for p in re.split(r"\n\s*\n", text or "") if p.strip()]
+    if len(paras) >= 4:
+        return "\n\n".join(paras[:7])
+    full = " ".join(paras)
+    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9(\[\"])", full) if s.strip()]
+    if len(sentences) <= 2:
+        return full
+    n_paras = min(target_paras, len(sentences))
+    chunk = max(1, math.ceil(len(sentences) / n_paras))
+    grouped = [
+        " ".join(sentences[i : i + chunk])
+        for i in range(0, len(sentences), chunk)
+    ]
+    return "\n\n".join(grouped[:target_paras])
+
+
+def fetch_article_paragraphs(url: str, fallback: str, target_paras: int = 5) -> str:
+    """Fetch full article paragraphs when an RSS feed only provides a 1-line teaser."""
+    try:
+        r = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=10)
+        if not r.ok:
+            return fallback
+        soup = BeautifulSoup(r.text, "html.parser")
+        for tag in soup.find_all(["script", "style", "nav", "header", "footer", "aside", "form"]):
+            tag.decompose()
+        root = soup.find("article") or soup.find("main") or soup.body or soup
+        paras: list[str] = []
+        if fallback and len(fallback) > 40:
+            paras.append(fallback)
+        for p in root.find_all("p"):
+            txt = re.sub(r"\s+", " ", p.get_text(" ", strip=True)).strip()
+            if len(txt) < 55:
+                continue
+            if any(txt[:45].lower() in existing.lower() for existing in paras):
+                continue
+            paras.append(txt)
+            if len(paras) >= target_paras:
+                break
+        if len(paras) >= 2:
+            return "\n\n".join(paras[:target_paras])
+    except Exception:  # noqa: BLE001
+        pass
+    return fallback
+
+
+def clean_text(html: str, limit: int = 5000) -> str:
+    soup = BeautifulSoup(html or "", "html.parser")
+    for br in soup.find_all(["br", "p", "div", "li"]):
+        br.append("\n")
+    raw = soup.get_text(" ")
+    paragraphs = [re.sub(r"[ \t\r\f\v]+", " ", p).strip() for p in re.split(r"\n\s*\n|\n", raw)]
+    paragraphs = [p for p in paragraphs if p]
+    text = "\n\n".join(paragraphs) if paragraphs else re.sub(r"\s+", " ", raw).strip()
     text = re.sub(r"^Abstract:?\s*", "", text, flags=re.I)
     if len(text) > limit:
         text = text[:limit].rsplit(" ", 1)[0].rstrip(",;:.") + "…"
@@ -255,14 +307,16 @@ def score_item(raw_rel: float, published: datetime, weight: float, kind: str) ->
 
 
 def build_item(entry: Any, src: dict[str, Any], kind: str, extra_tags: list[str] | None = None) -> dict[str, Any] | None:
-    title = clean_text(entry.get("title", ""), 220)
+    title = re.sub(r"\s+", " ", clean_text(entry.get("title", ""), 220)).strip()
     link = entry.get("link") or ""
     if not title or not link:
         return None
-    body_html = entry.get("summary") or ""
-    if not body_html and entry.get("content"):
+    body_html = ""
+    if entry.get("content"):
         body_html = entry["content"][0].get("value", "")
-    summary = clean_text(body_html)
+    if not body_html or len(body_html) < len(entry.get("summary") or ""):
+        body_html = entry.get("summary") or body_html
+    summary = clean_text(body_html, 5000)
     published = parse_date(entry)
 
     raw, hits = relevance(title, summary)
@@ -275,6 +329,10 @@ def build_item(entry: Any, src: dict[str, Any], kind: str, extra_tags: list[str]
 
     if src.get("filter") and rel < src.get("min_rel", 2) * 2:
         return None
+
+    if kind == "blog" and (len(summary) < 650 or summary.count("\n\n") < 3):
+        summary = fetch_article_paragraphs(link, summary, target_paras=5)
+    summary = split_into_paragraphs(summary, target_paras=5)
 
     tags = list(dict.fromkeys((extra_tags or []) + hits[domain]))[:6]
     return {
