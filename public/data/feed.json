@@ -1,9 +1,9 @@
 {
  "meta": {
-  "generated_at": "2026-10-24T12:50:45Z",
+  "generated_at": "2026-10-24T13:06:32Z",
   "sample": false,
   "total": 338,
-  "new_this_run": 338,
+  "new_this_run": 0,
   "domains": {
    "math": "Mathematics (Algebra)",
    "quantum": "Quantum Computing",
@@ -22,26 +22,26 @@
    "arXiv math.RT": "ok (30)",
    "arXiv quant-ph": "ok (31)",
    "arXiv cs.CL/LG/AI": "ok (63)",
-   "The Quantum Insider": "ok (10)",
-   "PennyLane Releases": "ok (10)",
-   "Macaulay2 Releases": "ok (10)",
-   "Cirq Releases": "ok (10)",
-   "SGLang Releases": "ok (10)",
-   "Qiskit Releases": "ok (10)",
-   "GAP Releases": "ok (10)",
-   "FlashAttention Releases": "ok (10)",
-   "Quanta Magazine": "ok (0)",
-   "SageMath Releases": "ok (10)",
-   "Shtetl-Optimized": "ok (10)",
-   "Mamba Releases": "ok (10)",
-   "Transformers Releases": "ok (10)",
-   "Google Quantum AI": "ok (2)",
-   "vLLM Releases": "ok (10)",
-   "Ahead of AI": "ok (19)",
    "Terence Tao": "ok (10)",
+   "Ahead of AI": "ok (19)",
+   "Quanta Magazine": "ok (0)",
+   "Shtetl-Optimized": "ok (10)",
    "Lil'Log": "ok (40)",
    "Hugging Face Blog": "ok (7)",
-   "vLLM Blog": "ok (40)"
+   "vLLM Blog": "ok (40)",
+   "GAP Releases": "ok (10)",
+   "SageMath Releases": "ok (10)",
+   "PennyLane Releases": "ok (10)",
+   "Macaulay2 Releases": "ok (10)",
+   "The Quantum Insider": "ok (10)",
+   "SGLang Releases": "ok (10)",
+   "FlashAttention Releases": "ok (10)",
+   "Mamba Releases": "ok (10)",
+   "Google Quantum AI": "ok (2)",
+   "Transformers Releases": "ok (10)",
+   "Cirq Releases": "ok (10)",
+   "Qiskit Releases": "ok (10)",
+   "vLLM Releases": "ok (10)"
   }
  },
  "items": [
@@ -84,7 +84,7 @@
    "published": "2026-10-24T07:00:00Z",
    "relevance": 9.2,
    "weight": 0.7,
-   "score": 67.8,
+   "score": 67.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -101,7 +101,7 @@
    "published": "2026-10-23T15:20:19Z",
    "relevance": 0.0,
    "weight": 0.95,
-   "score": 43.0,
+   "score": 42.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -209,7 +209,7 @@
    "published": "2026-10-23T08:12:25Z",
    "relevance": 28.4,
    "weight": 0.7,
-   "score": 86.3,
+   "score": 86.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -285,7 +285,7 @@
    "published": "2026-10-22T20:34:43Z",
    "relevance": 7.8,
    "weight": 0.8,
-   "score": 62.4,
+   "score": 62.3,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -330,7 +330,7 @@
    "published": "2026-10-22T17:58:24Z",
    "relevance": 2.4,
    "weight": 0.9,
-   "score": 43.9,
+   "score": 43.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -406,7 +406,7 @@
    "published": "2026-10-22T17:47:13Z",
    "relevance": 3.6,
    "weight": 0.9,
-   "score": 47.2,
+   "score": 47.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -430,7 +430,7 @@
    "published": "2026-10-22T17:42:04Z",
    "relevance": 3.0,
    "weight": 0.9,
-   "score": 45.5,
+   "score": 45.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -455,7 +455,7 @@
    "published": "2026-10-22T17:40:42Z",
    "relevance": 8.4,
    "weight": 0.9,
-   "score": 60.5,
+   "score": 60.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -570,7 +570,7 @@
    "published": "2026-10-22T17:26:39Z",
    "relevance": 5.4,
    "weight": 0.7,
-   "score": 48.1,
+   "score": 48.0,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -625,7 +625,7 @@
    "published": "2026-10-22T17:15:04Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 72.2,
+   "score": 72.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -702,7 +702,7 @@
    "published": "2026-10-22T16:53:58Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 37.0,
+   "score": 36.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -725,7 +725,7 @@
    "published": "2026-10-22T16:45:43Z",
    "relevance": 1.2,
    "weight": 0.9,
-   "score": 40.3,
+   "score": 40.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -777,7 +777,7 @@
    "published": "2026-10-22T16:29:15Z",
    "relevance": 12.2,
    "weight": 0.85,
-   "score": 69.8,
+   "score": 69.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -802,7 +802,7 @@
    "published": "2026-10-22T16:18:29Z",
    "relevance": 9.4,
    "weight": 0.85,
-   "score": 62.0,
+   "score": 61.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -827,7 +827,7 @@
    "published": "2026-10-22T16:14:52Z",
    "relevance": 1.2,
    "weight": 0.9,
-   "score": 40.2,
+   "score": 40.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -908,7 +908,7 @@
    "published": "2026-10-22T15:40:04Z",
    "relevance": 13.4,
    "weight": 0.85,
-   "score": 73.0,
+   "score": 72.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -959,7 +959,7 @@
    "published": "2026-10-22T15:14:44Z",
    "relevance": 15.6,
    "weight": 0.85,
-   "score": 79.0,
+   "score": 78.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1007,7 +1007,7 @@
    "published": "2026-10-22T15:00:16Z",
    "relevance": 2.4,
    "weight": 0.9,
-   "score": 43.3,
+   "score": 43.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1032,7 +1032,7 @@
    "published": "2026-10-22T14:57:02Z",
    "relevance": 23.2,
    "weight": 0.85,
-   "score": 85.6,
+   "score": 85.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1055,7 +1055,7 @@
    "published": "2026-10-22T14:55:10Z",
    "relevance": 12.2,
    "weight": 0.9,
-   "score": 70.5,
+   "score": 70.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1077,7 +1077,7 @@
    "published": "2026-10-22T14:49:15Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 36.6,
+   "score": 36.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1102,7 +1102,7 @@
    "published": "2026-10-22T14:38:21Z",
    "relevance": 7.0,
    "weight": 0.9,
-   "score": 56.0,
+   "score": 55.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1210,7 +1210,7 @@
    "published": "2026-10-22T14:07:01Z",
    "relevance": 12.0,
    "weight": 0.85,
-   "score": 68.8,
+   "score": 68.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1233,7 +1233,7 @@
    "published": "2026-10-22T13:52:29Z",
    "relevance": 6.4,
    "weight": 0.9,
-   "score": 54.2,
+   "score": 54.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1280,7 +1280,7 @@
    "published": "2026-10-22T13:40:34Z",
    "relevance": 20.6,
    "weight": 0.7,
-   "score": 82.4,
+   "score": 82.3,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1304,7 +1304,7 @@
    "published": "2026-10-22T13:38:48Z",
    "relevance": 3.0,
    "weight": 0.9,
-   "score": 44.7,
+   "score": 44.6,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1331,7 +1331,7 @@
    "published": "2026-10-22T13:36:19Z",
    "relevance": 12.0,
    "weight": 0.85,
-   "score": 68.7,
+   "score": 68.6,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1403,7 +1403,7 @@
    "published": "2026-10-22T13:24:47Z",
    "relevance": 8.6,
    "weight": 0.85,
-   "score": 59.2,
+   "score": 59.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1426,7 +1426,7 @@
    "published": "2026-10-22T13:20:37Z",
    "relevance": 41.0,
    "weight": 0.7,
-   "score": 82.3,
+   "score": 82.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1505,7 +1505,7 @@
    "published": "2026-10-22T12:45:17Z",
    "relevance": 24.4,
    "weight": 0.85,
-   "score": 85.2,
+   "score": 85.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1581,7 +1581,7 @@
    "published": "2026-10-22T12:08:02Z",
    "relevance": 3.0,
    "weight": 0.9,
-   "score": 44.4,
+   "score": 44.3,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1636,7 +1636,7 @@
    "published": "2026-10-22T11:33:49Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 71.1,
+   "score": 71.0,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1690,7 +1690,7 @@
    "published": "2026-10-22T11:12:23Z",
    "relevance": 23.8,
    "weight": 0.85,
-   "score": 84.9,
+   "score": 84.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1715,7 +1715,7 @@
    "published": "2026-10-22T10:54:30Z",
    "relevance": 4.8,
    "weight": 0.9,
-   "score": 49.2,
+   "score": 49.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1807,7 +1807,7 @@
    "published": "2026-10-22T09:36:15Z",
    "relevance": 0.6,
    "weight": 0.9,
-   "score": 37.3,
+   "score": 37.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1877,7 +1877,7 @@
    "published": "2026-10-22T09:08:03Z",
    "relevance": 2.4,
    "weight": 0.9,
-   "score": 42.2,
+   "score": 42.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1899,7 +1899,7 @@
    "published": "2026-10-22T09:03:38Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 35.5,
+   "score": 35.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -1950,7 +1950,7 @@
    "published": "2026-10-22T08:41:33Z",
    "relevance": 1.2,
    "weight": 0.9,
-   "score": 38.8,
+   "score": 38.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2024,7 +2024,7 @@
    "published": "2026-10-22T07:21:01Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 35.2,
+   "score": 35.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2080,7 +2080,7 @@
    "published": "2026-10-22T06:10:08Z",
    "relevance": 36.8,
    "weight": 0.85,
-   "score": 84.0,
+   "score": 83.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2134,7 +2134,7 @@
    "published": "2026-10-22T05:40:26Z",
    "relevance": 2.4,
    "weight": 0.9,
-   "score": 41.6,
+   "score": 41.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2236,7 +2236,7 @@
    "published": "2026-10-22T03:48:21Z",
    "relevance": 8.4,
    "weight": 0.85,
-   "score": 56.9,
+   "score": 56.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2314,7 +2314,7 @@
    "published": "2026-10-22T02:29:16Z",
    "relevance": 10.2,
    "weight": 0.85,
-   "score": 61.7,
+   "score": 61.6,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2383,7 +2383,7 @@
    "published": "2026-10-22T01:06:24Z",
    "relevance": 7.8,
    "weight": 0.9,
-   "score": 55.8,
+   "score": 55.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2430,7 +2430,7 @@
    "published": "2026-10-21T23:07:06Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 33.8,
+   "score": 33.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2486,7 +2486,7 @@
    "published": "2026-10-21T21:59:47Z",
    "relevance": 22.0,
    "weight": 0.85,
-   "score": 82.6,
+   "score": 82.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2510,7 +2510,7 @@
    "published": "2026-10-21T21:58:35Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 33.6,
+   "score": 33.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2533,7 +2533,7 @@
    "published": "2026-10-21T21:42:47Z",
    "relevance": 1.2,
    "weight": 0.9,
-   "score": 36.9,
+   "score": 36.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2556,7 +2556,7 @@
    "published": "2026-10-21T20:00:42Z",
    "relevance": 2.6,
    "weight": 0.9,
-   "score": 40.5,
+   "score": 40.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2603,7 +2603,7 @@
    "published": "2026-10-21T19:37:16Z",
    "relevance": 4.2,
    "weight": 0.9,
-   "score": 44.9,
+   "score": 44.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2630,7 +2630,7 @@
    "published": "2026-10-21T19:28:55Z",
    "relevance": 6.0,
    "weight": 0.9,
-   "score": 49.9,
+   "score": 49.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2656,7 +2656,7 @@
    "published": "2026-10-21T18:58:52Z",
    "relevance": 13.2,
    "weight": 0.85,
-   "score": 68.8,
+   "score": 68.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2685,7 +2685,7 @@
    "published": "2026-10-21T18:28:03Z",
    "relevance": 10.6,
    "weight": 0.85,
-   "score": 61.5,
+   "score": 61.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2709,7 +2709,7 @@
    "published": "2026-10-21T18:27:35Z",
    "relevance": 1.2,
    "weight": 0.9,
-   "score": 36.4,
+   "score": 36.3,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2779,7 +2779,7 @@
    "published": "2026-10-21T18:16:44Z",
    "relevance": 9.6,
    "weight": 0.85,
-   "score": 58.7,
+   "score": 58.6,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2831,7 +2831,7 @@
    "published": "2026-10-21T18:01:04Z",
    "relevance": 21.0,
    "weight": 0.85,
-   "score": 82.0,
+   "score": 81.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2884,7 +2884,7 @@
    "published": "2026-10-21T18:00:09Z",
    "relevance": 12.6,
    "weight": 0.85,
-   "score": 67.0,
+   "score": 66.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2936,7 +2936,7 @@
    "published": "2026-10-21T17:59:14Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 82.0,
+   "score": 81.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -2964,7 +2964,7 @@
    "published": "2026-10-21T17:34:04Z",
    "relevance": 26.4,
    "weight": 0.85,
-   "score": 81.9,
+   "score": 81.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3142,7 +3142,7 @@
    "published": "2026-10-21T17:15:05Z",
    "relevance": 1.2,
    "weight": 0.9,
-   "score": 36.2,
+   "score": 36.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3191,7 +3191,7 @@
    "published": "2026-10-21T16:51:51Z",
    "relevance": 20.8,
    "weight": 0.9,
-   "score": 82.8,
+   "score": 82.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3219,7 +3219,7 @@
    "published": "2026-10-21T16:37:09Z",
    "relevance": 10.6,
    "weight": 0.85,
-   "score": 61.2,
+   "score": 61.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3297,7 +3297,7 @@
    "published": "2026-10-21T16:24:34Z",
    "relevance": 0.6,
    "weight": 0.9,
-   "score": 34.4,
+   "score": 34.3,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3351,7 +3351,7 @@
    "published": "2026-10-21T16:15:39Z",
    "relevance": 9.6,
    "weight": 0.85,
-   "score": 58.4,
+   "score": 58.3,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3433,7 +3433,7 @@
    "published": "2026-10-21T15:27:57Z",
    "relevance": 7.2,
    "weight": 0.9,
-   "score": 52.6,
+   "score": 52.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3457,7 +3457,7 @@
    "published": "2026-10-21T15:14:32Z",
    "relevance": 11.0,
    "weight": 0.9,
-   "score": 63.1,
+   "score": 63.0,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3503,7 +3503,7 @@
    "published": "2026-10-21T14:53:56Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 32.5,
+   "score": 32.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3576,7 +3576,7 @@
    "published": "2026-10-21T13:25:03Z",
    "relevance": 1.8,
    "weight": 0.9,
-   "score": 37.3,
+   "score": 37.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3625,7 +3625,7 @@
    "published": "2026-10-21T12:49:05Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 32.2,
+   "score": 32.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3650,7 +3650,7 @@
    "published": "2026-10-21T12:38:04Z",
    "relevance": 12.0,
    "weight": 0.85,
-   "score": 64.5,
+   "score": 64.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3673,7 +3673,7 @@
    "published": "2026-10-21T12:11:41Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 32.1,
+   "score": 32.0,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3724,7 +3724,7 @@
    "published": "2026-10-21T11:42:19Z",
    "relevance": 15.4,
    "weight": 0.85,
-   "score": 73.8,
+   "score": 73.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3770,7 +3770,7 @@
    "published": "2026-10-21T10:50:33Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 31.9,
+   "score": 31.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3821,7 +3821,7 @@
    "published": "2026-10-21T10:12:05Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 31.8,
+   "score": 31.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -3849,7 +3849,7 @@
    "published": "2026-10-21T10:06:29Z",
    "relevance": 11.8,
    "weight": 0.85,
-   "score": 63.6,
+   "score": 63.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4038,7 +4038,7 @@
    "published": "2026-10-21T08:19:29Z",
    "relevance": 3.0,
    "weight": 0.85,
-   "score": 43.9,
+   "score": 43.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4067,7 +4067,7 @@
    "published": "2026-10-21T08:03:24Z",
    "relevance": 14.4,
    "weight": 0.85,
-   "score": 70.5,
+   "score": 70.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4119,7 +4119,7 @@
    "published": "2026-10-21T07:46:55Z",
    "relevance": 12.0,
    "weight": 0.85,
-   "score": 63.8,
+   "score": 63.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4174,7 +4174,7 @@
    "published": "2026-10-21T06:59:07Z",
    "relevance": 8.0,
    "weight": 0.85,
-   "score": 52.6,
+   "score": 52.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4224,7 +4224,7 @@
    "published": "2026-10-21T05:47:56Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 31.2,
+   "score": 31.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4292,7 +4292,7 @@
    "published": "2026-10-21T03:15:30Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 79.3,
+   "score": 79.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4316,7 +4316,7 @@
    "published": "2026-10-21T01:27:54Z",
    "relevance": 2.4,
    "weight": 0.9,
-   "score": 37.3,
+   "score": 37.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4344,7 +4344,7 @@
    "published": "2026-10-21T00:26:37Z",
    "relevance": 14.8,
    "weight": 0.85,
-   "score": 70.6,
+   "score": 70.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4458,7 +4458,7 @@
    "published": "2026-10-20T22:48:57Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 65.4,
+   "score": 65.3,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4559,7 +4559,7 @@
    "published": "2026-10-20T20:40:20Z",
    "relevance": 18.4,
    "weight": 0.85,
-   "score": 79.0,
+   "score": 78.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4585,7 +4585,7 @@
    "published": "2026-10-20T20:31:16Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 65.1,
+   "score": 65.0,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4661,7 +4661,7 @@
    "published": "2026-10-20T20:00:13Z",
    "relevance": 14.0,
    "weight": 0.9,
-   "score": 68.8,
+   "score": 68.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4712,7 +4712,7 @@
    "published": "2026-10-20T18:15:05Z",
    "relevance": 21.6,
    "weight": 0.85,
-   "score": 78.7,
+   "score": 78.6,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -4987,7 +4987,7 @@
    "published": "2026-10-20T15:35:00Z",
    "relevance": 0.0,
    "weight": 0.95,
-   "score": 30.4,
+   "score": 30.3,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5090,7 +5090,7 @@
    "published": "2026-10-20T14:41:56Z",
    "relevance": 1.8,
    "weight": 0.9,
-   "score": 34.3,
+   "score": 34.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5141,7 +5141,7 @@
    "published": "2026-10-20T13:56:12Z",
    "relevance": 25.0,
    "weight": 0.85,
-   "score": 78.2,
+   "score": 78.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5260,7 +5260,7 @@
    "published": "2026-10-20T09:28:33Z",
    "relevance": 4.4,
    "weight": 0.9,
-   "score": 40.9,
+   "score": 40.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5289,7 +5289,7 @@
    "published": "2026-10-20T09:26:20Z",
    "relevance": 12.6,
    "weight": 0.85,
-   "score": 62.7,
+   "score": 62.6,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5410,7 +5410,7 @@
    "published": "2026-10-20T06:17:09Z",
    "relevance": 13.2,
    "weight": 0.85,
-   "score": 64.0,
+   "score": 63.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5460,7 +5460,7 @@
    "published": "2026-10-20T04:05:56Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 77.1,
+   "score": 77.0,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5512,7 +5512,7 @@
    "published": "2026-10-20T03:45:45Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 63.2,
+   "score": 63.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5552,7 +5552,7 @@
     "math.AC",
     "ideals"
    ],
-   "summary": "In this paper, we provide the exact formula for the $\\mathrm{v}$-number of powers of the edge ideal of a cubic circulant graph $C_{2n}(a,n)$ with $1\\le a<n$.",
+   "summary": "In this paper, we provide the exact formula for the $\\mathrm{v}$-number of powers of the edge ideal of a cubic circulant graph $C_{2n}(a,n)$ with $1\\le a",
    "authors": [
     "Guangjun Zhu",
     "Jiaxin Li",
@@ -5635,7 +5635,7 @@
    "published": "2026-10-20T01:27:42Z",
    "relevance": 0.6,
    "weight": 0.9,
-   "score": 29.5,
+   "score": 29.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5675,7 +5675,7 @@
    "published": "2026-10-20T00:00:00Z",
    "relevance": 24.0,
    "weight": 1.0,
-   "score": 79.7,
+   "score": 79.6,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5694,7 +5694,7 @@
    "published": "2026-10-20T00:00:00Z",
    "relevance": 4.0,
    "weight": 0.85,
-   "score": 37.8,
+   "score": 37.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5748,7 +5748,7 @@
    "published": "2026-10-19T23:05:16Z",
    "relevance": 14.8,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.6,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -5973,7 +5973,7 @@
    "published": "2026-10-19T15:47:18Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 26.9,
+   "score": 26.8,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -6025,7 +6025,7 @@
    "published": "2026-10-19T09:21:01Z",
    "relevance": 2.4,
    "weight": 0.9,
-   "score": 33.0,
+   "score": 32.9,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -6048,7 +6048,7 @@
    "published": "2026-10-19T09:08:48Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 26.3,
+   "score": 26.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -6145,7 +6145,7 @@
    "published": "2026-10-19T06:00:27Z",
    "relevance": 6.0,
    "weight": 0.9,
-   "score": 42.7,
+   "score": 42.6,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -6419,7 +6419,7 @@
    "published": "2026-10-18T09:26:56Z",
    "relevance": 0.0,
    "weight": 1.0,
-   "score": 31.5,
+   "score": 31.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -6521,7 +6521,7 @@
    "published": "2026-10-17T17:09:00Z",
    "relevance": 0.0,
    "weight": 0.95,
-   "score": 24.5,
+   "score": 24.4,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -6649,7 +6649,7 @@
    "published": "2026-10-16T17:24:27Z",
    "relevance": 0.0,
    "weight": 0.9,
-   "score": 22.3,
+   "score": 22.2,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -6739,7 +6739,7 @@
    "published": "2026-10-16T00:00:00Z",
    "relevance": 24.6,
    "weight": 1.0,
-   "score": 73.6,
+   "score": 73.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -6775,7 +6775,7 @@
    "published": "2026-10-16T00:00:00Z",
    "relevance": 0.0,
    "weight": 1.0,
-   "score": 23.6,
+   "score": 23.5,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -6915,7 +6915,7 @@
    "published": "2026-10-14T23:29:34Z",
    "relevance": 0.0,
    "weight": 1.0,
-   "score": 27.8,
+   "score": 27.7,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -6990,7 +6990,7 @@
    "published": "2026-10-14T00:00:00Z",
    "relevance": 3.6,
    "weight": 1.0,
-   "score": 32.2,
+   "score": 32.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
@@ -7009,7 +7009,7 @@
    "published": "2026-10-14T00:00:00Z",
    "relevance": 1.8,
    "weight": 1.0,
-   "score": 27.2,
+   "score": 27.1,
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
