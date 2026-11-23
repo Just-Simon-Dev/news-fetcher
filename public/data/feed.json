@@ -1,18 +1,18 @@
 {
  "meta": {
-  "generated_at": "2026-11-22T19:45:28Z",
+  "generated_at": "2026-11-23T07:45:56Z",
   "sample": false,
   "total": 600,
-  "new_this_run": 0,
+  "new_this_run": 29,
   "domains": {
    "math": "Mathematics (Algebra)",
    "quantum": "Quantum Computing",
    "ai": "LLMs & AI Architectures"
   },
   "counts": {
-   "math": 17,
-   "quantum": 265,
-   "ai": 318
+   "math": 18,
+   "quantum": 260,
+   "ai": 322
   },
   "sources": {
    "arXiv math.AC": "ok (30)",
@@ -20,31 +20,51 @@
    "arXiv math.GR": "ok (30)",
    "arXiv math.AG": "ok (30)",
    "arXiv math.RT": "ok (30)",
-   "arXiv quant-ph": "ok (32)",
-   "arXiv cs.CL/LG/AI": "ok (67)",
-   "The Quantum Insider": "ok (8)",
-   "vLLM Blog": "ok (40)",
-   "GAP Releases": "ok (10)",
-   "PennyLane Releases": "ok (10)",
-   "SageMath Releases": "ok (10)",
-   "Macaulay2 Releases": "ok (10)",
-   "Google Quantum AI": "ok (3)",
-   "SGLang Releases": "ok (10)",
-   "FlashAttention Releases": "ok (10)",
+   "arXiv quant-ph": "ok (26)",
+   "arXiv cs.CL/LG/AI": "ok (64)",
+   "Hugging Face Blog": "ok (9)",
    "Quanta Magazine": "ok (0)",
-   "Mamba Releases": "ok (10)",
-   "Transformers Releases": "ok (10)",
-   "Terence Tao": "ok (10)",
-   "vLLM Releases": "ok (10)",
-   "Cirq Releases": "ok (10)",
-   "Qiskit Releases": "ok (10)",
-   "Ahead of AI": "ok (19)",
+   "vLLM Blog": "ok (40)",
    "Shtetl-Optimized": "ok (10)",
+   "SageMath Releases": "ok (10)",
+   "PennyLane Releases": "ok (10)",
+   "Cirq Releases": "ok (10)",
+   "SGLang Releases": "ok (10)",
+   "Qiskit Releases": "ok (10)",
+   "FlashAttention Releases": "ok (10)",
+   "Mamba Releases": "ok (10)",
+   "Terence Tao": "ok (10)",
+   "GAP Releases": "ok (10)",
+   "Transformers Releases": "ok (10)",
+   "vLLM Releases": "ok (10)",
+   "Ahead of AI": "ok (19)",
+   "The Quantum Insider": "ok (8)",
+   "Macaulay2 Releases": "ok (10)",
    "Lil'Log": "ok (40)",
-   "Hugging Face Blog": "ok (9)"
+   "Google Quantum AI": "ok (3)"
   }
  },
  "items": [
+  {
+   "id": "a62042fc9f5e9e03",
+   "title": "Skip the DRAM Tier: MoRI UMBP Runs the Agentic KV Cache on NVMe",
+   "url": "https://vllm.ai/blog/2026-11-23-skip-the-dram-tier",
+   "source": "vLLM Blog",
+   "also_in": [],
+   "type": "blog",
+   "domain": "ai",
+   "tags": [
+    "vllm",
+    "kv cache"
+   ],
+   "summary": "On AMD Instinct™ MI355X GPUs, a MoRI UMBP KV pool on NVMe matched a DRAM pool of the same size within 1% for Kimi-K3 on vLLM, and drives that hold a day of agent KV cost less than DRAM that holds 31 minutes.\n\nMost of the traffic in agentic serving is multi-turn sessions that resend long prefixes. In the AgentX benchmark replaying real Claude Code sessions, the median turn is 142K input tokens, and over 96% of those tokens are a prefix the server has already seen [3] .\n\nA KV cache hit means the prefill node only has to process the small delta. A miss forces a full recomputation of the prefix, which burns GPU time and delays the first token. In our 42 runs of Kimi-K3 on vLLM, raising the KV cache hit rate by 1% of prompt tokens, for example from 95% to 96%, was worth about 10% more throughput (Figure 3).\n\nA KV cache hit needs the session’s prefix to still be in memory when its next turn arrives. With dozens of sessions open at once, memory runs out. GPU memory goes first, and host DRAM is the usual next tier. But DRAM fills too: Kimi-K3 wrote 2.3 to 4.6 TB of KV to the pool an hour in our runs, so a 1.8 TB DRAM pool, which lists at about $76,000, holds only the last 23 to 47 minutes of it.\n\nThat led us to a simple question: why not skip the DRAM tier and put vLLM’s KV pool straight on NVMe? We tried it on AMD Instinct™ MI355X GPUs with UMBP, the KV cache pool in AMD’s open-source MoRI library. At the same size, NVMe matched DRAM’s throughput within 1% on Kimi-K3, in two sets of runs on different machines (Figure 1). On a second workload with longer prompts, NVMe came within 1% of a DRAM pool of the same size. The NVMe pool has no DRAM tier: DRAM only buffers new KV on its way to the drives and stages reads, about 80 GB against the DRAM pool’s 1.8 TB. And NVMe’s cost follows the KV it writes, not the KV it holds, so drives rated for Kimi-K3’s writes cost less than that DRAM pool and hold a full day of KV.",
+   "authors": [],
+   "published": "2026-11-23T00:00:00Z",
+   "relevance": 13.6,
+   "weight": 1.0,
+   "score": 85.4,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
   {
    "id": "7f7ccbf019ca3177",
    "title": "Release v5.24.0",
@@ -63,8 +83,160 @@
    "published": "2026-11-21T12:43:39Z",
    "relevance": 12.6,
    "weight": 0.95,
-   "score": 80.7,
+   "score": 78.2,
    "first_seen": "2026-11-21T19:21:42Z"
+  },
+  {
+   "id": "9965f17ee5bcd8de",
+   "title": "MemOnce: A Scalable Memory Architecture for Large Language Models",
+   "url": "https://arxiv.org/abs/2611.27973",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.CL",
+    "kv cache",
+    "transformers",
+    "large language models",
+    "language models"
+   ],
+   "summary": "Deploying large language models (LLMs) in long-horizon and continual interactions requires maintaining reusable memory states for future inference, posing challenges for existing architectures. Standard Transformers accumulate layer-wise, token-level KV caches, incurring linear GPU memory growth and quadratic computational complexity as the context expands.\n\nIn contrast, linear-time architectures compress history into fixed-size states, but struggle to retain fine-grained details. We introduce MemOnce, a foundation architecture that learns scalable memory states for language models.\n\nMemOnce is based on two core designs: (a) Memory encoder-decoder: it caches only a small subset of final-layer hidden states as compact memory representations and dynamically decodes them back into KV caches for attention layers; (b) Memory sparse attention: for each continual input, MemOnce adaptively retrieves relevant memory representations, with the sparse indices computed only once across layers. Coupling these two designs enables efficient on-the-fly memory loading and KV cache decoding, drastically reducing the GPU memory footprint and achieving linear-time complexity.\n\nWe conduct extensive experiments to show that MemOnce outperforms Transformers and other architectures across varying model sizes, context lengths, and training paradigms (pretraining and post-training adaptation). In particular, adapting Qwen3.5-4B with MemOnce reduces memory state cache by 1313$\\times$ and prefill latency by 6.9$\\times$ at 1M context, and improves throughput by 3.5$\\times$ and overall memory performance by +5.77%.\n\nFinally, MemOnce generalizes zero-shot to downstream representation tasks, achieving competitive results against specialized models.",
+   "authors": [
+    "Chang Nie",
+    "Chaoyou Fu",
+    "Songlin Liu",
+    "Yiqing Hu",
+    "et al."
+   ],
+   "published": "2026-11-20T18:51:29Z",
+   "relevance": 16.2,
+   "weight": 0.85,
+   "score": 77.9,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "82739ba01c869493",
+   "title": "Topology Hub Optimal Transport: Eliminating Long Context Dilution at Flash Speed",
+   "url": "https://arxiv.org/abs/2611.27951",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.LG",
+    "flashattention",
+    "long context",
+    "rope"
+   ],
+   "summary": "Long-context models use sparse or structured attention to avoid quadratic cost, yet retrieving a small set of relevant facts embedded among hundreds of thousands of distractors degrades as normalization mass disperses with length. Hub-and-spoke optimal transport (OT) replaces the dense $L \\times L$ matrix with a linear-size graph over local windows and $K$ shared hubs balanced by Sinkhorn scaling.\n\nBuilding on block-wise tail refinement and fixed-support transport topology (arXiv:2605.08123, arXiv:2609.07954), we introduce Topology Hub Optimal Transport (THOT): (1) bounded-support capacity gating via simplex sparsemax ($O(L\\log L)$) or sorting-free token-local thresholded ReLU ($O(L)$), driving excess distractor mass to zero; (2) a three-sweep $1+2$ annealed row-closed Sinkhorn schedule that damps bipartite residuals; (3) an exact rank-$(D+2R+1)$ One-Reference-Tile adjoint in batched split-factor Triton kernels (BF16 Tensor Cores, FP32 potentials); and (4) a chunked exclusive-prefix causal variant with verified zero future leakage. On NVIDIA L4, sparsemax THOT trained at $L=128$ reaches 97.40% zero-shot recall of fixed bindings at $L=262{,}144$ under pure task loss ($α=0$) and 98.83% at $α=0.05$ (matched by $O(L)$ thresholded ReLU at $α=0.05$, vs.\n\n80.60% at $α=0$), while softmax-gated hub OT drops to 3.52%. In bidirectional operator microbenchmarks, our kernel runs forward+VJP in 100.1 ms at $H=8, D=64, L=262\\mathrm{K}$ (2.2x faster with 4.0x smaller compiler temporaries than latent softmax) and 1.34 ms vs.\n\n4.37 ms for cuDNN FlashAttention at $L=4{,}096$; multi-layer LM runs use the unfused path. Zero-shot WikiText-103 multi-needle retrieval hits 100.00% (128/128 queries at $L=65\\mathrm{K}$) vs.\n\n0.78% for short-trained RoPE FlashAttention, and compact 4-layer WikiText-4K runs show modest causal and masked LM gains.",
+   "authors": [
+    "Dylan Forde"
+   ],
+   "published": "2026-11-20T18:23:42Z",
+   "relevance": 15.0,
+   "weight": 0.85,
+   "score": 74.5,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "aa163fca3c27c751",
+   "title": "Optimised 8th-Order Trotter-Suzuki Schemes for Quantum Simulation",
+   "url": "https://arxiv.org/abs/2611.27896",
+   "source": "arXiv quant-ph",
+   "also_in": [],
+   "type": "paper",
+   "domain": "quantum",
+   "tags": [
+    "quant-ph",
+    "cond-mat.stat-mech",
+    "quantum hardware",
+    "quantum computers",
+    "qiskit",
+    "quantum"
+   ],
+   "summary": "Simulating quantum dynamics in many-body systems is one of the most promising applications of quantum computers. Product formulas are a natural choice for this task, since they map directly onto quantum gates, and increasing their order $n$ could lead to reduced gate depths, provided the parameters are chosen efficiently.\n\nSo far, schemes beyond $6^{\\textrm{th}}$ order have only been built as compositions of second-order schemes, while more general product formulas are known only up to $6^{\\textrm{th}}$ order. In this work, we extend our optimisation framework to order $n = 8$, and find both more efficient compositions and the first $8^{\\textrm{th}}$ order general schemes.\n\nOur formulas improve on the theoretical efficiency of the state-of-the-art schemes by Morales et al and we recommend two schemes explicitly. In simulations of the Heisenberg XZ chain one of our recommended schemes always outperforms those by Morales et al, though it is not always the same scheme that performs best.\n\nMore generally, we observe that for Hamiltonians split into many non-commuting operators the uniformity of a Trotter decomposition becomes the main indicator of a scheme's performance. To assess the schemes' use on quantum hardware, we simulate noisy circuits with our new Qiskit plugin qiskit-omelyan.\n\nAt current noise levels, the Leapfrog scheme remains the best choice, but as noise rates decrease toward fault tolerance, our recommended schemes become competitive.",
+   "authors": [
+    "Marko Maležič",
+    "Johann Ostmeyer"
+   ],
+   "published": "2026-11-20T17:36:11Z",
+   "relevance": 11.6,
+   "weight": 0.85,
+   "score": 64.9,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "41ceb802cc280891",
+   "title": "Speculative Decoding Is Less Speculative Than You Think",
+   "url": "https://arxiv.org/abs/2611.27891",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.AI",
+    "speculative decoding"
+   ],
+   "summary": "Speculative decoding accelerates language-model inference by preparing candidate continuations before the target model generates them. Its efficiency depends on how well limited drafting computation anticipates the path the target will actually follow.\n\nAnticipating this path involves two sources of uncertainty: the target model's predictions and the randomness of sampling. Yet the former requires a target-model forward pass, while the latter can be fixed before drafting.\n\nBuilding on this observation, we introduce DICE (Draw-Informed Candidate Selection), which pre-samples and synchronizes verification randomness across drafting and verification. By combining these known draws with predictions from an existing drafter, DICE allocates computation toward continuations more likely to be used in the current sampling run.\n\nThis principle guides node selection throughout draft-tree construction and extends to asynchronous prefetching, where DICE predicts which next-round drafts to prepare. Without additional drafter training or changes to the target sampling distribution, DICE achieves state-of-the-art decoding throughput across diverse settings, with speedups of up to 24.6pp over strong baselines.",
+   "authors": [
+    "Guanning Zeng",
+    "Andrea Zanette"
+   ],
+   "published": "2026-11-20T17:33:21Z",
+   "relevance": 13.0,
+   "weight": 0.85,
+   "score": 68.8,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "16ea0b23775ca43e",
+   "title": "Anchors That Move Without Collapsing: Exclusive-Region Anchor Routing for Vision Transformers",
+   "url": "https://arxiv.org/abs/2611.27855",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.CV",
+    "cs.LG",
+    "flashattention",
+    "transformers"
+   ],
+   "summary": "Anchor tokens let a vision transformer exchange global information through a few summaries, but nothing forces different anchors to summarise different things. On one shared backbone we show that a Perceiver-style pathway and an AnchorFormer pathway collapse to a single summary, the latter despite its mass normalisation (pooling-map similarity 0.99), while other soft pathways, including Representative Attention, stay partly redundant (0.59-0.79).\n\nThese results concern the routing modules inside our block, not the full published models. An exclusive partition of the patch grid cannot collapse by construction, and matched component by component it is 2.4-3.6 points more accurate than Representative Attention on CIFAR-100.\n\nWe then propose focus anchors, which place most anchors at the peaks of a learned importance map while all anchors keep one exclusive Voronoi partition. Focus anchors beat a fixed partition on a cluttered canvas (+1.5 points, 95% CI [0.5, 2.6]) but not on full-HD traffic-sign recognition.\n\nThere, both variants match dense attention with local windows at about a fifth of its FLOPs, and the fixed partition also trains 1.5x faster per step than dense attention with FlashAttention, though both use more memory; a ViT on a downsampled input loses half its mean average precision. Hard exclusive assignment is the only region assignment we tested that is both stable and most accurate: softmax and Sinkhorn relaxations diverge, and Gumbel-softmax trains but is less accurate.\n\nWe also report the limits: a ResNet-18 is more accurate on every task we trained it on in this from-scratch regime, and anchors train faster than FlashAttention only from about 1536x1536 pixels and never use less memory.",
+   "authors": [
+    "Aadi Gupta"
+   ],
+   "published": "2026-11-20T17:04:16Z",
+   "relevance": 13.8,
+   "weight": 0.85,
+   "score": 70.9,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "b3c063ca816aae03",
+   "title": "Evaluating Prompting Strategies for Zero-Shot Multilingual Aspect-Based Sentiment Analysis with Large Language Models",
+   "url": "https://arxiv.org/abs/2611.27807",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.CL",
+    "mixture-of-experts",
+    "large language models",
+    "language models"
+   ],
+   "summary": "While large language models (LLMs) have advanced natural language understanding, their ability to perform complex target-aspect-sentiment detection (TASD) -- a key task within aspect-based sentiment analysis (ABSA) -- in zero-shot multilingual settings remains underexplored. Existing ABSA research predominantly focuses on English or relies on fine-tuned task-specific models, leaving a gap in understanding how open-weight LLMs handle compound sentiment triplet extraction across diverse language families and domains.\n\nWe present a systematic evaluation of zero-shot multilingual TASD across 12 languages and three domains using seven instruction-tuned open-weight models -- ranging from 8B to 35B parameters across dense and mixture-of-experts (MoE) architectures -- under four prompting paradigms: monolithic, chain-of-thought, sequential, and sequential refine. Our results show that direct monolithic prompting achieves strong zero-shot performance, outperforming multi-step pipelines, while dense models consistently outperform sparse MoE architectures.\n\nThrough fine-grained error taxonomy profiling and step-level pipeline tracking, we demonstrate that initial aspect term recall forms a hard bottleneck, whereas multi-step decomposition degrades extraction quality; iterative refinement only partially recovers this loss on larger models while inducing net-negative over-refinement on smaller architectures. Finally, generation volume analysis shows that multi-step strategies incur up to 2.38x token overhead without F1 gains, establishing monolithic prompting as the most effective and efficient paradigm for multilingual ABSA.",
+   "authors": [
+    "Jakub Šm{í}d",
+    "Pavel Kr{á}l"
+   ],
+   "published": "2026-11-20T16:34:21Z",
+   "relevance": 19.2,
+   "weight": 0.85,
+   "score": 82.5,
+   "first_seen": "2026-11-23T07:45:56Z"
   },
   {
    "id": "698da6ce67c388dd",
@@ -86,28 +258,272 @@
    "published": "2026-11-20T16:05:47Z",
    "relevance": 17.6,
    "weight": 0.7,
-   "score": 80.4,
+   "score": 78.3,
    "first_seen": "2026-11-20T20:27:13Z"
   },
   {
-   "id": "77bc81ba396016c1",
-   "title": "Mastercard Launches Quantum Advisory Practice for Financial Services",
-   "url": "https://thequantuminsider.com/2026/11/20/mastercard-quantum-advisory-practice-financial-services",
-   "source": "The Quantum Insider",
+   "id": "a1d3b3053e24dba6",
+   "title": "DPMA: Learning to Compress Mixture-of-Experts Models",
+   "url": "https://arxiv.org/abs/2611.27759",
+   "source": "arXiv cs.CL/LG/AI",
    "also_in": [],
-   "type": "blog",
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.LG",
+    "mixture-of-experts"
+   ],
+   "summary": "Mixture-of-Experts (MoE) architectures offer high computational efficiency, but storing all experts requires substantial memory and limits deployment on resource-constrained hardware. Most retraining-free MoE compression methods commit to either pruning or merging experts, often with a uniform compression ratio across layers.\n\nWe introduce DPMA (Differentiable Prune Merge Absorb), which jointly learns compression operations and layer-wise expert allocation through gradient descent under a global expert budget. Separate learnable coefficients allow DPMA to prune experts, merge their parameters, and absorb their routing contributions by forwarding routing weights to retained experts.\n\nThese coefficients and expert assignments are optimised to match the original model's outputs on calibration data while its weights remain frozen. Across four MoE models, eight multiple-choice benchmarks, and five compression ratios, DPMA achieves the highest accuracy averaged over benchmarks and compression ratios on each model among the evaluated methods.\n\nAt $75\\%$ expert reduction, it outperforms the strongest baseline on every model, with gains of up to $6.7$ percentage points.",
+   "authors": [
+    "Jon Irureta",
+    "Jon Imaz",
+    "Philipp Wiesner",
+    "Gorka Azkune",
+    "et al."
+   ],
+   "published": "2026-11-20T15:46:35Z",
+   "relevance": 19.0,
+   "weight": 0.85,
+   "score": 82.4,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "0fcdd704a983b16a",
+   "title": "Beyond the Stabilizer Norm: Physicality and Resource Allocation in Pauli-Limited Quantum Certification",
+   "url": "https://arxiv.org/abs/2611.27724",
+   "source": "arXiv quant-ph",
+   "also_in": [],
+   "type": "paper",
    "domain": "quantum",
    "tags": [
-    "quantum computing",
+    "quant-ph",
+    "stabilizer",
+    "qubit",
     "quantum"
    ],
-   "summary": "Insider Brief\n\nMastercard has launched a Quantum Advisory Practice to help financial services organisations assess quantum-related cybersecurity risks and prepare for the transition to post-quantum cryptography.\n\nThe advisory service will cover cryptographic inventories, PQC migration strategies, remediation roadmaps, executive education and potential business applications of quantum technology.\n\nMastercard has also published a white paper on quantum readiness and is working with QIZ Security and Oxford Quantum Circuits on advisory services, research and a financial fraud protection pilot.\n\nPRESS RELEASE — Quantum computing is not currently a mainstream technology, but cybersecurity experts and the financial services industry need to operate as if it’s here.\n\nQuantum computing has transformative potential, from strengthening fraud detection to optimizing financial operations and loyalty, to unlocking new forms of innovation.\n\nYet, risk management is critical. Cybercriminals are preparing for a post-quantum future , in which powerful quantum technology could be used to access sensitive encrypted data and pose a threat to cryptography foundations that keep our financial systems secure. Today, there is already the serious potential of these bad actors hoarding this kind of data with the hopes of decrypting it in the future, a strategy known as “harvest now, decrypt later” (HNDL).",
-   "authors": [],
-   "published": "2026-11-20T09:51:04Z",
-   "relevance": 9.2,
-   "weight": 0.7,
-   "score": 56.0,
-   "first_seen": "2026-11-20T20:27:13Z"
+   "summary": "Certification from restricted and uncertain Pauli measurements can be posed as a robust optimization problem: among all physical channels consistent with the data, how small can the fidelity with a target channel be? We first study a linear relaxation that ignores positivity and show that it is exactly characterized by a single scalar, the stabilizer norm of the target Choi state, $s_{\\mathrm{wit}}(U)=\\|C_U\\|_{\\mathrm{st}}-1/D$.\n\nWe then ask whether this scalar continues to determine robustness once the positivity constraint is restored. It does not.\n\nWe derive a necessary and sufficient KKT condition for the relaxation to remain tight, together with a dual obstruction certifying a strict gap, and give a rigorous computer-assisted proof that two distinct two-qubit targets can have exactly the same stabilizer norm but different physical robustness. The KKT condition depends on structure discarded by the stabilizer norm, including the support and relative signs of the Choi-Pauli coefficients and the algebraic relations among the corresponding Pauli operators.\n\nWe use this structure to derive simpler sufficient certificates for a strict gap. The dual coefficients also determine how measurement uncertainty enters the finite-data fidelity bound.\n\nFor a fixed budget, we derive exact shot-allocation rules for a fixed certificate and for compatible observables obtained from shared measurement settings, and we formulate the corresponding joint certificate-design problem. The conjecture that every full-support two-qubit target has positive gain remains open.",
+   "authors": [
+    "Shreya Savadatti",
+    "Peter Yun Zhang"
+   ],
+   "published": "2026-11-20T15:25:06Z",
+   "relevance": 17.0,
+   "weight": 0.85,
+   "score": 79.6,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "965774fc95b0e75a",
+   "title": "Auditing Post-Training Unlearning in Diffusion Language Models using Sparse Autoencoders",
+   "url": "https://arxiv.org/abs/2611.27652",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.CL",
+    "diffusion language models",
+    "large language models",
+    "language models"
+   ],
+   "summary": "Machine unlearning is an approach to privacy protection: it aims to remove the influence of designated data while preserving the model's behavior on information that should be retained. While a growing body of work investigates this objective in autoregressive large language models, machine unlearning remains underexplored in diffusion language models (DLMs).\n\nDLMs generate text through iterative denoising, exposing partially masked states whose internal representations change throughout the generation process. This raises a DLM-specific question: can selective forgetting improve by identifying forget-data-associated features and adapting their suppression across denoising stages?\n\nWe conduct a controlled investigation of this question in LLaDA-8B-Instruct. To evaluate the unlearning of knowledge plausibly encoded during pre-training, we use WMDP as our forget-domain benchmark.\n\nUsing top-k sparse autoencoders and denoising-state replay, we compare static and stage-adaptive feature suppression. We find substantial shifts in forget-data-associated features across denoising stages, but tracking these dynamics alone does not reliably improve the forget-retain trade-off at the evaluated operating points.\n\nTogether, our study provides an initial empirical foundation for developing and evaluating machine unlearning as a post-training privacy mechanism in DLMs.",
+   "authors": [
+    "Yunha Seo",
+    "Changhoon Kim"
+   ],
+   "published": "2026-11-20T14:17:08Z",
+   "relevance": 14.8,
+   "weight": 0.85,
+   "score": 73.3,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "6129a3cdb9d6f4af",
+   "title": "Quantum control of an electrically levitated nanoparticle with a trapped ion",
+   "url": "https://arxiv.org/abs/2611.27634",
+   "source": "arXiv quant-ph",
+   "also_in": [],
+   "type": "paper",
+   "domain": "quantum",
+   "tags": [
+    "quant-ph",
+    "trapped ion",
+    "entanglement",
+    "quantum"
+   ],
+   "summary": "Quantum control of levitated nanoparticles offers a route towards macroscopic quantum states. Here we propose a novel way to achieve it for a nanoparticle levitated electrically in a linear Paul trap together with a single ion, a system recently realized experimentally.\n\nBy suitably engineering the trap's AC potential, one can parametrically modulate the ion-nanoparticle distance and thus the Coulomb coupling to enable a resonant interaction. For realistic parameters, we calculate that this enables sympathetic cooling of the nanoparticle to its motional ground state by a single, continuously laser-cooled ion.\n\nAdditional AC drives enable the preparation of squeezed nanoparticle states and of ion-nanoparticle entanglement. Moreover, non-Gaussian states such as Fock and cat states, prepared in the ion with standard trapped-ion techniques, can be transferred to the nanoparticle with high fidelities.\n\nWe provide complete protocols for each of these states, including all known decoherence sources. Our results establish electrically trapped ion-nanoparticle systems as a platform for quantum control of levitated matter.",
+   "authors": [
+    "Bernard Faulend",
+    "Dmitry S. Bykov",
+    "Tracy E. Northup",
+    "Carlos Gonzalez-Ballestero"
+   ],
+   "published": "2026-11-20T13:59:06Z",
+   "relevance": 17.8,
+   "weight": 0.85,
+   "score": 81.6,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "910596afb7fa2b4e",
+   "title": "Open CDLM: A Benchmark and Library for Continuous Diffusion Language Models",
+   "url": "https://arxiv.org/abs/2611.27536",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.CL",
+    "diffusion language models",
+    "language models"
+   ],
+   "summary": "Reliable comparisons of continuous diffusion language models (CDLMs) require evaluating both model fit and the distribution of generated text. Two common practices leave this goal only partially addressed. Likelihood-based evaluation often reports a variational upper bound on discrete negative log-likelihood, whose slack can confound comparisons.\n\nGenerated-sample-based evaluation commonly combines generative perplexity with within-sequence unigram entropy; both scores can remain favorable even when a sampler produces the same text on every draw. We introduce \\textbf{Open CDLM}, a benchmark for evaluating CDLMs and their samplers, and describe the design of an accompanying open-source library to support reproducible comparisons. For likelihood-based evaluation, we clarify which comparisons of model fit are supported by reported perplexity bounds and how those conclusions depend on the evaluation procedure.\n\nFor sample-based evaluation, we use \\textit{Kernel Text Discrepancy} (\\textbf{KTD}) to compare collections of generated and real texts, alongside diagnostics for diversity, validity, and coverage. In controlled OpenWebText experiments, replacing a collection of texts with copies of a single selected passage improves both conventional generation scores. MAUVE detects the resulting collapse, and its response to other perturbations depends on the text representation and the type of perturbation.\n\nThis work marks the beginning of Open CDLM as an open-source project for CDLM research. We will maintain and extend the library over time and welcome contributions from the community.",
+   "authors": [
+    "Hao Jiang",
+    "Ruixi Chen",
+    "Jiayi Han",
+    "Yulei Sun",
+    "et al."
+   ],
+   "published": "2026-11-20T12:33:19Z",
+   "relevance": 13.0,
+   "weight": 0.85,
+   "score": 68.0,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "b9b5c65835264412",
+   "title": "Classical simulability and hardware diagnostics for QAOA on geographic coverage benchmarks",
+   "url": "https://arxiv.org/abs/2611.27507",
+   "source": "arXiv quant-ph",
+   "also_in": [],
+   "type": "paper",
+   "domain": "quantum",
+   "tags": [
+    "quant-ph",
+    "qaoa",
+    "qubit",
+    "quantum"
+   ],
+   "summary": "Quantum-optimization benchmarks can show reduced energy while concealing local loss of weighted covariance. We combine encoding checks with exact structural references to select informative circuit diagnostics for static geographic coverage instances.\n\nThe executed 24-qubit surrogate has infeasible ground states, whereas a faithful 51-qubit slack encoding preserves its 13 support-graph components and remains exactly simulable blockwise. At the executed angles, the total ideal optimum probability is $5.47\\times10^{-20}$, making optimum counts uninformative at the executed budget of $10^5$ shots.\n\nA product distribution with the measured bit marginals accounts for about $90\\%$ of the observed energy reduction. In three fixed-circuit jobs, the global weighted-covariance ratio is approximately $0.50$, while a five-variable block has ratios between $0.12$ and $0.28$ and contributes only $3.7\\%$ of the ideal global denominator.\n\nSimultaneous bands resolve its deficit relative to the global ratio under an exploratory conditional counting model. The exact block reference thus reveals a local discrepancy concealed by the aggregate, without identifying an error mechanism or establishing device stability.\n\nThe procedure links benchmark structure to the resolution and limitations of its observables.",
+   "authors": [
+    "F. S. Luiz",
+    "D Abreu",
+    "A. J. G. Abelém",
+    "J. E. Da Fonseca",
+    "et al."
+   ],
+   "published": "2026-11-20T11:55:14Z",
+   "relevance": 14.2,
+   "weight": 0.85,
+   "score": 71.2,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "d97472418928d0a4",
+   "title": "Cannot Wait to Verify: Parallel Drafting to Eliminate Verifier Idle Time in Speculative Decoding",
+   "url": "https://arxiv.org/abs/2611.27477",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.LG",
+    "speculative decoding",
+    "transformer"
+   ],
+   "summary": "Autoregressive inference in large transformer models is limited by token-level sequential execution, resulting in high latency and low GPU utilization. Speculative decoding (SD) mitigates this bottleneck by introducing a draft-and-verifier model.\n\nHowever, the drafting stage remains sequential, leaving the verifier idle and underutilizing compute. To address this, we propose a plug-and-play drafting adaptive drafting method that parallelizes inference across transformer layers during draft generation.\n\nStarting from a shared hidden state, our approach evaluates multiple layers in parallel and verifies consistency by measuring divergence in hidden-state space. Layer-wise draft states are accepted when deviations are small; otherwise, a correction step is applied.\n\nBy exploiting redundancy across transformer layers, our method accelerates draft generation and improves hardware utilization without modifying architectures or requiring retraining. Experimental results on NLP tasks show that our method speeds up the drafting stage by up to $1.65\\times$ with minimal degradation in accuracy, while maintaining the same performance as SD.",
+   "authors": [
+    "Divya Jyoti Bajpai",
+    "Arun Verma",
+    "Manjesh Kumar Hanawal"
+   ],
+   "published": "2026-11-20T11:26:57Z",
+   "relevance": 18.4,
+   "weight": 0.85,
+   "score": 81.7,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "830195f89c675bdc",
+   "title": "Jagged Robustness: Uneven Safety Transfer and Emerging Vulnerabilities under LLM Quantization",
+   "url": "https://arxiv.org/abs/2611.27424",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.AI",
+    "quantization",
+    "llm",
+    "language models"
+   ],
+   "summary": "Quantization enables efficient inference in language models through model parameter compression. This work audits the impact of quantization on capability and safety domains including model safeguards, instruction-following, ethics and bias.\n\nThrough benchmarks, we find that model safeguards and bias can degrade under quantization, while other capabilities such as truthfulness remain more stable in Qwen3-4B. We define this uneven transfer of LLM capabilities under quantization as Jagged Robustness.\n\nWe find multiple factors driving Jagged Robustness: task complexity, evaluation method and generation coherence. Moreover, we verify the degradation of model safeguards by observing increased compliance with unsafe requests under quantization, and demonstrate universal adversarial suffix attacks that are benign for the full model but jailbreak quantized models.\n\nThe findings indicate that it is risky to assume that the performance and robustness can transfer evenly across different capability domains from full models to quantized models.",
+   "authors": [
+    "Ramneek Agnihotri",
+    "Yingte Xu",
+    "Hans Vath"
+   ],
+   "published": "2026-11-20T10:24:25Z",
+   "relevance": 17.2,
+   "weight": 0.85,
+   "score": 79.3,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "2cd6776e84c675c5",
+   "title": "Quantum computing for gearing down complex many-fermion problems",
+   "url": "https://arxiv.org/abs/2611.27402",
+   "source": "arXiv quant-ph",
+   "also_in": [],
+   "type": "paper",
+   "domain": "quantum",
+   "tags": [
+    "quant-ph",
+    "cond-mat.str-el",
+    "quantum computing",
+    "noisy intermediate",
+    "nisq",
+    "quantum"
+   ],
+   "summary": "Quantum computing unlocks exciting opportunities to extend first-principles calculations of quantum many-body systems beyond classical computing limits. Despite advances in algorithms and proof-of-principle experiments, large-scale {\\it ab initio} calculations on noisy intermediate-scale quantum (NISQ) devices remain challenging.\n\nWe introduce a quantum-classical framework that identifies compact single-particle bases to bring otherwise intractable many-fermion problems within classical reach while preserving an accurate ground-state description. We develop an efficient adaptive search scheme driven by simulated annealing that jointly optimizes natural-orbital-guided transformations and active-space selections.\n\nA quantum-assisted ground-state estimator provides search guidance using low-depth circuits and relaxed accuracy requirements, making the framework promising for NISQ devices. We demonstrate the framework's applicability for the nuclear structure of the oxygen isotopes.\n\nOur framework opens a new route to tackling complex {\\it ab initio} many-fermion problems across disciplines through quantum-assisted basis reduction.",
+   "authors": [
+    "Weijie Du",
+    "Filippo Fornetti",
+    "James P. Vary"
+   ],
+   "published": "2026-11-20T10:10:07Z",
+   "relevance": 17.0,
+   "weight": 0.85,
+   "score": 78.8,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "40f2ba203f7634fe",
+   "title": "The non symmetric Hikita conjecture",
+   "url": "https://arxiv.org/abs/2611.27331",
+   "source": "arXiv math.RT",
+   "also_in": [],
+   "type": "paper",
+   "domain": "math",
+   "tags": [
+    "math.RT",
+    "quiver",
+    "cohomology",
+    "algebra",
+    "conjecture",
+    "proof"
+   ],
+   "summary": "We construct local and global comparison maps for the Hikita conjecture in quiver gauge theories and study their analogues for finite non symmetric Cartan pairs. The construction uses quiver Hecke description of Coulomb branch and microlocal geometry. It yields comparison maps from B-algebras to the cohomology of some Lagrangians of quiver varieties.\n\nFor arbitrary symmetric types, the local and global comparison maps are surjective and are isomorphisms under a B-algebra dimension bound. In finite non symmetric types, the local image is the image of the Kirwan map, i.e., the tautological subalgebra. It can be proper. Under some assumptions we also construct a non symmetric global comparison map.\n\nCrystal theoretic methods identify the set of nonempty Lagrangians with the set of isomorphism classes of simple modules of the category $\\mathscr O$ of the Coulomb branch, and proves that the Lagrangians are nonempty for $\\ell$-dominant $\\ell$-highest weights.\n\nThe proof uses microlocal modules of Coulomb branches that we define. We prove they form integral bases of the Grothendieck group of the category $\\mathscr O$, with Jordan-Hölder multiplicities given by characteristic cycles.\n\nIn symmetric type we prove an isomorphism between based quasimap modules at homogeneous polarized points of quiver varieties and co-specialized microlocal modules. The proof uses hyperbolic restriction and Braden's theorem. We conjecture an extension to all homogeneous points and a relative version.",
+   "authors": [
+    "Michela Varagnolo",
+    "Eric Vasserot"
+   ],
+   "published": "2026-11-20T09:11:13Z",
+   "relevance": 11.6,
+   "weight": 0.9,
+   "score": 64.6,
+   "first_seen": "2026-11-23T07:45:56Z"
   },
   {
    "id": "ea3bdbc75a35d07f",
@@ -129,8 +545,193 @@
    "published": "2026-11-20T08:58:59Z",
    "relevance": 24.8,
    "weight": 0.7,
-   "score": 80.3,
+   "score": 78.4,
    "first_seen": "2026-11-20T20:27:13Z"
+  },
+  {
+   "id": "49d8d0aa85896a45",
+   "title": "Symplectic Matroids, Stabilizer Codes, and Quantum Secret-Sharing",
+   "url": "https://arxiv.org/abs/2611.27300",
+   "source": "arXiv quant-ph",
+   "also_in": [],
+   "type": "paper",
+   "domain": "quantum",
+   "tags": [
+    "quant-ph",
+    "math.CO",
+    "stabilizer",
+    "qubit",
+    "quantum"
+   ],
+   "summary": "An $\\mathbb{F}_q$-linear $[[n,k]]_q$ stabilizer code is represented by a totally isotropic subspace of $\\mathbb{F}_q^{2n}$ of dimension $n-k$, whose full-rank generator matrix has nonzero maximal minors on admissible column sets forming the bases of a representable symplectic matroid. Sarvepalli asked whether graphical symplectic matroids introduced by Chow give stabilizer codes with good parameters, when a Lagrangian matroid induces a quantum access structure, which code realizes it, and which polynomial carries the weight enumerator.\n\nWe answer these questions. For a $3$-connected simple graph, every representation of a graphical symplectic matroid, over any field, gives a stabilizer code of distance exactly $2$, so the girth is not a lower bound.\n\nFor a represented Lagrangian matroid and a dealer, we construct the dealer-shortened stabilizer code, its logical operators, an encoding isometry and explicit recovery maps, and we show that this is the code implemented by the stabilizer state through teleportation. A set of players recovers the secret, learns nothing, or learns part of it according to a rank formula on pairs of columns, which equals its mutual information with the dealer; for graph states it becomes a cut-rank condition.\n\nOver $\\F_2$ a symplectic matroid of any rank has only one representation, so the code, its access structure and its weight enumerators depend on the matroid alone; for $q\\ge3$ even the enumerator does not. Circuit-induced authorized sets always reconstruct when the matroid is self-dual, but not in general, and a six-qubit graph state shows that the two access structures can differ even then.\n\nFinally, a polynomial in the ranks of column pairs determines both weight enumerators.",
+   "authors": [
+    "Sayantan Ganguly"
+   ],
+   "published": "2026-11-20T08:37:23Z",
+   "relevance": 15.8,
+   "weight": 0.85,
+   "score": 75.2,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "4d244d7bc8e55f09",
+   "title": "The Vulnerability Window: Decision Instability in Quantized Reward Models",
+   "url": "https://arxiv.org/abs/2611.27155",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.LG",
+    "cs.CL",
+    "quantized",
+    "llm"
+   ],
+   "summary": "Reward models and LLM judges are routinely quantized to 4 bits so that scoring many candidates stays affordable, and the usual check is that benchmark accuracy barely moves. That check is close to blind.\n\nAcross eight reward models from two families (0.6B-8B), three generative judges and four 4-bit quantizers, quantization rewrites 1.1-12.3% of pairwise preference decisions on RewardBench while aggregate accuracy moves by as little as 0.03 points (p = 1.00), because the errors it fixes and introduces cancel. Flips concentrate where the full-precision margin is small relative to the quantization noise scale sigma: a Gaussian approximation Phi(-|m|/sigma) describes the aggregate rate, over-predicting it in all 30 scalar settings and failing for generative judges, and occupancy of the resulting vulnerability window falls from 25% to 7% with model size, which is what makes small judges fragile.\n\nThe churn stays within noise under benign best-of-16 and becomes clear under adversarial pressure for some quantizers (146:54 harmful:helpful flips on one family, reversing sign on another). Downstream it changes what ships: across six (model, quantizer) pairs from two families, 14.6-65.7% of problems get a different best-of-64 selection while only 2.6-9.6% get a different final answer, with selections changing 5-8x more often than answers in every pair, and the pair the benchmark calls identical (0.03 points, p = 1.00) still changes 34.5% of them.\n\nBenchmark churn ranks that downstream change (rho = 0.89); benchmark accuracy does not order it reliably. Held-out audits then locate the useful diagnostic in the margin rather than the Gaussian: every margin-based predictor orders flips identically (AUC 0.927), and on the level a directly measured churn rate wins in-distribution.\n\nAs a routing signal it is matched by plain top-k. The contribution is the characterization, not the model.",
+   "authors": [
+    "Omkar Shewale",
+    "Deepak Kumar",
+    "Divakar Kumar Yadav"
+   ],
+   "published": "2026-11-20T05:39:34Z",
+   "relevance": 12.6,
+   "weight": 0.85,
+   "score": 65.9,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "3bd5672e563b8a4e",
+   "title": "Physical Learning for Autonomous Tuning of Spin Qubits in Electrostatically Defined Quantum Dots",
+   "url": "https://arxiv.org/abs/2611.27140",
+   "source": "arXiv quant-ph",
+   "also_in": [],
+   "type": "paper",
+   "domain": "quantum",
+   "tags": [
+    "quant-ph",
+    "cond-mat.mes-hall",
+    "qubits",
+    "quantum"
+   ],
+   "summary": "Tuning electrostatically defined quantum dots remains a primary bottleneck in the scalability of semiconductor spin qubits. While existing solutions rely on machine learning algorithms, these approaches require global information, introduce latency bottlenecks, and tax the limited cooling power available at cryogenic stages.\n\nHere, we demonstrate an FPGA-in-the-loop learning paradigm that bypasses digital computing overhead by utilizing multiplexed gradient descent (MGD) for tuning. Implemented on an FPGA and an emulated quantum dot device, our system autonomously tracks environmental drift, dynamically recovers from discrete charge jumps, and maintains steady-state stabilization in low signal-to-noise ratio regimes, without prior knowledge of the device's cross-capacitance matrix.\n\nThe system also navigates the charge-stability landscape to stabilize the quantum dot around optimal operating points. These results demonstrate a ``compute-in-place'' platform, with a logic and power footprint suited to future cryo-CMOS integration, that provides autonomous stabilization of quantum dots at desired operating points, creating an auto-tuning system for spin qubits that is resilient to electrostatic drifts, changing noise profiles, and two-level fluctuations.",
+   "authors": [
+    "Leonardo Gaytan",
+    "Bradley Lloyd",
+    "Paul Kliewer",
+    "Chandler Wilburn",
+    "et al."
+   ],
+   "published": "2026-11-20T05:21:10Z",
+   "relevance": 13.4,
+   "weight": 0.85,
+   "score": 68.0,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "c47d050796a8430f",
+   "title": "PLoQ: A Prompt-Specific Low-Rank Basis for 4-bit Quantization of LLM Activations",
+   "url": "https://arxiv.org/abs/2611.27092",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.LG",
+    "cs.CL",
+    "quantization",
+    "llm",
+    "language models"
+   ],
+   "summary": "Low-bit activation quantization of large language models remains challenging, as a small number of dominant directions dictate the quantization range. State-of-the-art methods isolate these directions in a high-precision subspace through transformations calibrated offline and folded into the weights, which fixes the subspace for all prompts, leaving each prompt's few unique directions unprotected, and rules it out wherever no weight can absorb the transformation.\n\nWe present PLoQ, a prompt-adaptive low-rank decomposition that extracts the dominant activation components before quantization, quantizes them separately, and restores them within the layer's GEMM, without modifying the weights. The low-rank component's basis is estimated from each prompt during prefill and reused throughout decoding.\n\nAt the same bit width as state-of-the-art mixed-precision quantization (4-bit weights, activations and K/V cache with an eighth of the channels at 8 bits, about 4.2 bits per activation on average), PLoQ outperforms it on all six Llama and Qwen models from 1B to 70B parameters, at up to 8k tokens (16k on two of them), recovering up to 46% of the perplexity that the state of the art still loses to 4-bit activations. On Llama-3.1-8B at 8k tokens it adds only 4% to prefill and 8% to decoding.",
+   "authors": [
+    "Faraz Tahmasebi",
+    "Michael Pellauer",
+    "Hyoukjun Kwon",
+    "Sitao Huang"
+   ],
+   "published": "2026-11-20T04:07:37Z",
+   "relevance": 17.2,
+   "weight": 0.85,
+   "score": 78.4,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "8c47bbf929c01fd7",
+   "title": "Auditing and Adapting kNNGuard for Long-Context Prompts",
+   "url": "https://arxiv.org/abs/2611.27084",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.LG",
+    "long-context",
+    "llm"
+   ],
+   "summary": "Training-free activation guardrails such as kNNGuard score prompts by comparing last-token LLM hidden states (the Layer Ensemble branch, kNNGuard LE) and sentence embeddings (all-MiniLM-L6-v2, Embedding-kNN) against a small reference bank (50 examples per class), combining the two branches into a Fused Ensemble (kNNGuard FE). While effective on short inputs (up to 256 tokens), standard kNNGuard degrades substantially on long inputs (over 1000 tokens): averaged across Qwen3.5-4B and Gemma-4-E4B-it, kNNGuard LE AUROC drops from 0.742 (0.777 and 0.706) to 0.554 (0.587 and 0.521) on Content Harm Moderation (Aegis-2.0), and from 0.994 (0.995 and 0.992) to 0.556 (0.598 and 0.513) on RAG Hallucination Detection (HaluBench).\n\nWe trace this degradation to three causes: (1) hidden-state drift as sequence length increases, (2) hard 256-token truncation in MiniLM, and (3) signal dilution when a long document is compressed into a single final-token vector. We then evaluate three training-free adaptations: a Length-Routed Dual Bank, a long-context embedding model (Qwen3-Embedding-0.6B), and Strided Window Pooling across intermediate token positions.\n\nOn Content Harm Moderation, dual-bank routing and strided window pooling raise long-context kNNGuard LE AUROC from 0.554 to 0.828 (+0.274 AUROC) and fused kNNGuard FE AUROC from 0.721 to 0.886 (+0.164 AUROC) with no latency overhead from bank routing. On RAG Hallucination Detection, where the guardrail must verify logical consistency between a generated answer and a retrieved passage, sentence-embedding kNN remains near random chance across all lengths, while length-matched LLM hidden states (kNNGuard LE) recover medium-length detection (AUROC = 0.853) but remain limited on over-1000-token passages (AUROC = 0.607) due to final-token dilution over long contexts.",
+   "authors": [
+    "Niccolò Ronchetti"
+   ],
+   "published": "2026-11-20T03:54:23Z",
+   "relevance": 12.0,
+   "weight": 0.85,
+   "score": 63.9,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "b1d173c8f889fa55",
+   "title": "A Continuous Relaxation of Quantization-Aware Training",
+   "url": "https://arxiv.org/abs/2611.27056",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.AI",
+    "cs.CV",
+    "quantization"
+   ],
+   "summary": "Quantization is a critical piece of the deployment pipeline in the era of large generative models. Low-bit quantization, particularly 2-bits or sub-2-bits, is a notoriously difficult problem, particularly when using a channelwise quantization scheme which has been shown as a leading candidate for hardware-efficiency.\n\nThe key challenges with low-bit quantization range from limited quantization levels to saddle points or flat regions in the loss surface. In this paper, we look at the problem of flat quantization loss surfaces through a lens of dynamically changing bitwidth.\n\nUnlike existing techniques which either change the bit-precision abruptly or keep it fixed, we propose to gradually alter the bitwidth as the model trains. To this end, we propose RelaxQAT, a continuous relaxation of the QAT process.\n\nWe also provide simple theoretical and empirical insights behind why RelaxQAT helps the QAT performance. Our extensive experiments demonstrate up to 6.3% average accuracy gains on vision and up to 7.7% better average accuracy on natural language tasks, compared to the leading QAT methods.",
+   "authors": [
+    "Kartikeya Bhardwaj",
+    "Mohammed Almousa",
+    "Chaitanya Mullapudi",
+    "Ananth Balasubramanian",
+    "et al."
+   ],
+   "published": "2026-11-20T03:24:54Z",
+   "relevance": 11.4,
+   "weight": 0.85,
+   "score": 62.2,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "7d212e2fbaf8c307",
+   "title": "MixFold: Sub-4-Bit Mixed-Precision LLM Inference via Output-Channel Grouping on Mobile NPUs",
+   "url": "https://arxiv.org/abs/2611.26976",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.AI",
+    "llm inference",
+    "quantization",
+    "llm"
+   ],
+   "summary": "Sub-4-bit quantization allows mobile devices to run larger LLMs, but its memory savings do not always translate into faster decoding on mobile NPUs. Their matrix units support only a few native integer datatypes, and converting unsupported weight formats on the vector unit can erase the gains from fewer bits.\n\nMixed precision faces an additional constraint: each matrix-unit tile uses one datatype. MixFold executes 3-bit and perfectly symmetric 2-bit weights using native integer operations without expanding the weights to wider datatypes during decoding.\n\nMixFold then assigns datatypes to output-channel groups aligned with the matrix-unit tiles, enabling finer-than-layer assignment without disrupting matrix-unit execution. We compare MixFold with llama.cpp Hexagon backend on the Qualcomm Hexagon NPU of a Snapdragon 8 Elite Gen 5.\n\nAcross the Qwen3 model family, MixFold achieves comparable or higher accuracy than llama.cpp's sub-4-bit formats at matched bits per weight, while decoding 1.16-1.41 times faster and generating 1.5-4.3 times more tokens per joule.",
+   "authors": [
+    "Vinnam Kim",
+    "Seong Hoon Seo",
+    "Junhan Kim",
+    "Jaeseong You",
+    "et al."
+   ],
+   "published": "2026-11-20T01:54:06Z",
+   "relevance": 13.0,
+   "weight": 0.85,
+   "score": 66.4,
+   "first_seen": "2026-11-23T07:45:56Z"
   },
   {
    "id": "b3e7d9944d8f0b5b",
@@ -150,8 +751,89 @@
    "published": "2026-11-20T00:00:00Z",
    "relevance": 21.6,
    "weight": 1.0,
-   "score": 84.8,
+   "score": 83.1,
    "first_seen": "2026-11-20T20:27:13Z"
+  },
+  {
+   "id": "acaf5100e55645d4",
+   "title": "Scheduling the quantum implementation of the Trotter decomposition for Hamiltonian simulation",
+   "url": "https://arxiv.org/abs/2611.26884",
+   "source": "arXiv quant-ph",
+   "also_in": [],
+   "type": "paper",
+   "domain": "quantum",
+   "tags": [
+    "quant-ph",
+    "hamiltonian simulation",
+    "quantum"
+   ],
+   "summary": "For the quantum computational task for Hamiltonian simulation, the arrangement in which sub-Hamiltonians appear in the Trotter decomposition may have a large influence on the precision, under a given circuit complexity.\n\nIn this paper, we design several scheduling strategies by combining two methods; that is, the existing simultaneous diagonalization scheme leveraged in order to guarantee the performance in a relatively short circuit depth, with a method inspired from a Trotter-Suzuki decomposition of the second or the fourth order for a better accuracy.\n\nBy conducting numerical simulations on various Hamiltonian instances, we confirm a systematic advantage over previous methods.\n\nThus, our proposal may eliminate the need of dealing with several Hamiltonian-dependent scheduling strategies.",
+   "authors": [
+    "Augustin Ho",
+    "Naoki Yamamoto"
+   ],
+   "published": "2026-11-19T22:57:43Z",
+   "relevance": 13.0,
+   "weight": 0.85,
+   "score": 66.0,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "afb2985349028de0",
+   "title": "Non-Expanding Gated Continued Fraction Architecture for Feedforward Layers in Language Models",
+   "url": "https://arxiv.org/abs/2611.26835",
+   "source": "arXiv cs.CL/LG/AI",
+   "also_in": [],
+   "type": "paper",
+   "domain": "ai",
+   "tags": [
+    "cs.CL",
+    "cs.AI",
+    "mamba",
+    "mixture-of-experts",
+    "large language model",
+    "language models"
+   ],
+   "summary": "Recent work has shown that continued fraction inspired neural architectures (CoFrGeNets) can be highly parameter efficient yet performant for language modeling. In this work, we revisit continued fraction-based channel mixing with the goal of improving its performance and simplifying integration into standard pre-training protocols for language models.\n\nWe achieve this by two simple yet critical contributions: i) we propose a novel non-expanding gated continued fraction inspired architectural component to replace feedforward layers in established language model architectures that may use vanilla multilayer perceptrons or gated linear units or (vanilla/gated) experts in mixture-of-experts (MoE) type architectures. ii) We propose a way to re-implement divisions -- the non-linearity in these architectures -- in terms of logarithms and exponentials. By experimenting on different language modeling architectures such as GPT-2, Llama-3, Mamba-2 and (nano) Llama-MoE we find that our proposed architecture performs similarly or significantly better than the continued fraction architecture proposed in prior work along with having higher throughput.\n\nIn addition, our re-implementation of divisions makes training of deeper CoFrGeNets stable without the need for incremental training which was proposed in prior work as a means to stabilize training, but added notable complexity to existing large language model training implementations. Code is available at http://github.com/IBM/CoFrNets",
+   "authors": [
+    "Amit Dhurandhar",
+    "Vijil Chenthamarakshan",
+    "Karthikeyan Natesan Ramamurthy",
+    "Dennis Wei",
+    "et al."
+   ],
+   "published": "2026-11-19T21:37:17Z",
+   "relevance": 17.6,
+   "weight": 0.85,
+   "score": 78.6,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "39967280cf501f1b",
+   "title": "Studies on a Relationship Between Tate Homology and Local Cohomology of Tensor Products of Modules",
+   "url": "https://arxiv.org/abs/2611.26812",
+   "source": "arXiv math.AC",
+   "also_in": [],
+   "type": "paper",
+   "domain": "math",
+   "tags": [
+    "math.AC",
+    "noetherian",
+    "gorenstein",
+    "modules over",
+    "cohomology"
+   ],
+   "summary": "We study the local cohomology of finitely generated modules with respect to specialization-closed subsets over commutative Noetherian rings. Our main result establishes a relationship between the local cohomology of tensor products of modules and Tate homology over Gorenstein rings.\n\nWe present several consequences of our main result, which are of independent interest. For example, we study various aspects of the cohomological rigidity property of tensor products of modules and generalize results of Huneke-Wiegand in this direction.\n\nWe determine conditions under which the vanishing of a single local cohomology module of a tensor product implies the vanishing of all lower ones, establish bounds for the depth of tensor products of modules, and obtain criteria for freeness of modules over complete intersection rings. Along the way, we also provide a splitting criterion for vector bundles on smooth complete intersections.",
+   "authors": [
+    "Mohsen Asgharzadeh",
+    "Olgur Celikbas",
+    "Arash Sadeghi"
+   ],
+   "published": "2026-11-19T21:04:20Z",
+   "relevance": 12.4,
+   "weight": 0.9,
+   "score": 65.1,
+   "first_seen": "2026-11-23T07:45:56Z"
   },
   {
    "id": "e156af39cdcfcf27",
@@ -173,55 +855,59 @@
    "published": "2026-11-19T20:31:49Z",
    "relevance": 21.8,
    "weight": 0.7,
-   "score": 78.3,
+   "score": 76.6,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
-   "id": "44d231d9ee488f2d",
-   "title": "A game you cannot win unless you have a quantum computer",
-   "url": "https://research.google/blog/a-game-you-cannot-win-unless-you-have-a-quantum-computer",
-   "source": "Google Quantum AI",
-   "also_in": [],
-   "type": "blog",
-   "domain": "quantum",
-   "tags": [
-    "quantum computer",
-    "quantum"
-   ],
-   "summary": "Shashwat Kumar and Rodrigo Cortiñas, Research Scientists, Google Quantum AI, Google Research\n\nOn a superconducting processor, we turned one of quantum mechanics’ strangest features into something you can measure, benchmark, and put to work across systems as large as 105 qubits.\n\nHere is a Sunday paper-style puzzle you can try right now. Draw a 3×3 grid. Fill every cell with either +1 or −1, subject to two rules: each row must multiply to +1, and each column must multiply to −1.\n\nYou didn’t manage it, right? There is an elegant reason for that. For a row to multiply to +1, it needs an even number of −1s. For a column to multiply to −1, it needs an odd number. Add up the rows and you learn the grid contains an even number of −1s. Add up the columns and you learn it contains an odd number. Well…That’s impossible!\n\nThe grid would have to be two contradictory things at once. No such table exists; it is a paradox.",
-   "authors": [],
-   "published": "2026-11-19T20:03:00Z",
-   "relevance": 8.6,
-   "weight": 0.85,
-   "score": 55.1,
-   "first_seen": "2026-11-19T20:42:44Z"
-  },
-  {
-   "id": "5bd55eaca202f500",
-   "title": "Local velocimetry for atomic superfluids: from Riemann rarefaction waves to quantized vortices",
-   "url": "https://arxiv.org/abs/2611.26608",
+   "id": "90905311420ceced",
+   "title": "Efficient Tensor Decomposition of the Coulomb and Coulomb-like Potentials and Its Application to Probing Molecular Geometries Using a Quantum Computer",
+   "url": "https://arxiv.org/abs/2611.26740",
    "source": "arXiv quant-ph",
    "also_in": [],
    "type": "paper",
-   "domain": "ai",
+   "domain": "quantum",
    "tags": [
-    "cond-mat.quant-gas",
-    "physics.atom-ph",
-    "quantized"
+    "quant-ph",
+    "qubits",
+    "quantum computer",
+    "quantum"
    ],
-   "summary": "We demonstrate local velocimetry for atomic superfluids in two dimensions (2D).\n\nUsing matter-wave interferometry based on Raman--Bragg beam splitters, we map the local gradient of the phase of the superfluid's wavefunction onto displacement of the interference fringes and reconstruct the 2D velocity field.\n\nWe illustrate the capabilities of this technique by applying it to two canonical problems.\n\nFirst, we directly observe the self-similar evolution of the velocity field in 1D Riemann rarefaction flows.\n\nSecond, we map out the full 2D velocity field around quantized vortices, explicitly demonstrating the quantization of velocity circulation.",
+   "summary": "We present an efficient canonical polyadic decomposition of the Coulomb and Coulomb-like potentials in real-space grid representations suited to quantum computing applications. By decomposing the matrix elements of Coulomb-like potentials into low-rank Cartesian components, we achieve $O(N^{1/3})$ T-gate scaling per Coulomb term, where $N$ is the number of grid points (basis functions) per electron, while maintaining high accuracy.\n\nThis opens a path to significantly reducing the number of basis functions (i.e., qubits) required compared to previous methods by utilizing improved representations of the Coulomb potential that converge faster with grid spacing. The decomposition is also valid for certain pseudopotentials, which can decrease the cost significantly compared to previous work.\n\nThis efficient decomposition enables the application of block-encoding techniques at larger grid spacings than with previous decompositions, and can therefore be used for algorithms that do not require high energy accuracy. We apply this decomposed Coulomb potential to hydrogen atom energy levels, the helium ground-state energy, and the Hartree-Fock potential energy curve of LiH, and show that modest basis sizes achieve semi-quantitative to quantitative accuracy.\n\nAs an example of where these faster-converging Coulomb representations can be used on a quantum computer, we discuss their application to probing low-energy molecular geometries, and we estimate the resulting reduction in the cost of real-time evolution.",
    "authors": [
-    "Yansheng Zhang",
-    "Yi Jiang",
-    "Feiyang Wang",
-    "Louis Depaepe",
-    "et al."
+    "James Brown",
+    "Masashi Takahashi",
+    "Robert Wodraszka",
+    "James Whitfield"
    ],
-   "published": "2026-11-19T18:56:37Z",
-   "relevance": 9.6,
+   "published": "2026-11-19T19:35:51Z",
+   "relevance": 14.6,
    "weight": 0.85,
-   "score": 57.7,
-   "first_seen": "2026-11-20T07:24:21Z"
+   "score": 70.0,
+   "first_seen": "2026-11-23T07:45:56Z"
+  },
+  {
+   "id": "93fa87b497b226f1",
+   "title": "Certification of non-stabilizerness in multi-qubit systems via worst-case random access codes",
+   "url": "https://arxiv.org/abs/2611.26705",
+   "source": "arXiv quant-ph",
+   "also_in": [],
+   "type": "paper",
+   "domain": "quantum",
+   "tags": [
+    "quant-ph",
+    "stabilizer",
+    "qubit",
+    "quantum"
+   ],
+   "summary": "Recent works have proposed semi-device-independent frameworks to certify non-stabilizerness, but the complexity of the stabilizer polytope makes these methods infeasible beyond a few qubits. In this work, we address this limitation by moving to partially characterized measurements in the context of worst-case random access codes.\n\nWe first establish a simple condition, which we term the stabilizer pigeonhole criterion, that certifies non-stabilizerness in $m$-qubit pure states, and show how it can be applied to reduced states. As an application, we certify magic in $W$ states of arbitrary size using only eight preparations and three single-qubit measurement settings.\n\nMotivated by recent work on the stabilizer marginal problem, we then construct prepare-and-measure correlations generated by global $m$-qubit quantum states for which every $k$-qubit marginal lies inside the stabilizer polytope, yet the combined correlations cannot be reproduced by any global stabilizer mixture. Finally, we derive analytical upper and lower bounds on the worst-case bias attainable with mixed stabilizer preparations in an $m$-qubit random access code with $n$ Pauli measurements.\n\nFor the complete set of $4^m-1$ non-identity Pauli measurements, we show that the optimal quantum and mixed-stabilizer biases both scale as $2^{-3m/2}$, and that their ratio is asymptotically bounded by a constant ($\\lesssim 1.85$), showing that in this setting, magic in the preparations alone yields at most a constant-factor advantage over stabilizer mixtures.",
+   "authors": [
+    "Santiago Zamora"
+   ],
+   "published": "2026-11-19T19:03:02Z",
+   "relevance": 18.0,
+   "weight": 0.85,
+   "score": 79.4,
+   "first_seen": "2026-11-23T07:45:56Z"
   },
   {
    "id": "251ee51c7a9994ef",
@@ -246,7 +932,7 @@
    "published": "2026-11-19T18:55:54Z",
    "relevance": 22.0,
    "weight": 0.85,
-   "score": 81.0,
+   "score": 79.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -275,7 +961,7 @@
    "published": "2026-11-19T18:43:32Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 81.0,
+   "score": 79.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -303,7 +989,7 @@
    "published": "2026-11-19T17:55:21Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 80.9,
+   "score": 79.3,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -332,7 +1018,7 @@
    "published": "2026-11-19T17:21:37Z",
    "relevance": 12.6,
    "weight": 0.9,
-   "score": 66.8,
+   "score": 65.2,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -360,7 +1046,7 @@
    "published": "2026-11-19T17:16:21Z",
    "relevance": 30.6,
    "weight": 0.85,
-   "score": 80.8,
+   "score": 79.2,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -387,7 +1073,7 @@
    "published": "2026-11-19T17:10:09Z",
    "relevance": 11.2,
    "weight": 0.85,
-   "score": 61.9,
+   "score": 60.3,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -413,63 +1099,7 @@
    "published": "2026-11-19T17:08:10Z",
    "relevance": 12.0,
    "weight": 0.85,
-   "score": 64.1,
-   "first_seen": "2026-11-20T07:24:21Z"
-  },
-  {
-   "id": "3e8730d5e6af2d62",
-   "title": "Non-Binary Detector Error Models",
-   "url": "https://arxiv.org/abs/2611.26395",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "cs.IT",
-    "quantum error correction",
-    "fault-tolerant",
-    "qubit",
-    "quantum"
-   ],
-   "summary": "A key challenge in fault-tolerant quantum error correction (QEC) is that the syndrome extraction circuits are themselves faulty. Such circuit-level noise is commonly described by a detector error model (DEM). In Stim and in almost all related works, DEMs are binary: every non-binary circuit error (e.g., CNOT gate), is decomposed into independent binary error mechanisms.\n\nIn this work, we introduce non-binary DEMs, in which each fault location of the syndrome extraction circuit is modeled by one random variable over its original alphabet, e.g., the 16 two-qubit Pauli errors after a CNOT gate. We also propose a split-merge-regroup transformation that builds a compact non-binary DEM from any Clifford circuit by merging the error components that flip the same detectors and observables. Non-binary DEMs represent any Pauli channel exactly, whereas binary DEMs are exact only for channels that factorize into independent binary parts.\n\nWhen the channels factorize, we prove that binary and non-binary DEMs are equivalent under degenerate quantum maximum-a-posteriori (MAP) decoding, but not under quantum MAP decoding. Although the variables are non-binary, belief propagation (BP) still exchanges a single scalar message per edge. Our numerical results with surface, color and bivariate bicycle codes show that non-binary DEMs have two main advantages.\n\nFirst, their Tanner graphs have four to five times fewer edges, which is advantageous for hardware implementations. Second, their performance under BP, with and without OSD post-processing, is better than that of their binary counterparts, and BP with OSD runs up to $9.4\\times$ faster in a CPU.",
-   "authors": [
-    "Stefano Tinelli",
-    "Francisco Lázaro",
-    "Francisco García Herrero"
-   ],
-   "published": "2026-11-19T16:46:42Z",
-   "relevance": 9.6,
-   "weight": 0.85,
-   "score": 57.4,
-   "first_seen": "2026-11-20T07:24:21Z"
-  },
-  {
-   "id": "64861408c2195195",
-   "title": "Quantum Zeno Effect with a Superposed Measurement Schedule in Relational Time",
-   "url": "https://arxiv.org/abs/2611.26371",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "physics.ins-det",
-    "qubit",
-    "quantum"
-   ],
-   "summary": "Motivated by the Page-Wootters construction in which time is a quantum clock reading and the global system state is stationary, we propose a quantum circuit that explores the observable consequences of treating measurement timing as a quantum degree of freedom. We place two Zeno measurement schedules of a driven qubit in a coherent superposition using a schedule qubit.\n\nWe show that, for a fixed drive strength, the interference visibility between the two schedules depends only on the time offset between them, not on the number of intermediate measurements taken. Then we show that, for one schedule-readout outcome, the Zeno trend reverses, predicting a result that complements the standard Zeno probability.\n\nWe propose a circuit implementation with physical memory qubits and show that measuring the memory register's joint $X$-basis parity distinguishes a coherent schedule from a classical or dephased one. We give the gate count and an error budget for a superconducting-qubit implementation.\n\nThe Page-Wootters picture motivates this protocol and provides an equivalent stationary representation, although the predictions follow from the standard circuit description without requiring a relational-time interpretation. This is consistent with the Page-Wootters framework recovering standard quantum dynamics through correlations between a clock and the rest of the system.",
-   "authors": [
-    "Olivia Seidel",
-    "Chiara Marletto",
-    "Jonathan Asaadi",
-    "Sara Sussman",
-    "et al."
-   ],
-   "published": "2026-11-19T16:34:35Z",
-   "relevance": 9.2,
-   "weight": 0.85,
-   "score": 56.3,
+   "score": 62.5,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -494,7 +1124,7 @@
    "published": "2026-11-19T16:33:25Z",
    "relevance": 18.0,
    "weight": 0.85,
-   "score": 80.7,
+   "score": 79.1,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -522,7 +1152,7 @@
    "published": "2026-11-19T16:31:46Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 76.3,
+   "score": 74.6,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -552,7 +1182,7 @@
    "published": "2026-11-19T16:28:23Z",
    "relevance": 15.6,
    "weight": 0.85,
-   "score": 74.0,
+   "score": 72.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -580,32 +1210,7 @@
    "published": "2026-11-19T16:25:45Z",
    "relevance": 19.8,
    "weight": 0.85,
-   "score": 80.7,
-   "first_seen": "2026-11-20T07:24:21Z"
-  },
-  {
-   "id": "f070e46e0d47b3d2",
-   "title": "Quantifying the irrealism required by quantum random access codes",
-   "url": "https://arxiv.org/abs/2611.26340",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "quantum advantage",
-    "qubits",
-    "entanglement",
-    "quantum"
-   ],
-   "summary": "How far must decoding observables be from having elements of reality to achieve a given quantum advantage in a communication task? We answer this question for quantum random access codes.\n\nHere, an observable has an element of reality when its unrevealed measurement leaves the preparation undisturbed; its irrealism is the relative entropy to the closest such preparation. Because it comprises local coherence and the correlations destroyed by the unrevealed measurement, irrealism applies to prepare-and-measure (PM) and entanglement-assisted (EA) codes alike.\n\nFor PM codes decoded in mutually unbiased bases, we obtain the irrealism frontier, the least total irrealism compatible with each success probability, exactly in every dimension; an excess-irrealism identity shows that Gibbs states of the decoding operator attain it uniquely. For PM codes minimized also over the decoders, the required irrealism vanishes up to the classical value and is positive beyond it; for qubits, mutually unbiased decoders are not the cheapest below a success probability of 0.833.\n\nFor EA codes with a qubit receiver, trusted decoders, and parity-dependent sender settings, the frontier exceeds the PM one by the realism-based nonlocality of the contexts used by an optimal code, and with rank-one projective sender measurements a success probability above 0.815 certifies a minimum realism-based nonlocality of the shared state.",
-   "authors": [
-    "Pedro R. Dieguez"
-   ],
-   "published": "2026-11-19T16:17:53Z",
-   "relevance": 10.4,
-   "weight": 0.85,
-   "score": 59.6,
+   "score": 79.1,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -626,7 +1231,7 @@
    "published": "2026-11-19T16:16:38Z",
    "relevance": 18.8,
    "weight": 0.7,
-   "score": 77.7,
+   "score": 76.1,
    "first_seen": "2026-11-19T20:42:44Z"
   },
   {
@@ -653,7 +1258,7 @@
    "published": "2026-11-19T16:14:13Z",
    "relevance": 32.2,
    "weight": 0.85,
-   "score": 80.7,
+   "score": 79.1,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -678,7 +1283,7 @@
    "published": "2026-11-19T16:10:42Z",
    "relevance": 26.0,
    "weight": 0.85,
-   "score": 80.7,
+   "score": 79.0,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -701,7 +1306,7 @@
    "published": "2026-11-19T16:07:22Z",
    "relevance": 21.8,
    "weight": 0.7,
-   "score": 77.6,
+   "score": 76.0,
    "first_seen": "2026-11-19T20:42:44Z"
   },
   {
@@ -722,7 +1327,7 @@
    "published": "2026-11-19T15:45:03Z",
    "relevance": 17.0,
    "weight": 0.7,
-   "score": 74.8,
+   "score": 73.2,
    "first_seen": "2026-11-19T20:42:44Z"
   },
   {
@@ -749,7 +1354,7 @@
    "published": "2026-11-19T15:40:24Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 75.0,
+   "score": 73.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -779,7 +1384,7 @@
    "published": "2026-11-19T14:57:16Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 80.5,
+   "score": 78.9,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -804,7 +1409,7 @@
    "published": "2026-11-19T14:52:30Z",
    "relevance": 11.6,
    "weight": 0.85,
-   "score": 62.7,
+   "score": 61.1,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -827,32 +1432,7 @@
    "published": "2026-11-19T14:48:17Z",
    "relevance": 13.0,
    "weight": 0.9,
-   "score": 67.6,
-   "first_seen": "2026-11-20T07:24:21Z"
-  },
-  {
-   "id": "9739a9bf7b884f49",
-   "title": "Euler up-down numbers and quiver representations",
-   "url": "https://arxiv.org/abs/2611.26185",
-   "source": "arXiv math.AG",
-   "also_in": [],
-   "type": "paper",
-   "domain": "math",
-   "tags": [
-    "math.RT",
-    "math.AG",
-    "quiver"
-   ],
-   "summary": "We show that Euler up-down numbers enumerate isoclasses of representations arising from quiver Grassmannians which provide an explicit realization of PBW degenerate flag varieties.\n\nUsing this geometric realization, we derive several formulas connecting Euler up-down numbers, median Genocchi numbers, and Motzkin numbers.\n\nWe also define a new $q$-analogue of Euler up-down numbers and derive several formulas for these polynomials.\n\nWe describe a natural poset structure on the set of isoclasses of subrepresentations and describe it in terms of the classical degeneration order.\n\nFinally, we prove that the finer strata defined by fixing isotypes of sub- and quotient representations are the orbits under the automorphism group of the ambient quiver representation.",
-   "authors": [
-    "Giovanni Cerulli Irelli",
-    "Evgeny Feigin",
-    "Markus Reineke"
-   ],
-   "published": "2026-11-19T14:36:07Z",
-   "relevance": 9.6,
-   "weight": 0.9,
-   "score": 58.1,
+   "score": 66.0,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -877,30 +1457,7 @@
    "published": "2026-11-19T14:24:36Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 76.0,
-   "first_seen": "2026-11-20T07:24:21Z"
-  },
-  {
-   "id": "bc4f1d657ced4dd0",
-   "title": "NariQ: Sub-3-Bit Quantization for Long-Horizon Agentic Tasks",
-   "url": "https://arxiv.org/abs/2611.26157",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.LG",
-    "quantization",
-    "huggingface"
-   ],
-   "summary": "Long-horizon agentic tasks require a model to call tools over many steps at contexts of 100K tokens or more, yet many low-bit quantization methods are calibrated on short web text and judged on perplexity. This mismatch is costly: existing quantizations of Qwen3.8-27B at or below 3 bits per weight match BF16 on shorter tasks like AIME, yet in published results solve at most 72% as many tasks as BF16 on DeepSWE, a long-horizon agentic benchmark.\n\nWe propose NariQ, a trellis-coded post-training quantization method that calibrates on tokens generated by the BF16 model in agent sessions. On Qwen3.8-27B, NariQ at 3.0 and 2.5 bits per weight stays level with BF16 on two long-horizon agentic benchmarks, DeepSWE and Terminal Bench, as well as on AIME and RealWorldQA.\n\nOur checkpoint at 2.0 bits per weight trails this performance. To our knowledge, these are the first quantizations at or below 3 bits per weight shown to match their full-precision version on long-horizon agentic tasks.\n\nWe release the files as Qwen3.8-27B-NariQ-GGUF (https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF), with inference available through our llama.cpp fork at https://github.com/nari-labs/nari-llama.cpp.",
-   "authors": [
-    "Doyeob Kim"
-   ],
-   "published": "2026-11-19T14:13:27Z",
-   "relevance": 10.8,
-   "weight": 0.85,
-   "score": 60.4,
+   "score": 74.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -927,7 +1484,7 @@
    "published": "2026-11-19T13:16:58Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 76.4,
+   "score": 74.8,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -953,7 +1510,7 @@
    "published": "2026-11-19T12:34:25Z",
    "relevance": 17.2,
    "weight": 0.85,
-   "score": 77.9,
+   "score": 76.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -973,7 +1530,7 @@
    "published": "2026-11-19T11:51:36Z",
    "relevance": 15.2,
    "weight": 0.7,
-   "score": 69.3,
+   "score": 67.7,
    "first_seen": "2026-11-19T20:42:44Z"
   },
   {
@@ -996,7 +1553,7 @@
    "published": "2026-11-19T11:51:24Z",
    "relevance": 13.6,
    "weight": 0.85,
-   "score": 67.8,
+   "score": 66.3,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1024,7 +1581,7 @@
    "published": "2026-11-19T11:23:22Z",
    "relevance": 14.4,
    "weight": 0.85,
-   "score": 70.0,
+   "score": 68.5,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1053,7 +1610,7 @@
    "published": "2026-11-19T10:54:57Z",
    "relevance": 25.6,
    "weight": 0.85,
-   "score": 79.9,
+   "score": 78.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1081,7 +1638,7 @@
    "published": "2026-11-19T10:47:26Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 66.0,
+   "score": 64.5,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1107,7 +1664,7 @@
    "published": "2026-11-19T10:41:49Z",
    "relevance": 13.2,
    "weight": 0.85,
-   "score": 66.6,
+   "score": 65.0,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1135,7 +1692,7 @@
    "published": "2026-11-19T10:36:21Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 79.9,
+   "score": 78.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1156,38 +1713,8 @@
    "published": "2026-11-19T10:26:06Z",
    "relevance": 20.6,
    "weight": 0.7,
-   "score": 76.9,
+   "score": 75.3,
    "first_seen": "2026-11-19T20:42:44Z"
-  },
-  {
-   "id": "b342dcee6bfb1b56",
-   "title": "Efficient and Robust Drafting with Multi-Token Prediction",
-   "url": "https://arxiv.org/abs/2611.25813",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.CL",
-    "kv-cache",
-    "speculative decoding",
-    "large language model",
-    "language model",
-    "fine-tuning"
-   ],
-   "summary": "Speculative decoding has emerged as a critical technique for accelerating Large Language Model (LLM) inference by decoupling generation into a drafting phase and a parallel verification phase. A crucial challenge is therefore designing a drafter that is both lightweight and accurate enough to approximate the predictions of the target model.\n\nWe present a highly optimized Multi-Token Prediction (MTP) architecture that extends existing backbone LLMs to efficiently produce high-quality drafts. Built around a single shared drafting head, our approach features three core architectural optimizations: target activation injection to anchor semantic planning, zero-copy KV-cache cross-attention to bypass prefill compute and reduce memory overhead, and an efficient clustered vocabulary projection to reduce the cost of full-vocabulary decoding.\n\nTesting these improvements with the Gemma 4 model family, our G-MTP shows out-of-the-box speedups for both large server-side setups (up to 3.1$\\times$) and smaller models targeting memory-constrained on-device environments (up to 2.3$\\times$ on H100 and up to 2.2$\\times$ on a smartphone GPU). In addition, we present parameter-efficient fine-tuning recipes for G-MTP that keep the drafter aligned with the backbone LLM under domain shift, requiring up to 1.83$\\times$ fewer target forward passes than tuning only the backbone.",
-   "authors": [
-    "Filippo Galgani",
-    "Ziwei Ji",
-    "Omri Homburger",
-    "Ganesh Jawahar",
-    "et al."
-   ],
-   "published": "2026-11-19T09:33:39Z",
-   "relevance": 10.8,
-   "weight": 0.85,
-   "score": 59.7,
-   "first_seen": "2026-11-20T07:24:21Z"
   },
   {
    "id": "d5e6da74990324bd",
@@ -1211,7 +1738,7 @@
    "published": "2026-11-19T09:11:52Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 79.7,
+   "score": 78.2,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1238,7 +1765,7 @@
    "published": "2026-11-19T09:10:09Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 79.7,
+   "score": 78.2,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1265,7 +1792,7 @@
    "published": "2026-11-19T09:03:43Z",
    "relevance": 15.4,
    "weight": 0.85,
-   "score": 72.5,
+   "score": 71.0,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1292,7 +1819,7 @@
    "published": "2026-11-19T08:56:10Z",
    "relevance": 14.2,
    "weight": 0.85,
-   "score": 69.1,
+   "score": 67.6,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1321,7 +1848,7 @@
    "published": "2026-11-19T08:49:01Z",
    "relevance": 50.0,
    "weight": 0.85,
-   "score": 79.6,
+   "score": 78.2,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1349,7 +1876,7 @@
    "published": "2026-11-19T08:29:39Z",
    "relevance": 16.8,
    "weight": 0.85,
-   "score": 76.3,
+   "score": 74.8,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1377,7 +1904,7 @@
    "published": "2026-11-19T07:48:38Z",
    "relevance": 14.6,
    "weight": 0.85,
-   "score": 70.1,
+   "score": 68.6,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1407,65 +1934,7 @@
    "published": "2026-11-19T07:47:07Z",
    "relevance": 22.6,
    "weight": 0.85,
-   "score": 79.5,
-   "first_seen": "2026-11-20T07:24:21Z"
-  },
-  {
-   "id": "5fb14d3223a82704",
-   "title": "Correctable Enrollment and One-Transaction Seed Proofs for Ethereum's Post-Quantum Transition",
-   "url": "https://arxiv.org/abs/2611.25663",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "cs.CR",
-    "quant-ph",
-    "shor's",
-    "quantum computer",
-    "quantum"
-   ],
-   "summary": "A quantum computer running Shor's algorithm can extract the private key of every Ethereum account whose public key is published, and accounts exposed by their own transactions hold 54.6% of execution-layer ETH. As the first such machine may stay secret, a migration cannot wait for visible thefts, and once keys are extractable, legacy signatures no longer tell owners from attackers.\n\nWe design a migration in which owners enroll post-quantum keys cheaply with their existing signatures before ECDSA is retired at a scheduled time, while a zero-knowledge proof of the wallet's BIP-39 seed can correct any such enrollment until a common deadline afterward; an account nobody enrolled stays frozen and recoverable by seed proof without a deadline. Each proof binds the new key, a nonce and a fee cap, so neither a paying sponsor nor a reordering block builder can redirect or replay it.\n\nValidators switch to hash-based keys first, at a finalized checkpoint and under a stated bound on the attacker's voting power. We prove the account guarantees under explicit assumptions, model-check the rules, and implement the design in go-ethereum and a Lean consensus client.\n\nA three-layer recursive hash-based STARK yields a seed proof of about 190 KB that fits one transaction, verifies in 38 ms and takes a median of 111 s to generate on a laptop; four proofs aggregate into one. In a ten-node simulation with mainnet-derived accounts and fee demand, block space rather than proving sets the duration: the 4.45 million accounts with at least 0.1 ETH would migrate in 29.4 days if all enroll before ECDSA is retired and in 235 days if all recover after it in batches of four.\n\nIn a mass enrollment, an enrollment waits a median of 19.1 minutes in the public mempool, longer than published estimates for a fast quantum computer to extract its key, so owners with a seed and an unexposed key should migrate by seed proof.",
-   "authors": [
-    "Xin Jin",
-    "Maximillian Liao",
-    "Handong Chen",
-    "Yi Nancy Li",
-    "et al."
-   ],
-   "published": "2026-11-19T07:43:09Z",
-   "relevance": 9.2,
-   "weight": 0.85,
-   "score": 55.1,
-   "first_seen": "2026-11-20T07:24:21Z"
-  },
-  {
-   "id": "4829f38d0b474a5e",
-   "title": "Syndrome-based Calibration Using Gate-Error Amplification",
-   "url": "https://arxiv.org/abs/2611.25579",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "quantum error correction",
-    "surface code",
-    "qubit",
-    "quantum"
-   ],
-   "summary": "We present Gate-Error Amplification for Recalibration with Syndromes (GEARS), a runtime calibration framework that uses gate-error amplification to efficiently tune control parameters during quantum error correction. Maintaining reliable control of large qubit arrays throughout hours-long computations requires repeated calibration to compensate for hardware drift. In conventional calibration, targeted qubits are temporarily removed from the code, introducing non-negligible space-time overhead.\n\nAn elegant alternative uses syndrome information already collected during error correction as feedback for in situ recalibration, but acquiring signal requires sufficient (1) measurement budget or (2) probe strength, i.e., the size of deliberate control perturbations. More measurements improve statistical precision but result in slower control updates, while stronger perturbations produce larger calibration signals at the cost of additional errors. GEARS augments syndrome-based calibration with an established gate characterization technique called gate-error amplification.\n\nOur approach repeats selected CZ gates and probes their controls in spatially separated groups, strengthening local calibration signals while limiting the logical cost of probing. Surface code simulations show that GEARS with depth-three amplification reduces measurement requirements by approximately a factor of eight at matched gradient SNR and fixed probe strength. In closed-loop calibration, GEARS with depth-three amplification reduces excess expected logical failures by approximately 31-40% relative to calibration without amplification across the evaluated execution windows.\n\nUnder time-dependent drift, GEARS increases the estimated critical drift frequency by approximately 1.9x. These results indicate that deliberately amplifying gate errors during operation can improve the long-time performance of quantum computations.",
-   "authors": [
-    "Andrew T. Kamen",
-    "Arielle Sanford",
-    "Frederic T. Chong",
-    "Andy J. Goldschmidt",
-    "et al."
-   ],
-   "published": "2026-11-19T06:21:31Z",
-   "relevance": 10.8,
-   "weight": 0.85,
-   "score": 59.3,
+   "score": 78.0,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1493,7 +1962,7 @@
    "published": "2026-11-19T06:13:48Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 76.5,
+   "score": 75.1,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1521,7 +1990,7 @@
    "published": "2026-11-19T03:17:52Z",
    "relevance": 13.6,
    "weight": 0.85,
-   "score": 66.7,
+   "score": 65.3,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1551,7 +2020,7 @@
    "published": "2026-11-19T03:16:18Z",
    "relevance": 41.6,
    "weight": 0.85,
-   "score": 78.9,
+   "score": 77.5,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1577,34 +2046,7 @@
    "published": "2026-11-19T02:23:25Z",
    "relevance": 20.0,
    "weight": 0.85,
-   "score": 78.8,
-   "first_seen": "2026-11-20T07:24:21Z"
-  },
-  {
-   "id": "b22ec1238119d3b3",
-   "title": "Incorporating argumentation frameworks for LLM decision-making: Task-specific design and evaluation",
-   "url": "https://arxiv.org/abs/2611.25361",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.CL",
-    "cs.AI",
-    "llm inference",
-    "llm",
-    "language model"
-   ],
-   "summary": "Argumentation frameworks (AFs) provide explicit, formal mechanisms for representing and resolving conflicts and thus have been incorporated into large language model (LLM) decision-making. The benefits vary and depend on how arguments and their relations are constructed, evaluated, and incorporated into the decision process. {We abstract a workflow consisting of four stages based on existing argumentation-augmented methods} and investigate their design choices over tasks of debate-based decision-making and retrieval-based fact verification.\n\nOur evaluation with recent LLMs shows that existing methods do not consistently improve performance across the considered tasks. Motivated by this observation, we develop two task-specific methods.\n\nThe first is called Qnt-Arg, which organizes arguments around the original speakers in debate materials and aggregates model-estimated argument strengths and candidate-answer priors under gradual semantics. The second is Qlt-Arg that uses credibility estimates to establish preferences between conflicting evidence items and applies grounded semantics to select acceptable evidence for subsequent LLM inference.\n\nWe examine the roles of generative and decision models within the two methods. In the debate setting, Qnt-Arg consistently outperforms other argumentation-augmented methods across matched configurations; Qlt-Arg improves retrieval-based fact-verification performance compared with the baselines.\n\nThese findings demonstrate the value of combining formal argumentation and LLM while highlighting the importance of aligning with tasks in argumentation construction, model selection, and the role of formal semantic reasoning.",
-   "authors": [
-    "Bochen Han",
-    "Anshu Xiong",
-    "Mingyang Ma"
-   ],
-   "published": "2026-11-19T02:00:57Z",
-   "relevance": 10.0,
-   "weight": 0.85,
-   "score": 56.6,
+   "score": 77.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1628,7 +2070,7 @@
    "published": "2026-11-18T23:06:23Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 64.5,
+   "score": 63.2,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1655,7 +2097,7 @@
    "published": "2026-11-18T21:10:41Z",
    "relevance": 21.0,
    "weight": 0.9,
-   "score": 79.2,
+   "score": 77.9,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -1678,7 +2120,7 @@
    "published": "2026-11-18T21:02:33Z",
    "relevance": 43.8,
    "weight": 1.0,
-   "score": 86.2,
+   "score": 84.9,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -1705,7 +2147,7 @@
    "published": "2026-11-18T18:34:10Z",
    "relevance": 14.8,
    "weight": 0.85,
-   "score": 69.0,
+   "score": 67.7,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -1728,7 +2170,7 @@
    "published": "2026-11-18T18:32:55Z",
    "relevance": 13.6,
    "weight": 0.85,
-   "score": 65.7,
+   "score": 64.4,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -1758,7 +2200,7 @@
    "published": "2026-11-18T18:29:52Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 73.4,
+   "score": 72.2,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -1782,7 +2224,7 @@
    "published": "2026-11-18T17:28:14Z",
    "relevance": 11.8,
    "weight": 0.85,
-   "score": 60.6,
+   "score": 59.3,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -1805,7 +2247,7 @@
    "published": "2026-11-18T17:03:12Z",
    "relevance": 36.2,
    "weight": 0.7,
-   "score": 74.7,
+   "score": 73.5,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -1835,7 +2277,7 @@
    "published": "2026-11-18T16:18:37Z",
    "relevance": 22.0,
    "weight": 0.85,
-   "score": 77.6,
+   "score": 76.4,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -1861,36 +2303,7 @@
    "published": "2026-11-18T15:52:07Z",
    "relevance": 15.0,
    "weight": 0.85,
-   "score": 69.3,
-   "first_seen": "2026-11-19T07:32:28Z"
-  },
-  {
-   "id": "a6a2615eafe2330d",
-   "title": "A provably efficient classical algorithm for simulating OTOC$^{(1)}$ in 1D",
-   "url": "https://arxiv.org/abs/2611.24640",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "cond-mat.stat-mech",
-    "quantum advantage",
-    "qubits",
-    "quantum"
-   ],
-   "summary": "Out-of-time-order correlators (OTOCs) are quantities of broad interest in many-body physics due to their connection with information scrambling and quantum chaos. Recently, estimating higher-order OTOCs in random quantum circuits was proposed as a promising avenue for quantum advantage, yet the classical hardness of this task remains poorly understood.\n\nEven for first-order OTOCs, where growing evidence suggests classical tractability, no efficient classical algorithm with rigorous guarantees has been established to date. In this work, we introduce \"window propagation,\" the first provably polynomial-time classical algorithm for approximating first-order OTOCs in 1D Haar-random brickwork circuits, at arbitrary depths and with inverse-polynomial mean-squared error.\n\nWe also conduct numerical experiments comparing our simulation results to exact computation on up to $512$ qubits for Clifford circuits with $768$ $T$-gates and up to $22$ qubits for Haar-random circuits. We emphasize that our results do not directly apply to second-order OTOCs in 2D, which is the subject of recent quantum advantage proposals.\n\nNevertheless, our work provides a rigorous step towards understanding the classical complexity of OTOC estimation and represents a family of non-trivial quantum circuits for which a provable, polynomial time algorithm is now known, establishing foundations for understanding these widely used diagnostics of quantum chaos.",
-   "authors": [
-    "Laura Lewis",
-    "Antonio A. Mele",
-    "Ronald de Wolf",
-    "Jarrod R. McClean",
-    "et al."
-   ],
-   "published": "2026-11-18T15:48:02Z",
-   "relevance": 10.2,
-   "weight": 0.85,
-   "score": 55.9,
+   "score": 68.0,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -1917,31 +2330,7 @@
    "published": "2026-11-18T15:37:04Z",
    "relevance": 14.8,
    "weight": 0.85,
-   "score": 68.7,
-   "first_seen": "2026-11-19T07:32:28Z"
-  },
-  {
-   "id": "d5827a902a9abe8f",
-   "title": "No-Go Theorems for Ordered Universal Entanglement Purification",
-   "url": "https://arxiv.org/abs/2611.24603",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "qubit",
-    "entanglement",
-    "quantum"
-   ],
-   "summary": "Entanglement purification is a fundamental tool for obtaining high-fidelity entangled states used in various quantum technologies. It aims to increase the fidelity of noisy shared entangled states with a fixed maximally entangled state through LOCC.\n\nIn distributed quantum systems, such as networks employing quantum repeaters, limited memory, probabilistic entanglement generation, and unequal storage times can leave a finite collection of nonidentical pairs. Their states may remain incompletely characterized even when calibrated preparation and storage records establish their fidelity ordering.\n\nRecent work has investigated whether fidelity ordering permits nontrivial universal purification. A nontrivial universal $n$-to-1 protocol must, conditioned on success, never lower the highest input fidelity and strictly increase it for at least one allowed joint input.\n\nAlthough no-go results have been established for a restricted class of LOCC protocols, the corresponding question for general LOCC has remained unresolved. Here, we study ordered universal purification under separable operations.\n\nSpecifically, for every fixed finite $n\\ge2$, we prove that when independently prepared two-qubit pairs range over the full family of states above a fixed fidelity threshold $0\\le F_*<1$, any separable success map that never lowers the highest input fidelity on the allowed ordered inputs must preserve that fidelity exactly whenever it succeeds. This excludes nontrivial universal LOCC purification even for arbitrarily high input fidelities, without imposing a positive lower bound on success probability. ...",
-   "authors": [
-    "C. L. Liu"
-   ],
-   "published": "2026-11-18T15:28:50Z",
-   "relevance": 10.0,
-   "weight": 0.85,
-   "score": 55.3,
+   "score": 67.4,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -1971,7 +2360,7 @@
    "published": "2026-11-18T15:18:58Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 73.1,
+   "score": 71.9,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -1992,7 +2381,7 @@
    "published": "2026-11-18T14:24:48Z",
    "relevance": 17.0,
    "weight": 0.7,
-   "score": 71.7,
+   "score": 70.4,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -2022,7 +2411,7 @@
    "published": "2026-11-18T14:24:23Z",
    "relevance": 22.4,
    "weight": 0.85,
-   "score": 77.4,
+   "score": 76.2,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2046,7 +2435,7 @@
    "published": "2026-11-18T14:08:52Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 63.5,
+   "score": 62.3,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2075,7 +2464,7 @@
    "published": "2026-11-18T13:56:37Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 73.5,
+   "score": 72.3,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2095,7 +2484,7 @@
    "published": "2026-11-18T13:05:00Z",
    "relevance": 15.2,
    "weight": 0.7,
-   "score": 66.5,
+   "score": 65.3,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -2124,7 +2513,7 @@
    "published": "2026-11-18T12:30:48Z",
    "relevance": 22.8,
    "weight": 0.85,
-   "score": 77.2,
+   "score": 76.0,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2150,7 +2539,7 @@
    "published": "2026-11-18T12:13:14Z",
    "relevance": 12.6,
    "weight": 0.85,
-   "score": 62.2,
+   "score": 61.0,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2180,7 +2569,7 @@
    "published": "2026-11-18T12:11:43Z",
    "relevance": 38.2,
    "weight": 0.85,
-   "score": 77.2,
+   "score": 76.0,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2201,7 +2590,7 @@
    "published": "2026-11-18T12:10:36Z",
    "relevance": 14.6,
    "weight": 0.7,
-   "score": 64.8,
+   "score": 63.6,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -2228,7 +2617,7 @@
    "published": "2026-11-18T12:03:57Z",
    "relevance": 12.8,
    "weight": 0.85,
-   "score": 62.7,
+   "score": 61.5,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2251,7 +2640,7 @@
    "published": "2026-11-18T12:03:29Z",
    "relevance": 51.4,
    "weight": 0.7,
-   "score": 74.2,
+   "score": 73.0,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -2280,7 +2669,7 @@
    "published": "2026-11-18T09:03:03Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 73.0,
+   "score": 71.8,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2310,27 +2699,8 @@
    "published": "2026-11-18T08:31:41Z",
    "relevance": 23.4,
    "weight": 0.85,
-   "score": 76.8,
+   "score": 75.7,
    "first_seen": "2026-11-19T07:32:28Z"
-  },
-  {
-   "id": "121d09df4bcd63af",
-   "title": "fa4-v4.0.0.beta40",
-   "url": "https://github.com/Dao-AILab/flash-attention/releases/tag/fa4-v4.0.0.beta40",
-   "source": "FlashAttention Releases",
-   "also_in": [],
-   "type": "release",
-   "domain": "ai",
-   "tags": [
-    "kv-cache"
-   ],
-   "summary": "What's Changed\n\n[CuTe] Clamp aux_tensors indices instead of wrapping them modulo seqlen by @drisspg in #3150\n\n[FA3] Check kv_batch_idx length in mha_fwd by @bhargavchintam in #3153\n\nFix FA3 out-of-bounds reads with empty KV-cache page tables by @Super262 in #3161\n\n[CuTe] Return early for a paged KV cache whose page table has no column by @18853477039 in #3167\n\n[CuTe] Reject a paged KV cache whose key count reaches 2**31 by @18853477039 in #3168\n\n[FA2] Keep the softmax_lse, softmax_d and attention-probs offsets in 64 bits by @yunweili3 in #3169",
-   "authors": [],
-   "published": "2026-11-18T08:12:55Z",
-   "relevance": 9.0,
-   "weight": 0.85,
-   "score": 56.8,
-   "first_seen": "2026-11-18T20:37:11Z"
   },
   {
    "id": "9e8dc8212b6d66e3",
@@ -2359,7 +2729,7 @@
    "published": "2026-11-18T08:04:49Z",
    "relevance": 13.4,
    "weight": 0.85,
-   "score": 64.0,
+   "score": 62.8,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2385,37 +2755,7 @@
    "published": "2026-11-18T06:45:03Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 76.1,
-   "first_seen": "2026-11-19T07:32:28Z"
-  },
-  {
-   "id": "53344dbeca065130",
-   "title": "General Noise Channels and Mid-Circuit Measurements for Pre-Trajectory Sampling with Batched Execution",
-   "url": "https://arxiv.org/abs/2611.23923",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "physics.comp-ph",
-    "quantum error correction",
-    "fault-tolerant",
-    "stabilizer",
-    "qubit"
-   ],
-   "summary": "Many studies of quantum protocols require fast sampling of large amounts of measurement data from noisy quantum circuits, such as for training machine-learning decoders for quantum error correction. Exact simulation of realistic noise is expensive, while stabilizer-based simulators are fast but approximate, for example through Pauli twirling, which generally alters the output statistics. Pre-trajectory sampling with batched execution (PTSBE) accelerates exact trajectory simulation by sampling noise before state evolution.\n\nThis method requires the outcome probability of every stochastic event to be independent of the state, which excludes mid-circuit measurements and general Kraus channels. We present a generalization of PTSBE to measurement and Kraus operators without approximation. Each event is partially pre-sampled, while deferred outcomes are drawn during grouped execution via multinomial branching and cached-state reuse.\n\nWe implement the method for GPUs as an extension of CUDA-Q. On distance-3 topological code memories under amplitude damping, it is up to 24x faster than conventional trajectory sampling in CUDA-Q. On 30-qubit random circuits with mid-circuit measurements, it is up to 83x faster and outperforms the near-Clifford simulator Clifft when more than about 25% of the gates are non-Clifford.\n\nWith repeated sampling of each final state, its sampling rate per trajectory exceeds that of CUDA-Q by nearly five orders of magnitude. Our method also allows us to compare exact amplitude damping with its Pauli-twirled channel on a surface-code memory, revealing that twirling overestimates the detection rate by 21% and raises the logical error rate of a lookup decoder by 8%. This work makes exact, high-throughput simulation practical for general noisy circuits, from data generation for training decoders to studying measurement-based fault-tolerant protocols under realistic noise.",
-   "authors": [
-    "Louis Follet",
-    "Paavai Pari",
-    "Isidor Schoch",
-    "Thien Nguyen",
-    "et al."
-   ],
-   "published": "2026-11-18T06:15:37Z",
-   "relevance": 11.4,
-   "weight": 0.85,
-   "score": 58.3,
+   "score": 74.9,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2443,7 +2783,7 @@
    "published": "2026-11-18T06:09:26Z",
    "relevance": 35.4,
    "weight": 0.85,
-   "score": 76.6,
+   "score": 75.5,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2471,7 +2811,7 @@
    "published": "2026-11-18T04:40:10Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 70.9,
+   "score": 69.8,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2498,7 +2838,7 @@
    "published": "2026-11-18T04:12:31Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 76.4,
+   "score": 75.3,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2525,7 +2865,7 @@
    "published": "2026-11-18T03:16:56Z",
    "relevance": 29.8,
    "weight": 0.85,
-   "score": 76.3,
+   "score": 75.2,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2554,7 +2894,7 @@
    "published": "2026-11-18T03:05:15Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 72.4,
+   "score": 71.3,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2580,59 +2920,7 @@
    "published": "2026-11-18T01:36:56Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 73.4,
-   "first_seen": "2026-11-19T07:32:28Z"
-  },
-  {
-   "id": "34bb2d42b5c59d54",
-   "title": "Same Model, Different People: Numerical Execution Contracts and the Reproducibility of Fairness Audits",
-   "url": "https://arxiv.org/abs/2611.23657",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.CY",
-    "cs.LG",
-    "vllm",
-    "serving",
-    "fp8",
-    "language models"
-   ],
-   "summary": "Fairness audits treat a trained model as a fixed decision function, but the arithmetic that evaluates it is part of that function. This study holds the model, records, threshold and audit code fixed and varies the numerical execution contract in two tiers. Tier 1 changes only how products and sums are computed, with the serialized weights byte-identical, and is the causal test of arithmetic.\n\nTier 2 runs reduced-precision deployment configurations (BF16 compute, FP8 and 8-bit weights), which can also round weights and change engines and kernels, so its effects belong to the configuration. It audits three tabular model families and two open-weight language models (4B and 24B parameters) on four public tasks, including hospital readmission, on CPUs and GPUs from NVIDIA, AMD and Apple. Tier 1 changed decisions near the threshold, and which ones depended on the GPU and its software stack, but no verdict under the prespecified, unweighted tests.\n\nTier 2 configurations changed more decisions and some diagnostic verdicts, but no four-fifths verdict. Serving the 24B model with vLLM FP8 selected 54% of people rather than 45% and passed an employment-status audit by sex that its strict FP32 reference failed: its demographic-parity and equalized-odds gaps fell from 0.0567 and 0.0515 to 0.0417 and 0.0394, against a diagnostic tolerance of 0.05. At the reference's selection count FP8 failed demographic parity, and no reading gave its equalized-odds change a paired interval excluding zero.\n\nThe declared audit depends on the configuration; FP8 is not shown to be fairer. At the frozen thresholds, every pass-fail verdict a configuration changed had a sampling interval containing its criterion. It proposes an audit stability protocol in which the auditor declares contracts, groups, weights and tests before scoring and records each verdict's range over them apart from its sampling uncertainty.",
-   "authors": [
-    "Erzheng Zhang",
-    "Agnes Chu"
-   ],
-   "published": "2026-11-18T00:26:37Z",
-   "relevance": 11.4,
-   "weight": 0.85,
-   "score": 57.7,
-   "first_seen": "2026-11-19T07:32:28Z"
-  },
-  {
-   "id": "bf3290fef9104a9b",
-   "title": "Parisi Energy before Parisi Geometry in the Quantum Approximate Optimization Algorithm",
-   "url": "https://arxiv.org/abs/2611.23645",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "cond-mat.dis-nn",
-    "qaoa",
-    "quantum"
-   ],
-   "summary": "The fractured low-energy landscape of spin glasses presents a notorious barrier to optimization. While high-depth calculations indicate that the Quantum Approximate Optimization Algorithm (QAOA) can approach the Parisi ground-state energy of the Sherrington-Kirkpatrick spin glass, how it does so remains elusive.\n\nHere, we treat the QAOA distribution as a statistical-physics object and probe its geometry directly in the thermodynamic limit. We draw two independent bitstrings from the same problem instance and couple them through their macroscopic similarity.\n\nWe find that typical QAOA samples remain macroscopically uncorrelated, even as their sensitivity to this coupling grows with circuit depth $p$. By contrast, the low-energy tail shows a much stronger tendency to overlap and reveals a Parisi-like phase with the same critical behavior as the thermal spin-glass transition.\n\nThe onset of this organization moves toward the typical output as the circuit deepens, consistent with the separation vanishing only as $p\\to\\infty$. Together, these findings suggest a route distinct from structure-exploiting classical algorithms and thermal sampling, one in which the QAOA approaches the Parisi energy before Parisi geometry becomes typical.",
-   "authors": [
-    "Maxime Dupont",
-    "Bhuvanesh Sundar"
-   ],
-   "published": "2026-11-18T00:08:39Z",
-   "relevance": 11.6,
-   "weight": 0.85,
-   "score": 58.2,
+   "score": 72.3,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2651,7 +2939,7 @@
    "published": "2026-11-18T00:00:00Z",
    "relevance": 15.6,
    "weight": 1.0,
-   "score": 72.3,
+   "score": 71.3,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -2671,7 +2959,7 @@
    "published": "2026-11-18T00:00:00Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 70.4,
+   "score": 69.4,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -2699,7 +2987,7 @@
    "published": "2026-11-17T22:16:11Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 61.9,
+   "score": 60.9,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2723,7 +3011,7 @@
    "published": "2026-11-17T20:25:51Z",
    "relevance": 14.8,
    "weight": 0.85,
-   "score": 66.8,
+   "score": 65.7,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2748,7 +3036,7 @@
    "published": "2026-11-17T20:10:23Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 61.7,
+   "score": 60.7,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2771,7 +3059,7 @@
    "published": "2026-11-17T19:34:26Z",
    "relevance": 26.6,
    "weight": 0.7,
-   "score": 72.6,
+   "score": 71.6,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -2800,7 +3088,7 @@
    "published": "2026-11-17T19:00:09Z",
    "relevance": 27.4,
    "weight": 0.85,
-   "score": 75.5,
+   "score": 74.5,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -2830,7 +3118,7 @@
    "published": "2026-11-17T18:38:14Z",
    "relevance": 24.6,
    "weight": 0.85,
-   "score": 75.5,
+   "score": 74.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -2860,7 +3148,7 @@
    "published": "2026-11-17T18:17:01Z",
    "relevance": 52.0,
    "weight": 0.85,
-   "score": 75.5,
+   "score": 74.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -2889,7 +3177,7 @@
    "published": "2026-11-17T17:08:28Z",
    "relevance": 15.8,
    "weight": 0.85,
-   "score": 69.3,
+   "score": 68.3,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -2915,7 +3203,7 @@
    "published": "2026-11-17T16:36:28Z",
    "relevance": 24.6,
    "weight": 0.85,
-   "score": 75.3,
+   "score": 74.3,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -2944,7 +3232,7 @@
    "published": "2026-11-17T16:20:46Z",
    "relevance": 22.8,
    "weight": 0.85,
-   "score": 75.3,
+   "score": 74.3,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -2966,7 +3254,7 @@
    "published": "2026-11-17T15:40:15Z",
    "relevance": 19.4,
    "weight": 0.7,
-   "score": 72.2,
+   "score": 71.3,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -2993,7 +3281,7 @@
    "published": "2026-11-17T15:17:10Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 75.2,
+   "score": 74.2,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3021,7 +3309,7 @@
    "published": "2026-11-17T15:06:16Z",
    "relevance": 13.2,
    "weight": 0.85,
-   "score": 61.9,
+   "score": 60.9,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -3043,7 +3331,7 @@
    "published": "2026-11-17T15:02:20Z",
    "relevance": 17.0,
    "weight": 0.7,
-   "score": 69.4,
+   "score": 68.4,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -3073,7 +3361,7 @@
    "published": "2026-11-17T14:17:08Z",
    "relevance": 25.6,
    "weight": 0.85,
-   "score": 75.1,
+   "score": 74.2,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3098,7 +3386,7 @@
    "published": "2026-11-17T14:02:20Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 75.1,
+   "score": 74.1,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3123,35 +3411,7 @@
    "published": "2026-11-17T13:40:59Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 71.2,
-   "first_seen": "2026-11-18T07:36:19Z"
-  },
-  {
-   "id": "1155cb866afc5afc",
-   "title": "LoopPrune: Recurrent Pruning for Looped Diffusion Transformers",
-   "url": "https://arxiv.org/abs/2611.22757",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.LG",
-    "vllm",
-    "transformers",
-    "pytorch"
-   ],
-   "summary": "Looped diffusion Transformers reuse shared blocks to deepen computation and match larger models with fewer parameters, reducing storage and deployment burdens. Yet repeated attention and MLP computations remain costly.\n\nPruning reduces storage and computation by removing redundant parameters or units. Training-free methods struggle to resolve recurrent contributions, while training-based methods lack explicit constraints on position-specific errors affecting later inputs and final outputs.\n\nWe propose LoopPrune, a pruning and recovery framework addressing these requirements. Recurrent importance estimation combines shared-removal effects and position variation to select a shared structure; shared reconstruction pools recurrent input statistics to compensate weights.\n\nLoop-position recovery compares complete denoising predictions at identical student states and matches text guidance, updating all student parameters against a fixed dense teacher. Extensive experiments across four open-source models, six benchmarks, and three pruning paradigms demonstrate effectiveness.\n\nAt 30% structured parameter pruning, Looped-DiT B/16 retains 93.14% of dense six-benchmark average accuracy, exceeding the best baseline by 9.49%. Across PyTorch, vLLM-Omni, and SGLang Diffusion, pruned SDXSv3 reduces peak allocated GPU memory by 34.36-44.64% and accelerates denoising 1.46-1.74x over dense models.",
-   "authors": [
-    "Weizhong Huang",
-    "Huaijia Kou",
-    "Yan Zhang",
-    "Fei Chao",
-    "et al."
-   ],
-   "published": "2026-11-17T13:25:53Z",
-   "relevance": 12.0,
-   "weight": 0.85,
-   "score": 58.4,
+   "score": 70.2,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3173,7 +3433,7 @@
    "published": "2026-11-17T13:04:49Z",
    "relevance": 15.8,
    "weight": 0.7,
-   "score": 65.9,
+   "score": 65.0,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -3201,7 +3461,7 @@
    "published": "2026-11-17T12:57:53Z",
    "relevance": 14.4,
    "weight": 0.85,
-   "score": 65.0,
+   "score": 64.1,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3224,7 +3484,7 @@
    "published": "2026-11-17T12:42:28Z",
    "relevance": 34.4,
    "weight": 0.7,
-   "score": 72.0,
+   "score": 71.0,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -3247,7 +3507,7 @@
    "published": "2026-11-17T12:38:47Z",
    "relevance": 35.0,
    "weight": 0.7,
-   "score": 72.0,
+   "score": 71.0,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -3269,7 +3529,7 @@
    "published": "2026-11-17T12:31:04Z",
    "relevance": 25.0,
    "weight": 0.7,
-   "score": 72.0,
+   "score": 71.0,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -3297,7 +3557,7 @@
    "published": "2026-11-17T11:36:12Z",
    "relevance": 19.8,
    "weight": 0.85,
-   "score": 74.9,
+   "score": 74.0,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3323,7 +3583,7 @@
    "published": "2026-11-17T11:25:44Z",
    "relevance": 21.0,
    "weight": 0.85,
-   "score": 74.9,
+   "score": 74.0,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3350,32 +3610,7 @@
    "published": "2026-11-17T11:01:15Z",
    "relevance": 15.4,
    "weight": 0.85,
-   "score": 67.6,
-   "first_seen": "2026-11-18T07:36:19Z"
-  },
-  {
-   "id": "faf57519ae82cdc1",
-   "title": "Quantum Codes for Distributed Quantum Fault Sensing",
-   "url": "https://arxiv.org/abs/2611.22530",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "cond-mat.mes-hall",
-    "qubits",
-    "entanglement",
-    "quantum"
-   ],
-   "summary": "Targeted recovery in modular quantum processors requires identifying the component affected by a fault. Independent qubits can monitor faults through repeated preparation and measurement. Bell-pair probes improve the guaranteed correct-site probability for unknown local channels, but require partners kept away from the fault.\n\nCan entanglement among exposed probes supply this advantage without protected storage? We establish a quantum-code criterion for optimal distributed fault sensing of one unknown local qubit channel with strength in a prescribed positive range. For one interrogation with zero false alarms and no background noise, suitable code states attain the optimal worst-case correct-site probability, improving on independent probes by 50% with every qubit exposed.\n\nExact attainment is equivalent to mutually orthogonal input and single-qubit Pauli error subspaces. Pairwise entanglement gives no improvement, and entanglement depth at most four cannot exceed 95.54% of the optimum without protected ancillas. Approaching the optimum without protected ancillas also requires a number of probes proportional to the array size to participate in larger entangled factors.\n\nFor a persistent fault under memoryless depolarizing background of fixed strength 0 < eta < 1, independent probes already attain the optimal logarithmic interrogation scaling at fixed success between zero and one and a positive false-alarm budget. In three 1000-site comparisons with specified readouts, an encoded-probe protocol certifies fewer interrogations than independent probes and only one more than optimally decoded ideal Bell pairs, while storing no protected qubits.",
-   "authors": [
-    "Xiu-Hao Deng"
-   ],
-   "published": "2026-11-17T10:20:31Z",
-   "relevance": 12.2,
-   "weight": 0.85,
-   "score": 58.7,
+   "score": 66.7,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3401,7 +3636,7 @@
    "published": "2026-11-17T10:20:02Z",
    "relevance": 13.6,
    "weight": 0.85,
-   "score": 62.6,
+   "score": 61.7,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -3428,61 +3663,8 @@
    "published": "2026-11-17T10:06:34Z",
    "relevance": 14.4,
    "weight": 0.9,
-   "score": 65.8,
+   "score": 64.9,
    "first_seen": "2026-11-18T07:36:19Z"
-  },
-  {
-   "id": "1679b4a73d125a55",
-   "title": "Generating Massive Mechanical Superpositions through Qubit-Mediated Interference",
-   "url": "https://arxiv.org/abs/2611.22428",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "qubit",
-    "quantum"
-   ],
-   "summary": "We propose a method towards demonstrating a quantum superposition of a massive mechanical resonator without the need for exact ground-state cooling, a requirement that becomes increasingly difficult to satisfy for low-frequency resonators. Our scheme relies on coupling the resonator to a spin-qubit.\n\nUsing magnetic force coupling between the motion of the mechanical resonator and the spin-qubit, the resonator is forced into attracted and repelled states as the spin-qubit is coherently controlled. Interference between the resonator states can be observed when a series of $\\tfracπ{2}$-pulses is applied to the spin-qubit within the coherence time of the resonator.\n\nThe protocol describes a true which-path interference experiment suitable for use at ultra-low temperatures, since it requires only three $\\tfracπ{2}$-pulses, separated in time by half a mechanical period, thus minimizing the heat-load and duration of the experiment. By analysing the experimental requirements necessary to successfully execute the protocol, we show that the protocol is suitable for resonators in a broad regime of resonance frequencies, ranging from 1kHz resonators, which have the advantage of a relatively high spin-coupling, to resonators of more than 100kHz, whose mechanical mode is easier to cool.\n\nWe show that interference remains visible for resonator mode occupations exceeding 10 phonons. Lastly, we observe that an implementation of the protocol with low-frequency mechanical resonators provides a promising approach towards testing objective collapse models.",
-   "authors": [
-    "José P. Dupont",
-    "Loek van Everdingen",
-    "Tjerk H. Oosterkamp",
-    "Louk Rademaker"
-   ],
-   "published": "2026-11-17T09:01:26Z",
-   "relevance": 12.0,
-   "weight": 0.85,
-   "score": 58.0,
-   "first_seen": "2026-11-18T07:36:19Z"
-  },
-  {
-   "id": "2c0d6c950c9b819e",
-   "title": "InfuseLoop: Cross-Trajectory Latent Injection for Scalable Parallel Looped Transformers",
-   "url": "https://arxiv.org/abs/2611.22426",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.LG",
-    "kv-cache",
-    "transformers"
-   ],
-   "summary": "Parallel Looped Transformers (PLTs) use otherwise idle decoding compute by overlapping recurrent iterations. However, vanilla PLTs scale poorly with depth: they exhibit training-loss spikes, and their quality gains shrink as more loops are added. The benefit of additional loops depends on the information available to each iteration, so we examine whether the existing computational dependencies limit effective depth scaling.\n\nWe find that only the preceding in-trajectory state is passed across loop boundaries, even though completed cross-trajectory representations are already available. Based on this finding, we propose InfuseLoop, a cross-trajectory latent injection mechanism. It aggregates causally available hidden states from later prediction trajectories through lightweight attention residuals.\n\nThis design preserves token-parallel training and concurrent loop execution, and requires only $O(Rd)$ additional hidden-state storage. Experiments show that InfuseLoop eliminates training-loss spikes and improves validation-loss scaling up to eight loops. At eight loops, InfuseLoop reduces perplexity by 3.4--17.1% relative to vanilla PLTs and by 10.5--37.3% relative to the non-looped baseline.\n\nIt also improves average downstream accuracy by 0.84 and 1.99 percentage points over these two baselines. InfuseLoop incurs only 0.3% decoding time over vanilla PLTs and 23.3% over the non-looped baseline, while keeping the same logical KV-cache footprint as vanilla PLTs.",
-   "authors": [
-    "Zhaofeng Sun",
-    "Lanxiang Hu",
-    "Yu-Yang Qian",
-    "Jiaqi Leng",
-    "et al."
-   ],
-   "published": "2026-11-17T09:00:59Z",
-   "relevance": 10.8,
-   "weight": 0.85,
-   "score": 54.7,
-   "first_seen": "2026-11-22T06:57:16Z"
   },
   {
    "id": "3134d69e1a51c351",
@@ -3509,7 +3691,7 @@
    "published": "2026-11-17T08:40:31Z",
    "relevance": 15.2,
    "weight": 0.85,
-   "score": 66.9,
+   "score": 66.0,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3536,7 +3718,7 @@
    "published": "2026-11-17T07:33:56Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 71.8,
+   "score": 70.9,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3566,7 +3748,7 @@
    "published": "2026-11-17T07:14:52Z",
    "relevance": 26.4,
    "weight": 0.85,
-   "score": 74.5,
+   "score": 73.7,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -3596,7 +3778,7 @@
    "published": "2026-11-17T07:13:44Z",
    "relevance": 14.6,
    "weight": 0.85,
-   "score": 65.1,
+   "score": 64.2,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3624,7 +3806,7 @@
    "published": "2026-11-17T06:53:30Z",
    "relevance": 23.8,
    "weight": 0.85,
-   "score": 74.5,
+   "score": 73.6,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3654,7 +3836,7 @@
    "published": "2026-11-17T06:32:15Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 74.5,
+   "score": 73.6,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3684,7 +3866,7 @@
    "published": "2026-11-17T05:31:01Z",
    "relevance": 24.0,
    "weight": 0.85,
-   "score": 74.4,
+   "score": 73.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3713,7 +3895,7 @@
    "published": "2026-11-17T04:52:41Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 74.4,
+   "score": 73.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3738,7 +3920,7 @@
    "published": "2026-11-17T04:30:11Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 74.3,
+   "score": 73.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3765,7 +3947,7 @@
    "published": "2026-11-17T04:27:48Z",
    "relevance": 14.8,
    "weight": 0.85,
-   "score": 65.4,
+   "score": 64.6,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3793,7 +3975,7 @@
    "published": "2026-11-17T03:58:03Z",
    "relevance": 14.4,
    "weight": 0.85,
-   "score": 64.3,
+   "score": 63.4,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3820,7 +4002,7 @@
    "published": "2026-11-17T03:18:34Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 60.4,
+   "score": 59.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3846,7 +4028,7 @@
    "published": "2026-11-17T03:11:36Z",
    "relevance": 15.2,
    "weight": 0.85,
-   "score": 66.5,
+   "score": 65.6,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3873,7 +4055,7 @@
    "published": "2026-11-17T03:05:34Z",
    "relevance": 14.2,
    "weight": 0.85,
-   "score": 63.7,
+   "score": 62.8,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3899,7 +4081,7 @@
    "published": "2026-11-17T03:02:41Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 70.3,
+   "score": 69.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3929,7 +4111,7 @@
    "published": "2026-11-17T03:00:51Z",
    "relevance": 28.2,
    "weight": 0.85,
-   "score": 74.2,
+   "score": 73.4,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3957,7 +4139,7 @@
    "published": "2026-11-17T02:47:09Z",
    "relevance": 25.4,
    "weight": 0.85,
-   "score": 74.2,
+   "score": 73.4,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -3987,7 +4169,7 @@
    "published": "2026-11-17T02:14:54Z",
    "relevance": 25.8,
    "weight": 0.85,
-   "score": 74.2,
+   "score": 73.3,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -4014,7 +4196,7 @@
    "published": "2026-11-17T01:40:53Z",
    "relevance": 35.8,
    "weight": 0.85,
-   "score": 74.1,
+   "score": 73.3,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -4043,7 +4225,7 @@
    "published": "2026-11-17T00:56:04Z",
    "relevance": 28.4,
    "weight": 0.85,
-   "score": 74.1,
+   "score": 73.2,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -4069,7 +4251,7 @@
    "published": "2026-11-17T00:17:01Z",
    "relevance": 15.0,
    "weight": 0.85,
-   "score": 65.7,
+   "score": 64.9,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -4095,7 +4277,7 @@
    "published": "2026-11-16T22:58:32Z",
    "relevance": 26.2,
    "weight": 0.85,
-   "score": 73.9,
+   "score": 73.1,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -4119,7 +4301,7 @@
    "published": "2026-11-16T22:26:10Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 73.9,
+   "score": 73.1,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -4149,7 +4331,7 @@
    "published": "2026-11-16T21:32:01Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 68.3,
+   "score": 67.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -4175,34 +4357,8 @@
    "published": "2026-11-16T21:13:54Z",
    "relevance": 24.8,
    "weight": 0.9,
-   "score": 74.8,
+   "score": 74.0,
    "first_seen": "2026-11-18T07:36:19Z"
-  },
-  {
-   "id": "082fa2e3aef7ef75",
-   "title": "WM-Quant: Rollout-Aware Post-Training Quantization for JEPA-Style World Models",
-   "url": "https://arxiv.org/abs/2611.21882",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.LG",
-    "quantization"
-   ],
-   "summary": "We present WM-Quant, to our knowledge, the first post-training quantization (PTQ) framework designed specifically for JEPA-style world models. Although world models typically feature relatively few parameters, action planning algorithms often require thousands of inferences, which can quickly become computationally expensive.\n\nPTQ is a natural way to reduce this cost. However, we show that in world models using autoregressive model predictive control (MPC) rollouts, quantization error can compound with each predictor step, resulting in action rankings from the quantized model becoming near-random.\n\nWM-Quant addresses this with three components that build on existing PTQ methods: early-encoder precision, control-path preservation, and rollout-aware scaling. Early-encoder precision protects accurate latent state and goal information to mitigate long-term error propagation.\n\nControl-path preservation allows the world model predictor to distinguish between fine-grained actions, significantly improving action rankings and execution. Rollout-aware scaling jointly calibrates encoder and per-step predictor activation ranges with respect to an entire rollout rather than a single prediction, reducing the cumulative rollout error.\n\nAcross multiple world models, environments, and PTQ methods, WM-Quant substantially improves planning success at low bit-widths, approaching full-precision performance at W4A4.",
-   "authors": [
-    "William Hammer",
-    "Andrew Heuer",
-    "Nikhil Krishna",
-    "Matthew Grenier",
-    "et al."
-   ],
-   "published": "2026-11-16T20:51:59Z",
-   "relevance": 11.4,
-   "weight": 0.85,
-   "score": 55.4,
-   "first_seen": "2026-11-21T19:21:42Z"
   },
   {
    "id": "0ca90d0db4735b67",
@@ -4228,7 +4384,7 @@
    "published": "2026-11-16T20:16:09Z",
    "relevance": 28.0,
    "weight": 0.85,
-   "score": 73.7,
+   "score": 72.9,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -4257,7 +4413,7 @@
    "published": "2026-11-16T19:57:35Z",
    "relevance": 18.4,
    "weight": 0.85,
-   "score": 73.7,
+   "score": 72.9,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -4287,7 +4443,7 @@
    "published": "2026-11-16T18:59:38Z",
    "relevance": 21.2,
    "weight": 0.85,
-   "score": 73.6,
+   "score": 72.9,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4317,7 +4473,7 @@
    "published": "2026-11-16T18:49:49Z",
    "relevance": 29.4,
    "weight": 0.85,
-   "score": 73.6,
+   "score": 72.9,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4339,7 +4495,7 @@
    "published": "2026-11-16T18:21:45Z",
    "relevance": 15.2,
    "weight": 0.7,
-   "score": 62.8,
+   "score": 62.0,
    "first_seen": "2026-11-16T22:11:30Z"
   },
   {
@@ -4365,7 +4521,7 @@
    "published": "2026-11-16T18:00:35Z",
    "relevance": 13.4,
    "weight": 0.85,
-   "score": 60.8,
+   "score": 60.0,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4390,7 +4546,7 @@
    "published": "2026-11-16T17:56:55Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 59.7,
+   "score": 58.9,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4418,7 +4574,7 @@
    "published": "2026-11-16T16:51:20Z",
    "relevance": 21.8,
    "weight": 0.85,
-   "score": 73.5,
+   "score": 72.7,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4439,7 +4595,7 @@
    "published": "2026-11-16T16:30:50Z",
    "relevance": 20.0,
    "weight": 0.7,
-   "score": 70.5,
+   "score": 69.7,
    "first_seen": "2026-11-16T22:11:30Z"
   },
   {
@@ -4462,7 +4618,7 @@
    "published": "2026-11-16T16:24:01Z",
    "relevance": 30.8,
    "weight": 0.7,
-   "score": 70.5,
+   "score": 69.7,
    "first_seen": "2026-11-16T22:11:30Z"
   },
   {
@@ -4489,7 +4645,7 @@
    "published": "2026-11-16T16:15:08Z",
    "relevance": 15.6,
    "weight": 0.85,
-   "score": 66.8,
+   "score": 66.0,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4513,7 +4669,7 @@
    "published": "2026-11-16T15:23:24Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 72.8,
+   "score": 72.1,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4541,7 +4697,7 @@
    "published": "2026-11-16T15:20:32Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 70.6,
+   "score": 69.9,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4570,7 +4726,7 @@
    "published": "2026-11-16T15:07:41Z",
    "relevance": 33.4,
    "weight": 0.85,
-   "score": 73.4,
+   "score": 72.6,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4595,7 +4751,7 @@
    "published": "2026-11-16T14:05:04Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 68.9,
+   "score": 68.1,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4617,7 +4773,7 @@
    "published": "2026-11-16T14:05:00Z",
    "relevance": 24.2,
    "weight": 0.7,
-   "score": 70.3,
+   "score": 69.6,
    "first_seen": "2026-11-16T22:11:30Z"
   },
   {
@@ -4646,7 +4802,7 @@
    "published": "2026-11-16T13:35:40Z",
    "relevance": 14.6,
    "weight": 0.85,
-   "score": 63.8,
+   "score": 63.1,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4668,7 +4824,7 @@
    "published": "2026-11-16T12:44:27Z",
    "relevance": 22.4,
    "weight": 0.7,
-   "score": 70.2,
+   "score": 69.5,
    "first_seen": "2026-11-16T22:11:30Z"
   },
   {
@@ -4695,7 +4851,7 @@
    "published": "2026-11-16T11:40:43Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 73.2,
+   "score": 72.4,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4720,33 +4876,7 @@
    "published": "2026-11-16T11:06:34Z",
    "relevance": 17.2,
    "weight": 0.85,
-   "score": 70.9,
-   "first_seen": "2026-11-17T08:00:11Z"
-  },
-  {
-   "id": "efe0842676feca41",
-   "title": "Fast at the Frontier, Wrong at the Fallback: A Commit-Level Analysis of Threshold Decoding in Diffusion Language Models",
-   "url": "https://arxiv.org/abs/2611.20693",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.CL",
-    "cs.LG",
-    "diffusion language models",
-    "language models"
-   ],
-   "summary": "Diffusion language models (DLMs) can write several tokens per forward pass. Open-weight DLMs commit, in any order, every masked position whose confidence passes a threshold. If none does, a fallback commits the most confident one, and the commits are never revised.\n\nWide windows let the decoder commit far ahead of the text, which should speed up decoding but often costs accuracy. It is unclear where the model is confident and which commits cause errors. We trace every commit of four off-the-shelf DLMs on math, code, translation and summarization, and rerun failing answers with one step changed.\n\nMost tokens become confident only near the frontier, the leftmost masked position, so committing only there, still several tokens per step, is about as fast as committing anywhere. The accuracy loss comes from committing tokens before the text to their left, and committing one token per step does not reduce it. The worst case is an early end-of-sequence token that cuts the answer short.\n\nFallback commits are 11-35% of commits but start 61-72% of the failures that left-to-right decoding avoids. Changing only the step where such a failure starts repairs it more often than changing a similar earlier step. Committing only at the frontier recovers most of the lost accuracy on all four models.\n\nOur code is available at https://github.com/rmakarovv/fast-at-the-frontier.",
-   "authors": [
-    "Roman Makarov",
-    "Zhe Xu",
-    "Jian Kang"
-   ],
-   "published": "2026-11-16T07:58:25Z",
-   "relevance": 13.0,
-   "weight": 0.85,
-   "score": 59.0,
+   "score": 70.2,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4770,61 +4900,7 @@
    "published": "2026-11-16T07:26:03Z",
    "relevance": 29.2,
    "weight": 0.85,
-   "score": 72.9,
-   "first_seen": "2026-11-17T08:00:11Z"
-  },
-  {
-   "id": "34fefd4ac35e4fec",
-   "title": "GEAR$^2$: Pruned Experts Live On through Gated Reuse of Activated Experts and a Missing-Mass Residual",
-   "url": "https://arxiv.org/abs/2611.20616",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.AI",
-    "mixture-of-experts",
-    "large language models",
-    "language models"
-   ],
-   "summary": "Mixture-of-Experts (MoE) Large Language Models (LLMs) activate only a few experts per token while generally keeping all the experts in GPU memory for high efficiency. Expert pruning reduces this GPU memory footprint cost, yet discards the contribution of pruned experts.\n\nExisting remedies either rely on static substitutes, merge experts at the cost of altering their functions, or require costly recovery training. In this paper, we find that the functionalities of pruned experts can be efficiently reconstructed from the activated remaining experts.\n\nWe propose GEAR (Gated Expert Activation Reuse), which reuses the scaled outputs of reliable activated experts without any training or additional expert computation. In addition, we propose GEAR$^2$ to further recover what reuse cannot express with an ultra-lightweight residual.\n\nOn five MoE LLMs from 16B to 106B parameters with 25% and 50% of experts pruned, GEAR improves over its training-free counterparts in nearly every setting (up to 4 pp.) in terms of accuracy, and GEAR$^2$ outperforms baseline approaches (up to 2.75 pp.) in every setting on nine zero-shot benchmarks, with larger advantages (up to 2.72 pp. higher) under more aggressive pruning (up to 50%).",
-   "authors": [
-    "Linliang Chen",
-    "Yan Zhong",
-    "Wang Kang",
-    "Sai Li",
-    "et al."
-   ],
-   "published": "2026-11-16T06:40:09Z",
-   "relevance": 13.2,
-   "weight": 0.85,
-   "score": 59.5,
-   "first_seen": "2026-11-17T08:00:11Z"
-  },
-  {
-   "id": "3af2e66c12dec126",
-   "title": "Noise-Aware Testing of NISQ Quantum Programs: Self-Baseline Oracle with a Controlled False-Positive Rate",
-   "url": "https://arxiv.org/abs/2611.20613",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "cs.SE",
-    "noisy intermediate",
-    "nisq",
-    "quantum"
-   ],
-   "summary": "Testing quantum programs on Noisy Intermediate-Scale Quantum (NISQ) devices faces a test-oracle problem: hardware noise and finite-shot sampling make the runs of a correct program vary as much as those of a faulty one, so oracles with a fixed acceptance threshold produce false positives that depend on the program and the backend.\n\nWe present a noise-aware testing framework built on self-baseline calibration: each run of the program under test is compared with repeated executions of a trusted reference program on the same backend, and the acceptance threshold is the $(1-α)$ quantile of the finite-shot null distribution of the Jensen-Shannon divergence, so the oracle's false-positive rate is a level set in advance.\n\nA noncentral chi-square model predicts detection power, a homogeneity test and a two-run sentinel detect drift, a mutation engine labels every mutant exactly within a three-class noise-aware taxonomy, and zero-noise extrapolation attributes rejections to faults or noise.\n\nIn simulation on nine core benchmarks, 32 QASMBench programs, ten real bugs, seven noise regimes and three device snapshots, the oracle's false-positive rate is 0.0011 at $α= 10^{-3}$ over 9,000 correct runs, against 36-74% for fixed thresholds, 8.9% for a QOIN-style filter and 10.8% for a globally calibrated threshold, while attaining the highest F1 on non-equivalent faults (0.941).\n\nOn an IBM Heron device, using about 14 minutes of QPU time, it rejected none of 82 correct runs and detected 120 of 121 faults and semantic mutants, and a two-run sentinel reduced drift-induced false positives from 27.4% to 1.8%.",
-   "authors": [
-    "Mir Mohammad Yousuf",
-    "Shabir Ahmad Sofi"
-   ],
-   "published": "2026-11-16T06:38:12Z",
-   "relevance": 12.8,
-   "weight": 0.85,
-   "score": 58.4,
+   "score": 72.2,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4850,7 +4926,7 @@
    "published": "2026-11-16T05:44:21Z",
    "relevance": 35.6,
    "weight": 0.85,
-   "score": 72.8,
+   "score": 72.1,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4880,7 +4956,7 @@
    "published": "2026-11-16T02:16:37Z",
    "relevance": 33.8,
    "weight": 0.85,
-   "score": 72.6,
+   "score": 71.9,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4908,7 +4984,7 @@
    "published": "2026-11-16T02:15:03Z",
    "relevance": 36.0,
    "weight": 0.85,
-   "score": 72.6,
+   "score": 71.9,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4935,7 +5011,7 @@
    "published": "2026-11-16T01:21:50Z",
    "relevance": 24.6,
    "weight": 0.85,
-   "score": 72.5,
+   "score": 71.9,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4965,7 +5041,7 @@
    "published": "2026-11-15T22:37:14Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 72.4,
+   "score": 71.7,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4993,7 +5069,7 @@
    "published": "2026-11-15T16:47:29Z",
    "relevance": 24.2,
    "weight": 0.85,
-   "score": 72.1,
+   "score": 71.5,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -5023,7 +5099,7 @@
    "published": "2026-11-15T16:14:14Z",
    "relevance": 28.8,
    "weight": 0.85,
-   "score": 72.0,
+   "score": 71.4,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -5046,7 +5122,7 @@
    "published": "2026-11-15T12:10:37Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 71.8,
+   "score": 71.3,
    "first_seen": "2026-11-15T18:55:20Z"
   },
   {
@@ -5076,7 +5152,7 @@
    "published": "2026-11-15T05:20:54Z",
    "relevance": 21.6,
    "weight": 0.85,
-   "score": 71.5,
+   "score": 71.0,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -5104,7 +5180,7 @@
    "published": "2026-11-14T22:35:41Z",
    "relevance": 23.8,
    "weight": 0.85,
-   "score": 71.2,
+   "score": 70.7,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -5132,7 +5208,7 @@
    "published": "2026-11-14T13:09:50Z",
    "relevance": 19.4,
    "weight": 0.85,
-   "score": 70.8,
+   "score": 70.3,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -5162,7 +5238,7 @@
    "published": "2026-11-14T11:40:22Z",
    "relevance": 23.4,
    "weight": 0.85,
-   "score": 70.7,
+   "score": 70.3,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -5191,7 +5267,7 @@
    "published": "2026-11-14T03:28:05Z",
    "relevance": 24.8,
    "weight": 0.85,
-   "score": 70.4,
+   "score": 70.0,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -5216,7 +5292,7 @@
    "published": "2026-11-13T22:07:20Z",
    "relevance": 22.6,
    "weight": 0.85,
-   "score": 70.2,
+   "score": 69.9,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -5245,7 +5321,7 @@
    "published": "2026-11-13T21:40:06Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 70.2,
+   "score": 69.8,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -5272,7 +5348,7 @@
    "published": "2026-11-13T21:20:46Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 70.2,
+   "score": 69.8,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -5299,7 +5375,7 @@
    "published": "2026-11-13T18:58:59Z",
    "relevance": 23.8,
    "weight": 0.9,
-   "score": 71.1,
+   "score": 70.8,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5322,7 +5398,7 @@
    "published": "2026-11-13T18:36:11Z",
    "relevance": 26.4,
    "weight": 0.7,
-   "score": 67.1,
+   "score": 66.8,
    "first_seen": "2026-11-13T19:47:03Z"
   },
   {
@@ -5349,7 +5425,7 @@
    "published": "2026-11-13T18:20:23Z",
    "relevance": 24.6,
    "weight": 0.85,
-   "score": 70.1,
+   "score": 69.7,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5375,7 +5451,7 @@
    "published": "2026-11-13T17:28:37Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 70.1,
+   "score": 69.7,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5400,7 +5476,7 @@
    "published": "2026-11-13T17:15:22Z",
    "relevance": 18.2,
    "weight": 0.85,
-   "score": 70.1,
+   "score": 69.7,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5427,7 +5503,7 @@
    "published": "2026-11-13T16:58:35Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 70.1,
+   "score": 69.7,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5453,7 +5529,7 @@
    "published": "2026-11-13T15:09:22Z",
    "relevance": 18.6,
    "weight": 0.85,
-   "score": 70.0,
+   "score": 69.7,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5476,7 +5552,7 @@
    "published": "2026-11-13T14:10:57Z",
    "relevance": 18.0,
    "weight": 0.95,
-   "score": 77.0,
+   "score": 76.6,
    "first_seen": "2026-11-13T19:47:03Z"
   },
   {
@@ -5501,7 +5577,7 @@
    "published": "2026-11-13T13:59:45Z",
    "relevance": 18.0,
    "weight": 0.85,
-   "score": 70.0,
+   "score": 69.6,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5530,7 +5606,7 @@
    "published": "2026-11-13T12:52:16Z",
    "relevance": 18.6,
    "weight": 0.85,
-   "score": 69.9,
+   "score": 69.6,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5559,7 +5635,7 @@
    "published": "2026-11-13T12:16:00Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 67.1,
+   "score": 66.8,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5585,7 +5661,7 @@
    "published": "2026-11-13T10:27:33Z",
    "relevance": 25.6,
    "weight": 0.85,
-   "score": 69.9,
+   "score": 69.5,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5613,7 +5689,7 @@
    "published": "2026-11-13T09:25:31Z",
    "relevance": 15.6,
    "weight": 0.85,
-   "score": 63.2,
+   "score": 62.8,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5642,7 +5718,7 @@
    "published": "2026-11-13T07:43:04Z",
    "relevance": 27.4,
    "weight": 0.85,
-   "score": 69.8,
+   "score": 69.5,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5665,7 +5741,7 @@
    "published": "2026-11-13T02:40:00Z",
    "relevance": 23.0,
    "weight": 0.7,
-   "score": 66.6,
+   "score": 66.3,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -5693,7 +5769,7 @@
    "published": "2026-11-12T22:35:16Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 69.5,
+   "score": 69.2,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5717,7 +5793,7 @@
    "published": "2026-11-12T21:03:15Z",
    "relevance": 15.2,
    "weight": 0.85,
-   "score": 61.7,
+   "score": 61.4,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5746,7 +5822,7 @@
    "published": "2026-11-12T20:46:31Z",
    "relevance": 17.4,
    "weight": 0.85,
-   "score": 67.8,
+   "score": 67.5,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -5768,7 +5844,7 @@
    "published": "2026-11-12T16:04:33Z",
    "relevance": 21.6,
    "weight": 0.7,
-   "score": 66.4,
+   "score": 66.1,
    "first_seen": "2026-11-12T19:59:39Z"
   },
   {
@@ -5790,7 +5866,7 @@
    "published": "2026-11-12T15:54:57Z",
    "relevance": 27.8,
    "weight": 0.7,
-   "score": 66.4,
+   "score": 66.1,
    "first_seen": "2026-11-12T19:59:39Z"
   },
   {
@@ -5815,7 +5891,7 @@
    "published": "2026-11-12T15:41:36Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 68.8,
+   "score": 68.5,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -5842,7 +5918,7 @@
    "published": "2026-11-12T15:22:52Z",
    "relevance": 21.6,
    "weight": 0.85,
-   "score": 69.4,
+   "score": 69.1,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -5865,7 +5941,7 @@
    "published": "2026-11-12T14:12:15Z",
    "relevance": 32.8,
    "weight": 0.7,
-   "score": 66.3,
+   "score": 66.1,
    "first_seen": "2026-11-12T19:59:39Z"
   },
   {
@@ -5893,7 +5969,7 @@
    "published": "2026-11-12T13:04:34Z",
    "relevance": 27.0,
    "weight": 0.85,
-   "score": 69.3,
+   "score": 69.0,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -5917,7 +5993,7 @@
    "published": "2026-11-12T12:34:08Z",
    "relevance": 26.4,
    "weight": 0.85,
-   "score": 69.3,
+   "score": 69.0,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -5942,7 +6018,7 @@
    "published": "2026-11-12T12:32:14Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 69.3,
+   "score": 69.0,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -5967,7 +6043,7 @@
    "published": "2026-11-12T10:48:44Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 63.7,
+   "score": 63.4,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -5997,7 +6073,7 @@
    "published": "2026-11-12T10:45:24Z",
    "relevance": 33.2,
    "weight": 0.85,
-   "score": 69.2,
+   "score": 69.0,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6020,7 +6096,7 @@
    "published": "2026-11-12T10:02:05Z",
    "relevance": 24.6,
    "weight": 0.7,
-   "score": 66.2,
+   "score": 66.0,
    "first_seen": "2026-11-12T19:59:39Z"
   },
   {
@@ -6046,7 +6122,7 @@
    "published": "2026-11-12T09:05:14Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 65.3,
+   "score": 65.1,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6075,7 +6151,7 @@
    "published": "2026-11-12T07:45:46Z",
    "relevance": 27.0,
    "weight": 0.85,
-   "score": 69.2,
+   "score": 68.9,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6105,7 +6181,7 @@
    "published": "2026-11-12T07:36:46Z",
    "relevance": 16.2,
    "weight": 0.85,
-   "score": 64.2,
+   "score": 63.9,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6129,7 +6205,7 @@
    "published": "2026-11-12T07:09:05Z",
    "relevance": 16.8,
    "weight": 0.85,
-   "score": 65.8,
+   "score": 65.6,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6153,7 +6229,7 @@
    "published": "2026-11-12T05:44:19Z",
    "relevance": 27.0,
    "weight": 0.85,
-   "score": 69.1,
+   "score": 68.9,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6183,7 +6259,7 @@
    "published": "2026-11-12T04:17:09Z",
    "relevance": 23.4,
    "weight": 0.85,
-   "score": 69.1,
+   "score": 68.8,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6210,7 +6286,7 @@
    "published": "2026-11-12T03:10:15Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 68.5,
+   "score": 68.3,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6230,7 +6306,7 @@
    "published": "2026-11-12T00:00:00Z",
    "relevance": 18.6,
    "weight": 1.0,
-   "score": 72.0,
+   "score": 71.8,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6249,7 +6325,7 @@
    "published": "2026-11-12T00:00:00Z",
    "relevance": 15.6,
    "weight": 1.0,
-   "score": 65.3,
+   "score": 65.1,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6276,7 +6352,7 @@
    "published": "2026-11-11T21:45:59Z",
    "relevance": 16.0,
    "weight": 0.9,
-   "score": 64.4,
+   "score": 64.2,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6302,7 +6378,7 @@
    "published": "2026-11-11T18:54:03Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 65.0,
+   "score": 64.8,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6329,7 +6405,7 @@
    "published": "2026-11-11T16:15:08Z",
    "relevance": 24.0,
    "weight": 0.85,
-   "score": 68.8,
+   "score": 68.6,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6352,7 +6428,7 @@
    "published": "2026-11-11T15:48:13Z",
    "relevance": 24.2,
    "weight": 0.7,
-   "score": 65.8,
+   "score": 65.6,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -6375,7 +6451,7 @@
    "published": "2026-11-11T15:23:36Z",
    "relevance": 24.8,
    "weight": 0.7,
-   "score": 65.8,
+   "score": 65.6,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -6402,7 +6478,7 @@
    "published": "2026-11-11T14:54:19Z",
    "relevance": 22.2,
    "weight": 0.85,
-   "score": 68.8,
+   "score": 68.6,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6424,7 +6500,7 @@
    "published": "2026-11-11T14:03:23Z",
    "relevance": 25.4,
    "weight": 0.7,
-   "score": 65.8,
+   "score": 65.6,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -6446,7 +6522,7 @@
    "published": "2026-11-11T11:51:36Z",
    "relevance": 20.0,
    "weight": 0.7,
-   "score": 65.8,
+   "score": 65.6,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -6469,7 +6545,7 @@
    "published": "2026-11-11T09:30:09Z",
    "relevance": 21.8,
    "weight": 0.7,
-   "score": 65.7,
+   "score": 65.5,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -6495,7 +6571,7 @@
    "published": "2026-11-11T04:48:10Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 63.1,
+   "score": 62.9,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -6515,7 +6591,7 @@
    "published": "2026-11-11T00:00:00Z",
    "relevance": 21.6,
    "weight": 1.0,
-   "score": 71.6,
+   "score": 71.4,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -6538,7 +6614,7 @@
    "published": "2026-11-10T18:23:52Z",
    "relevance": 47.0,
    "weight": 0.7,
-   "score": 65.5,
+   "score": 65.3,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -6561,7 +6637,7 @@
    "published": "2026-11-10T18:10:47Z",
    "relevance": 32.0,
    "weight": 0.7,
-   "score": 65.5,
+   "score": 65.3,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -6586,7 +6662,7 @@
    "published": "2026-11-10T17:45:12Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 67.9,
+   "score": 67.7,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6614,7 +6690,7 @@
    "published": "2026-11-10T17:44:52Z",
    "relevance": 26.4,
    "weight": 0.85,
-   "score": 68.5,
+   "score": 68.3,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6643,7 +6719,7 @@
    "published": "2026-11-10T17:42:14Z",
    "relevance": 26.6,
    "weight": 0.85,
-   "score": 68.5,
+   "score": 68.3,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6666,7 +6742,7 @@
    "published": "2026-11-10T17:32:31Z",
    "relevance": 26.6,
    "weight": 0.7,
-   "score": 65.5,
+   "score": 65.3,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -6693,7 +6769,7 @@
    "published": "2026-11-10T16:36:18Z",
    "relevance": 20.4,
    "weight": 0.9,
-   "score": 69.4,
+   "score": 69.3,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6723,7 +6799,7 @@
    "published": "2026-11-10T15:57:35Z",
    "relevance": 31.0,
    "weight": 0.85,
-   "score": 68.4,
+   "score": 68.3,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6753,7 +6829,7 @@
    "published": "2026-11-10T14:05:45Z",
    "relevance": 22.4,
    "weight": 0.85,
-   "score": 68.4,
+   "score": 68.2,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6779,7 +6855,7 @@
    "published": "2026-11-10T13:17:04Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 64.5,
+   "score": 64.3,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6802,7 +6878,7 @@
    "published": "2026-11-10T13:09:20Z",
    "relevance": 21.6,
    "weight": 0.7,
-   "score": 65.4,
+   "score": 65.2,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -6823,7 +6899,7 @@
    "published": "2026-11-10T13:01:26Z",
    "relevance": 21.2,
    "weight": 0.7,
-   "score": 65.4,
+   "score": 65.2,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -6846,7 +6922,7 @@
    "published": "2026-11-10T12:51:41Z",
    "relevance": 20.0,
    "weight": 0.7,
-   "score": 65.4,
+   "score": 65.2,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -6874,7 +6950,7 @@
    "published": "2026-11-10T12:14:57Z",
    "relevance": 21.0,
    "weight": 0.85,
-   "score": 68.4,
+   "score": 68.2,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6902,7 +6978,7 @@
    "published": "2026-11-10T09:45:02Z",
    "relevance": 25.6,
    "weight": 0.85,
-   "score": 68.3,
+   "score": 68.2,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6931,7 +7007,7 @@
    "published": "2026-11-10T08:54:35Z",
    "relevance": 20.0,
    "weight": 0.85,
-   "score": 68.3,
+   "score": 68.2,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6961,7 +7037,7 @@
    "published": "2026-11-10T06:18:48Z",
    "relevance": 20.6,
    "weight": 0.85,
-   "score": 68.3,
+   "score": 68.1,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -6986,7 +7062,7 @@
    "published": "2026-11-10T03:48:51Z",
    "relevance": 18.4,
    "weight": 0.85,
-   "score": 68.3,
+   "score": 68.1,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -7013,7 +7089,7 @@
    "published": "2026-11-10T03:41:59Z",
    "relevance": 22.8,
    "weight": 0.85,
-   "score": 68.3,
+   "score": 68.1,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -7043,7 +7119,7 @@
    "published": "2026-11-10T01:37:38Z",
    "relevance": 22.6,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.1,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -7070,7 +7146,7 @@
    "published": "2026-11-10T00:46:51Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.1,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -7100,7 +7176,7 @@
    "published": "2026-11-09T23:55:02Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.1,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -7127,7 +7203,7 @@
    "published": "2026-11-09T23:46:26Z",
    "relevance": 17.4,
    "weight": 0.85,
-   "score": 66.5,
+   "score": 66.4,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -7157,7 +7233,7 @@
    "published": "2026-11-09T22:08:58Z",
    "relevance": 36.0,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.1,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -7185,7 +7261,7 @@
    "published": "2026-11-09T22:01:46Z",
    "relevance": 25.6,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.1,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -7213,7 +7289,7 @@
    "published": "2026-11-09T20:06:38Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.0,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -7235,7 +7311,7 @@
    "published": "2026-11-09T19:52:56Z",
    "relevance": 22.4,
    "weight": 0.7,
-   "score": 65.2,
+   "score": 65.0,
    "first_seen": "2026-11-09T22:26:17Z"
   },
   {
@@ -7263,7 +7339,7 @@
    "published": "2026-11-09T18:31:41Z",
    "relevance": 18.0,
    "weight": 0.85,
-   "score": 68.1,
+   "score": 68.0,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7288,7 +7364,7 @@
    "published": "2026-11-09T17:34:12Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 68.1,
+   "score": 68.0,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7316,7 +7392,7 @@
    "published": "2026-11-09T17:21:17Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 68.1,
+   "score": 68.0,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7343,7 +7419,7 @@
    "published": "2026-11-09T16:11:49Z",
    "relevance": 21.8,
    "weight": 0.85,
-   "score": 68.1,
+   "score": 68.0,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7366,7 +7442,7 @@
    "published": "2026-11-09T14:52:08Z",
    "relevance": 36.2,
    "weight": 0.7,
-   "score": 65.1,
+   "score": 65.0,
    "first_seen": "2026-11-09T22:26:17Z"
   },
   {
@@ -7389,7 +7465,7 @@
    "published": "2026-11-09T14:37:31Z",
    "relevance": 27.2,
    "weight": 0.7,
-   "score": 65.1,
+   "score": 65.0,
    "first_seen": "2026-11-09T22:26:17Z"
   },
   {
@@ -7416,7 +7492,7 @@
    "published": "2026-11-09T13:08:01Z",
    "relevance": 17.8,
    "weight": 0.9,
-   "score": 68.5,
+   "score": 68.4,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7443,7 +7519,7 @@
    "published": "2026-11-09T11:30:23Z",
    "relevance": 26.0,
    "weight": 0.85,
-   "score": 68.1,
+   "score": 67.9,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7469,7 +7545,7 @@
    "published": "2026-11-09T11:27:18Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 68.1,
+   "score": 67.9,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7499,7 +7575,7 @@
    "published": "2026-11-09T09:18:12Z",
    "relevance": 30.0,
    "weight": 0.85,
-   "score": 68.0,
+   "score": 67.9,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7524,7 +7600,7 @@
    "published": "2026-11-09T08:03:18Z",
    "relevance": 20.2,
    "weight": 0.85,
-   "score": 68.0,
+   "score": 67.9,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7553,7 +7629,7 @@
    "published": "2026-11-09T06:59:18Z",
    "relevance": 24.6,
    "weight": 0.85,
-   "score": 68.0,
+   "score": 67.9,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7581,7 +7657,7 @@
    "published": "2026-11-09T02:03:03Z",
    "relevance": 26.0,
    "weight": 0.85,
-   "score": 68.0,
+   "score": 67.9,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7606,7 +7682,7 @@
    "published": "2026-11-08T23:31:46Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 67.9,
+   "score": 67.8,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7628,7 +7704,7 @@
    "published": "2026-11-08T21:44:31Z",
    "relevance": 21.6,
    "weight": 0.9,
-   "score": 68.9,
+   "score": 68.8,
    "first_seen": "2026-11-08T22:11:47Z"
   },
   {
@@ -7656,7 +7732,7 @@
    "published": "2026-11-08T18:22:36Z",
    "relevance": 35.2,
    "weight": 0.85,
-   "score": 67.9,
+   "score": 67.8,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7679,7 +7755,7 @@
    "published": "2026-11-08T18:17:32Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 67.9,
+   "score": 67.8,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7707,7 +7783,7 @@
    "published": "2026-11-08T15:28:33Z",
    "relevance": 20.2,
    "weight": 0.85,
-   "score": 67.9,
+   "score": 67.8,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7733,7 +7809,7 @@
    "published": "2026-11-08T13:16:45Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 67.8,
+   "score": 67.7,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7763,7 +7839,7 @@
    "published": "2026-11-08T11:43:34Z",
    "relevance": 33.8,
    "weight": 0.85,
-   "score": 67.8,
+   "score": 67.7,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7790,7 +7866,7 @@
    "published": "2026-11-08T02:40:47Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 65.0,
+   "score": 64.9,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7817,7 +7893,7 @@
    "published": "2026-11-07T20:57:33Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.6,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7843,7 +7919,7 @@
    "published": "2026-11-07T16:43:30Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 63.8,
+   "score": 63.7,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7870,7 +7946,7 @@
    "published": "2026-11-07T14:21:18Z",
    "relevance": 27.8,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.6,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7929,7 +8005,7 @@
    "published": "2026-11-07T09:27:01Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 67.1,
+   "score": 67.0,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7954,7 +8030,7 @@
    "published": "2026-11-06T21:25:45Z",
    "relevance": 20.0,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -7978,7 +8054,7 @@
    "published": "2026-11-06T21:22:37Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8005,7 +8081,7 @@
    "published": "2026-11-06T21:02:37Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8288,7 +8364,7 @@
    "published": "2026-11-06T09:59:42Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 63.6,
+   "score": 63.5,
    "first_seen": "2026-11-09T06:43:18Z"
   },
   {
@@ -8317,7 +8393,7 @@
    "published": "2026-11-06T07:34:40Z",
    "relevance": 25.4,
    "weight": 0.85,
-   "score": 67.5,
+   "score": 67.4,
    "first_seen": "2026-11-09T06:43:18Z"
   },
   {
@@ -8364,7 +8440,7 @@
    "published": "2026-11-05T22:21:29Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 64.7,
+   "score": 64.6,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8388,7 +8464,7 @@
    "published": "2026-11-05T21:49:55Z",
    "relevance": 17.4,
    "weight": 0.85,
-   "score": 65.8,
+   "score": 65.7,
    "first_seen": "2026-11-09T06:43:18Z"
   },
   {
@@ -8718,7 +8794,7 @@
    "published": "2026-11-05T08:58:35Z",
    "relevance": 24.0,
    "weight": 0.7,
-   "score": 64.4,
+   "score": 64.3,
    "first_seen": "2026-11-05T20:00:56Z"
   },
   {
@@ -8743,7 +8819,7 @@
    "published": "2026-11-05T08:39:28Z",
    "relevance": 21.6,
    "weight": 0.85,
-   "score": 67.4,
+   "score": 67.3,
    "first_seen": "2026-11-06T06:54:30Z"
   },
   {
@@ -8770,7 +8846,7 @@
    "published": "2026-11-05T07:19:53Z",
    "relevance": 20.2,
    "weight": 0.85,
-   "score": 67.4,
+   "score": 67.3,
    "first_seen": "2026-11-06T06:54:30Z"
   },
   {
@@ -8800,7 +8876,7 @@
    "published": "2026-11-05T06:50:05Z",
    "relevance": 50.6,
    "weight": 0.85,
-   "score": 67.4,
+   "score": 67.3,
    "first_seen": "2026-11-06T06:54:30Z"
   },
   {
@@ -8829,7 +8905,7 @@
    "published": "2026-11-05T05:58:36Z",
    "relevance": 25.0,
    "weight": 0.85,
-   "score": 67.4,
+   "score": 67.3,
    "first_seen": "2026-11-06T06:54:30Z"
   },
   {
@@ -8974,7 +9050,7 @@
    "published": "2026-11-04T19:00:06Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 66.8,
+   "score": 66.7,
    "first_seen": "2026-11-06T06:54:30Z"
   },
   {
@@ -9455,7 +9531,7 @@
    "published": "2026-11-04T03:02:27Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -9483,7 +9559,7 @@
    "published": "2026-11-04T02:57:13Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -9504,7 +9580,7 @@
    "published": "2026-11-04T00:00:00Z",
    "relevance": 20.4,
    "weight": 1.0,
-   "score": 70.3,
+   "score": 70.2,
    "first_seen": "2026-11-04T19:50:27Z"
   },
   {
@@ -9552,7 +9628,7 @@
    "published": "2026-11-03T22:52:34Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 63.4,
+   "score": 63.3,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -9579,7 +9655,7 @@
    "published": "2026-11-03T20:55:26Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -9605,7 +9681,7 @@
    "published": "2026-11-03T18:59:47Z",
    "relevance": 22.2,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-04T06:32:51Z"
   },
   {
@@ -9632,7 +9708,7 @@
    "published": "2026-11-03T18:16:29Z",
    "relevance": 47.2,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-04T06:32:51Z"
   },
   {
@@ -9660,7 +9736,7 @@
    "published": "2026-11-03T17:18:12Z",
    "relevance": 27.0,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-04T06:32:51Z"
   },
   {
@@ -10868,7 +10944,7 @@
    "published": "2026-11-02T01:30:27Z",
    "relevance": 19.8,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-03T14:23:54Z"
   },
   {
@@ -10919,7 +10995,7 @@
    "published": "2026-11-01T18:28:00Z",
    "relevance": 16.2,
    "weight": 0.95,
-   "score": 64.2,
+   "score": 64.1,
    "first_seen": "2026-11-01T22:06:24Z"
   },
   {
@@ -11232,7 +11308,7 @@
    "published": "2026-10-31T15:06:46Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 66.6,
+   "score": 66.5,
    "first_seen": "2026-11-03T14:23:54Z"
   },
   {
@@ -12461,7 +12537,7 @@
    "published": "2026-10-28T16:05:00Z",
    "relevance": 30.8,
    "weight": 0.7,
-   "score": 64.1,
+   "score": 64.0,
    "first_seen": "2026-10-28T22:39:14Z"
   },
   {
@@ -12484,7 +12560,7 @@
    "published": "2026-10-28T13:09:30Z",
    "relevance": 30.2,
    "weight": 0.7,
-   "score": 64.1,
+   "score": 64.0,
    "first_seen": "2026-10-28T22:39:14Z"
   },
   {
@@ -12507,7 +12583,7 @@
    "published": "2026-10-28T13:08:26Z",
    "relevance": 27.2,
    "weight": 0.7,
-   "score": 64.1,
+   "score": 64.0,
    "first_seen": "2026-10-28T22:39:14Z"
   },
   {
@@ -12535,7 +12611,7 @@
    "published": "2026-10-28T10:09:14Z",
    "relevance": 22.6,
    "weight": 0.85,
-   "score": 67.1,
+   "score": 67.0,
    "first_seen": "2026-10-30T05:55:11Z"
   },
   {
@@ -12565,7 +12641,7 @@
    "published": "2026-10-28T05:58:47Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 67.1,
+   "score": 67.0,
    "first_seen": "2026-10-30T05:55:11Z"
   },
   {
@@ -13879,28 +13955,6 @@
    "weight": 0.85,
    "score": 67.0,
    "first_seen": "2026-10-27T05:12:15Z"
-  },
-  {
-   "id": "d1a3b4fa5d93fb49",
-   "title": "Building Reasoning Models from the Ground Up: A Full Video Course",
-   "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
-   "source": "Ahead of AI",
-   "also_in": [],
-   "type": "blog",
-   "domain": "ai",
-   "tags": [
-    "llms",
-    "reasoning models",
-    "language model",
-    "pytorch"
-   ],
-   "summary": "I have written a lot about reasoning models here over the last two years on Ahead of AI, including a recent article on mechanisms to control reasoning effort levels in contemporary LLMs . Reasoning models are still as relevant as ever. In fact, almost all current-generation LLMs today are reasoning models or offer a reasoning mode.\n\nFor those who are interested in how reasoning models work, including inference scaling, reinforcement learning, and distillation, I wrote my recent Build Reasoning Model (From Scratch), which implements these from the ground up in PyTorch, which, in my experience, is still the best way to understand and learn how things really work.\n\nNow, in the last few months, I also sat down and recorded accompanying lectures I wanted to share with you. So, below, you will find eight reasoning model-from-scratch coding videos (11 hours of content).\n\nWe start with a pre-trained LLM and implement methods to evaluate and improve it in Python and PyTorch. So, if you enjoyed my Coding LLMs from the Ground Up course last year, this is essentially the sequel (but you can also watch it without the prior course as a prerequisite).\n\nI’m currently taking a short break and will be back soon with more exciting LLM research roundups next month. In the meantime, I hope you enjoy coding along!\n\nHow LLMs, reasoning models, and agents relate and fit together As a small side note, and since I often get asked how reasoning models relate to today’s AI agents, here’s a short section on this before getting started with the videos.\n\nA reasoning model is essentially an upgrade from a conventional LLM, that is, adding more post-training via reinforcement learning with verifiable rewards (and optionally inference scaling techniques) to make it more capable of solving more challenging problems. Classically, reasoning models are developed for math and code, but the capabilities can generalize to other problem domains as well.",
-   "authors": [],
-   "published": "2026-10-24T11:14:32Z",
-   "relevance": 14.2,
-   "weight": 0.85,
-   "score": 56.5,
-   "first_seen": "2026-11-22T06:57:16Z"
   },
   {
    "id": "aa8e036d1fb95fa8",
@@ -15757,26 +15811,6 @@
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
-   "id": "3eea63ed8c658b08",
-   "title": "Qiskit 2.6.0rc1",
-   "url": "https://github.com/Qiskit/qiskit/releases/tag/2.6.0rc1",
-   "source": "Qiskit Releases",
-   "also_in": [],
-   "type": "release",
-   "domain": "quantum",
-   "tags": [
-    "qubit",
-    "qiskit"
-   ],
-   "summary": "Added\n\nDefine Custom Operations via the C API ( #16549 )\n\nAdd base implementation of LoweringPassManager ( #17105 )\n\nDefine Pass and PassContext handles for Python ( #17104 )\n\nAdd implementation of IR handle extraction ( #17103 )\n\nDefine Python API for Rust-native PassManager ( #17089 )\n\nAdd Delay with units of Dt to the C API ( #16915 )",
-   "authors": [],
-   "published": "2026-10-13T21:45:06Z",
-   "relevance": 13.2,
-   "weight": 0.8,
-   "score": 57.7,
-   "first_seen": "2026-11-21T19:21:42Z"
-  },
-  {
    "id": "44b7f39312a4eca5",
    "title": "MAGI-2 Preview on vLLM-Omni: Bringing a 114B Audio-Video MoE DiT to Moore Threads MUSA with torchada",
    "url": "https://vllm.ai/blog/2026-10-12-magi2-preview-musa",
@@ -15813,26 +15847,6 @@
    "relevance": 15.6,
    "weight": 1.0,
    "score": 63.3,
-   "first_seen": "2026-10-24T12:50:45Z"
-  },
-  {
-   "id": "c1c2327436f3faf4",
-   "title": "vLLM Support for NVIDIA Vera Rubin NVL72: 7.8x Throughput over GB200 NVL72",
-   "url": "https://vllm.ai/blog/2026-10-09-vera-rubin-preview",
-   "source": "vLLM Blog",
-   "also_in": [],
-   "type": "blog",
-   "domain": "ai",
-   "tags": [
-    "vllm",
-    "moe"
-   ],
-   "summary": "vLLM now runs on NVIDIA Vera Rubin NVL72 with day-0 model support, Rubin-tuned FlashInfer kernels, and locality-aware MoE, delivering 7.8x the per-GPU throughput of GB200 NVL72 on AgentX.\n\nNVIDIA Vera Rubin is the next-generation platform built for agentic inference. Inferact, NVIDIA, Red Hat, and the vLLM community have been bringing vLLM up on Vera Rubin NVL72 since it was announced, and vLLM runs on Vera Rubin NVL72 today with daily container builds and support for models from DeepSeek, Moonshot AI, Z.ai, and MiniMax.\n\nThis post is an early look at where things stand, and here are a few highlights from the work so far:\n\nFigure 1. Per-GPU comparison of NVIDIA Vera Rubin NVL72 and GB200 NVL72. Hover over a metric to highlight its part of the GPU; \"Show table\" lists every value. Sources: NVIDIA Vera Rubin NVL72 and GB200 NVL72 spec pages, and NVIDIA Rubin developer blogs.\n\nThe Vera Rubin platform delivers great performance through extreme co-design of its rack components – it comes with five new, distinct, purpose-built rack-scale systems for agentic AI workloads: Vera Rubin NVL72, Vera CPU rack, Groq 3 LPX, Spectrum-6 SPX, and BlueField-4 STX Storage.",
-   "authors": [],
-   "published": "2026-10-09T00:00:00Z",
-   "relevance": 18.6,
-   "weight": 1.0,
-   "score": 70.0,
    "first_seen": "2026-10-24T12:50:45Z"
   }
  ]
