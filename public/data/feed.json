@@ -1,18 +1,18 @@
 {
  "meta": {
-  "generated_at": "2026-11-25T08:43:11Z",
+  "generated_at": "2026-11-25T21:46:13Z",
   "sample": false,
   "total": 600,
-  "new_this_run": 41,
+  "new_this_run": 10,
   "domains": {
    "math": "Mathematics (Algebra)",
    "quantum": "Quantum Computing",
    "ai": "LLMs & AI Architectures"
   },
   "counts": {
-   "math": 23,
-   "quantum": 234,
-   "ai": 343
+   "math": 22,
+   "quantum": 236,
+   "ai": 342
   },
   "sources": {
    "arXiv math.AC": "ok (30)",
@@ -22,29 +22,174 @@
    "arXiv math.RT": "ok (30)",
    "arXiv quant-ph": "ok (17)",
    "arXiv cs.CL/LG/AI": "ok (67)",
-   "Ahead of AI": "ok (19)",
-   "SageMath Releases": "ok (10)",
-   "GAP Releases": "ok (10)",
-   "Lil'Log": "ok (40)",
-   "Quanta Magazine": "ok (0)",
-   "Hugging Face Blog": "ok (8)",
-   "Google Quantum AI": "ok (3)",
-   "vLLM Blog": "ok (40)",
-   "The Quantum Insider": "ok (9)",
-   "PennyLane Releases": "ok (10)",
    "Cirq Releases": "ok (10)",
-   "Shtetl-Optimized": "ok (10)",
+   "The Quantum Insider": "ok (10)",
    "SGLang Releases": "ok (10)",
    "Qiskit Releases": "ok (10)",
    "FlashAttention Releases": "ok (10)",
-   "Mamba Releases": "ok (10)",
    "Terence Tao": "ok (10)",
-   "Macaulay2 Releases": "ok (10)",
+   "Mamba Releases": "ok (10)",
+   "SageMath Releases": "ok (10)",
+   "GAP Releases": "ok (10)",
    "Transformers Releases": "ok (10)",
-   "vLLM Releases": "ok (10)"
+   "vLLM Releases": "ok (10)",
+   "Ahead of AI": "ok (19)",
+   "Lil'Log": "ok (40)",
+   "Google Quantum AI": "ok (2)",
+   "Hugging Face Blog": "ok (8)",
+   "Quanta Magazine": "ok (0)",
+   "vLLM Blog": "ok (40)",
+   "Shtetl-Optimized": "ok (10)",
+   "Macaulay2 Releases": "ok (10)",
+   "PennyLane Releases": "ok (10)"
   }
  },
  "items": [
+  {
+   "id": "d2dbef37dffb2f61",
+   "title": "IQM to Deploy 54-Qubit Quantum Computer at South Korean Data Centre",
+   "url": "https://thequantuminsider.com/2026/11/25/iqm-deploy-54-qubit-quantum-computer-south-korea-data-centre",
+   "source": "The Quantum Insider",
+   "also_in": [],
+   "type": "blog",
+   "domain": "quantum",
+   "tags": [
+    "qubit",
+    "quantum computer",
+    "quantum"
+   ],
+   "summary": "Insider Brief\n\nIQM Quantum Computers has secured an order from South Korean company QAI for an IQM Radiance R3 54-qubit quantum computer to be installed at QAI’s data centre in Seoul.\n\nThe system is expected to be delivered by the end of 2027 and will be the first IQM quantum computer deployed in a private data centre in Asia.\n\nQAI plans to offer access through its Quantum-as-a-Service platform, combining quantum computing resources with GPU-based infrastructure for enterprise, research and public-sector customers.\n\nPRESS RELEASE — IQM Quantum Computers (Nasdaq: IQMX), a global leader in superconducting quantum computers, is partnering with QAI Co., Ltd., a South Korean quantum-AI data center and cloud infrastructure company, to deliver an IQM Radiance R3 54-qubit quantum computer. The order covers a complete on-premises quantum computing solution for QAI’s data center, including an IQM Radiance R3 system and associated services.\n\nThe 54-qubit quantum computer will be the first IQM quantum computer deployed to a private data center in Asia. The deal brings on-premises quantum computing into QAI’s commercial data center environment, where it will help build applications and a resilient, competitive infrastructure within South Korea’s quantum ecosystem. The IQM Radiance R3 is expected to be delivered and installed on-premises at QAI’s data center in Seoul by the end of 2027.\n\n“We are proud to partner with QAI as they bring an IQM Radiance R3 54-qubit quantum computer to their data center in Seoul,” said Sylwia Barthel de Weydenthal, Chief Commercial Officer at IQM Quantum Computers. “This sale marks an important milestone for quantum computing in South Korea. With on-premises access to IQM Radiance, QAI will be able to accelerate research, develop commercial applications for businesses and support sovereign quantum capabilities that keep critical technology and data under national control. We look forward to working closely with QAI to build a thriving quantum ecosystem in Korea and across the Asia-Pacific region.”",
+   "authors": [],
+   "published": "2026-11-25T18:08:13Z",
+   "relevance": 26.6,
+   "weight": 0.7,
+   "score": 92.9,
+   "first_seen": "2026-11-25T21:46:13Z"
+  },
+  {
+   "id": "e7d28e5c2f7fd1dd",
+   "title": "QuIC Welcomes the European Quantum Act, Pledges to ‘Mobilize Industry”",
+   "url": "https://thequantuminsider.com/2026/11/25/quic-welcomes-the-european-quantum-act-pledges-to-mobilize-industry",
+   "source": "The Quantum Insider",
+   "also_in": [],
+   "type": "blog",
+   "domain": "quantum",
+   "tags": [
+    "logical qubits",
+    "qubits",
+    "quantum"
+   ],
+   "summary": "Insider Brief\n\nThe European Quantum Industry Consortium ( QuIC ) welcomed the European Commission’s proposed Quantum Act and called for stronger measures to help European quantum companies scale.\n\nQuIC plans to ask lawmakers for €7.7 billion to €12.3 billion in public procurement commitments over five years and a dedicated quantum share of the proposed Sovereign Tech Equity Fund.\n\nQuIC will consult its more than 240 member organizations over two weeks to develop recommendations for the European Parliament and Council.\n\nPRESS RELEASE — The European Quantum Industry Consortium ( QuIC ) welcomes the publication of the European Commission’s proposal for the European Quantum Act, marking a significant milestone in Europe’s ambition to establish itself as a global leader in quantum technologies.\n\nAs Europe’s largest quantum industry consortium, QuIC is committed to supporting the ambitions of the Quantum Act and ensuring that the expertise, priorities and needs of the European quantum industry are represented throughout the legislative process.\n\nThe Quantum Act presents an important opportunity to strengthen Europe’s industrial competitiveness, accelerate the commercialisation and adoption of quantum technologies, and establish the conditions necessary for a sustainable, resilient and globally competitive quantum ecosystem.",
+   "authors": [],
+   "published": "2026-11-25T14:05:24Z",
+   "relevance": 10.4,
+   "weight": 0.7,
+   "score": 70.6,
+   "first_seen": "2026-11-25T21:46:13Z"
+  },
+  {
+   "id": "4af67a55d659b8f1",
+   "title": "European Commission Proposes Quantum Act and New Sovereign Tech Equity Fund",
+   "url": "https://thequantuminsider.com/2026/11/25/european-commission-proposes-quantum-act-and-new-sovereign-tech-equity-fund",
+   "source": "The Quantum Insider",
+   "also_in": [],
+   "type": "blog",
+   "domain": "quantum",
+   "tags": [
+    "quantum computing",
+    "quantum"
+   ],
+   "summary": "Insider Brief\n\nThe European Commission proposed a Quantum Act to commercialize European quantum research, strengthen supply chains and coordinate the transition to post-quantum cryptography.\n\nThe proposal would bring EU and national programs together to fund research, expand access to shared facilities and help companies bring quantum technologies to market.\n\nThe act would lay the groundwork for a Sovereign Tech Equity Fund to invest in strategic technologies, and the European Parliament and Council will now consider the proposal.\n\nPRESS RELEASE — The European Commission today proposed the Quantum Act , a new framework to help turn Europe’s quantum research into products and services, strengthen supply chains and prepare Europe’s digital systems for post-quantum cryptography. The proposal also lays the groundwork for the Sovereign Tech Equity Fund (STEF).\n\nThe impact of quantum technologies will be profound, from navigation without satellites and faster drug discovery to ultra-advanced batteries and next-generation secure communications. Quantum technologies are moving from laboratories to products and services.\n\n“Quantum technologies will shape the future of industry, security and innovation, and they will have a profound impact on our societies. Europe needs to accelerate now. With the Quantum Act, we are putting in place the key elements to turn our world-class quantum research into industrial capacity, strengthen critical supply chains and prepare for the cyber risks linked to quantum computing. Europe has already built strong foundations in quantum; now we must turn them into industrial scale, resilient supply chains and secure deployment. “– Henna Virkkunen, Executive Vice-President for Tech Sovereignty, Security and Democracy",
+   "authors": [],
+   "published": "2026-11-25T11:01:30Z",
+   "relevance": 9.2,
+   "weight": 0.7,
+   "score": 66.4,
+   "first_seen": "2026-11-25T21:46:13Z"
+  },
+  {
+   "id": "bfe15952d0e774eb",
+   "title": "ARQUE Systems and Forschungszentrum Jülich Plan 200-Qubit Quantum Computer",
+   "url": "https://thequantuminsider.com/2026/11/25/arque-systems-forschungszentrum-julich-200-qubit-quantum-computer",
+   "source": "The Quantum Insider",
+   "also_in": [],
+   "type": "blog",
+   "domain": "quantum",
+   "tags": [
+    "qubit",
+    "quantum computer",
+    "quantum"
+   ],
+   "summary": "Insider Brief\n\nARQUE Systems and Forschungszentrum Jülich are developing a semiconductor-based quantum computer with up to 200 qubits under the €35 million Q-STAR.NRW project.\n\nThe system uses electron-spin qubits in silicon and silicon-germanium structures, with a shuttling technique designed to move quantum information across the chip and reduce control-line requirements.\n\nThe project runs until the end of 2029 and will integrate the quantum computer into Jülich’s JUNIQ infrastructure alongside classical high-performance computing resources.\n\nPRESS RELEASE — ARQUE Systems, a Jülich–Aachen spin-off, aims to overcome a major hurdle in quantum computing using innovative quantum semiconductor technology. As part of the € 35 million Q-STAR.NRW project, their approach will now be tested with up to 200 qubits, helping to stimulate value creation in the Rhenish mining area.\n\nThe development of quantum computers faces major technological challenges. In future, systems containing a very large numbers of qubits will be required for complex applications in materials research, chemistry, logistics, and process optimization. Taking into account the additional effort required for error correction, this demand could rise to hundreds of thousands, or even millions, of physical qubits. Scalability is therefore a crucial prerequisite for the development of such high-performance systems.\n\nThis is where ARQUE Systems comes in. The deep-tech start-up, a spin-off from Forschungszentrum Jülich and RWTH Aachen University, is pursuing a patented technological approach that draws on established semiconductor technology. This technology already enables billions of transistors to be integrated onto a single computer chip.",
+   "authors": [],
+   "published": "2026-11-25T10:18:34Z",
+   "relevance": 26.6,
+   "weight": 0.7,
+   "score": 90.6,
+   "first_seen": "2026-11-25T21:46:13Z"
+  },
+  {
+   "id": "329e9b2cb8709669",
+   "title": "Chulalongkorn Researchers Call for Greater Quantum Investment in Thailand",
+   "url": "https://thequantuminsider.com/2026/11/25/chulalongkorn-researchers-call-greater-quantum-investment-thailand",
+   "source": "The Quantum Insider",
+   "also_in": [],
+   "type": "blog",
+   "domain": "quantum",
+   "tags": [
+    "qubits",
+    "quantum computing",
+    "quantum"
+   ],
+   "summary": "Insider Brief\n\nChulalongkorn University researchers are calling for sustained investment in quantum education and research to prepare Thailand for opportunities in quantum computing, industry and data security.\n\nThe researchers say Thailand could enter the quantum industry by developing specialist components and expertise in areas such as quantum sensing and communications.\n\nThey also recommend that organisations review their encryption systems and prepare for post-quantum cryptography as quantum computing advances.\n\nPRESS RELEASE — Chulalongkorn University physicists are urging Thailand to build quantum expertise and\n\nstrengthen research support to prepare for opportunities in computing, industry and data security. With specialists taking years to train, the university’s learning programs offer a way to start preparing now.\n\nAssistant Professor Dr. Thiparat Chotibut, Assistant Professor Dr. Salinporn Kittiwatanakul and Dr. Supanut Thanasilp, of Chula’s Department of Physics, Faculty of Science, said preparation should begin before quantum computing becomes widely available. Chula’s Siam Quantum Square (SQ²) offers educational activities and free online courses for students and the public.",
+   "authors": [],
+   "published": "2026-11-25T09:34:28Z",
+   "relevance": 12.8,
+   "weight": 0.7,
+   "score": 76.0,
+   "first_seen": "2026-11-25T21:46:13Z"
+  },
+  {
+   "id": "9049a00f7e903170",
+   "title": "Nexent Capital IFSC Launches $1 Billion Quantum Computing-ready AI Infrastructure & Advanced Energy Fund",
+   "url": "https://thequantuminsider.com/2026/11/25/nexent-capital-launches-1-billion-ai-infrastructure-energy-fund",
+   "source": "The Quantum Insider",
+   "also_in": [],
+   "type": "blog",
+   "domain": "quantum",
+   "tags": [
+    "quantum computing",
+    "quantum"
+   ],
+   "summary": "Insider Brief\n\nNexent Capital has launched Nexent Capital ADGM Fund I, a closed-end fund targeting US$1 billion in commitments, with a US$1.6 billion hard cap, for quantum-ready AI infrastructure and advanced energy investments.\n\nThe fund will invest across five strategies, including infrastructure private equity, private credit, special-situations M&A, growth equity and public equities.\n\nStructured through an ADGM-domiciled master fund and a GIFT City-based IFSCA-regulated feeder, the fund has a US$20 million anchor commitment and is preparing for FSRA authorisation.\n\nPRESS RELEASE — Nexent Capital IFSC Private Limited (“Nexent Capital”) today announced the launch of Nexent Capital ADGM Fund I, a closed-end fund targeting US$1 billion in capital commitments — expandable up to a US$1.6 billion hard cap — dedicated to quantum-ready AI infrastructure and advanced energy investment. The Fund is structured as an ADGM-domiciled Qualified Investor Fund (the Master Fund), with a GIFT City-based IFSCA-regulated Alternative Investment Fund (AIF) acting as its feeder, and Nexent Capital ADGM Limited being established as its licensed ADGM Fund Manager.\n\nNexent Capital ADGM Fund I will deploy capital across five complementary strategies: infrastructure private equity in AI and data-center assets; private credit and structured capital; special-situations M&A; growth equity and PIPEs; and liquid, public equity exposure within the AI and data-center value chain. The Fund has an anchor commitment of US$20 million from the Tyagi family office and line of sight to an identified pipeline of quantum-ready AI infrastructure and advanced energy projects across North America and India, including data-center and power assets sponsored by affiliates of the Nexent Capital and Tryfacta platform.\n\nCommenting on the launch, Adesh Tyagi, Managing Partner, Nexent Capital IFSC Private Limited, said, “AI is being built on a foundation of physical infrastructure — power, land, and compute — that most capital isn’t positioned to finance at the scale or speed this moment demands. Nexent Capital ADGM Fund I, with a GIFT City, Gujarat-based IFSCA-regulated Alternative Investment Fund (AIF) acting as its feeder, is designed to meet that gap directly, giving institutional and family-office investors a disciplined way to back the infrastructure and energy assets that will underpin the next decade of AI growth.”",
+   "authors": [],
+   "published": "2026-11-25T09:17:07Z",
+   "relevance": 9.8,
+   "weight": 0.7,
+   "score": 67.6,
+   "first_seen": "2026-11-25T21:46:13Z"
+  },
+  {
+   "id": "ec0990e6c020272f",
+   "title": "Standard Chartered Expands Quantum Computing Research Program Following Successful Research Phase",
+   "url": "https://thequantuminsider.com/2026/11/25/standard-chartered-expands-quantum-computing-research-program-following-successful-research-phase",
+   "source": "The Quantum Insider",
+   "also_in": [],
+   "type": "blog",
+   "domain": "quantum",
+   "tags": [
+    "quantum algorithms",
+    "quantum computing",
+    "quantum"
+   ],
+   "summary": "Insider Brief\n\nStandard Chartered is expanding its quantum computing research program after a first year supported by the Monetary Authority of Singapore , with work spanning language modeling, forecasting and derivatives pricing.\n\nIn tests, a quantum-inspired method for adapting language models used about one-eighteenth as many trainable parameters as conventional methods, while a hybrid forecasting approach improved predictions with 28% fewer parameters.\n\nQuantum algorithms matched conventional derivatives pricing accuracy in tests using as little as one-eighteenth the number of iterations.\n\nPRESS RELEASE — Standard Chartered today announced the expansion of its quantum computing research programme, following the successful completion of its first year of research supported under the Financial Sector Technology & Innovation (FSTI) Quantum Technology scheme, administered by the Monetary Authority of Singapore (MAS)1. The expansion reinforces the Bank’s commitment to exploring emerging technologies that could transform financial services.\n\nIn its first year, the programme explored quantum and quantum-inspired approaches for language modelling, time-series forecasting – the analysis of sequentially ordered, time-stamped data, and the pricing of financial derivatives.\n\nLarge language models are computationally expensive to train and deploy, while quantum language models remain at an early stage of development. Quantum specialists at Standard Chartered used knowledge distillation to help a smaller quantum language model learn from a larger classical model, aiming to narrow the performance gap and explore more resource-efficient approaches to language processing.",
+   "authors": [],
+   "published": "2026-11-25T08:15:02Z",
+   "relevance": 20.0,
+   "weight": 0.7,
+   "score": 90.1,
+   "first_seen": "2026-11-25T21:46:13Z"
+  },
   {
    "id": "c1732dc4d10ab367",
    "title": "Prospects and limitations of adaptive variational quantum algorithms for lattice field theories: a case study in 2+1 dimensions",
@@ -71,7 +216,7 @@
    "published": "2026-11-24T18:55:38Z",
    "relevance": 36.0,
    "weight": 0.85,
-   "score": 93.0,
+   "score": 89.7,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -96,7 +241,7 @@
    "published": "2026-11-24T18:48:08Z",
    "relevance": 12.0,
    "weight": 0.9,
-   "score": 77.3,
+   "score": 74.0,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -126,7 +271,7 @@
    "published": "2026-11-24T18:41:59Z",
    "relevance": 33.8,
    "weight": 0.85,
-   "score": 92.9,
+   "score": 89.6,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -151,7 +296,7 @@
    "published": "2026-11-24T18:14:52Z",
    "relevance": 19.8,
    "weight": 0.85,
-   "score": 92.8,
+   "score": 89.5,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -176,7 +321,7 @@
    "published": "2026-11-24T17:43:09Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 92.1,
+   "score": 88.8,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -203,7 +348,7 @@
    "published": "2026-11-24T17:31:55Z",
    "relevance": 13.6,
    "weight": 0.85,
-   "score": 80.4,
+   "score": 77.1,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -233,7 +378,7 @@
    "published": "2026-11-24T17:18:25Z",
    "relevance": 13.2,
    "weight": 0.85,
-   "score": 79.2,
+   "score": 76.0,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -257,7 +402,7 @@
    "published": "2026-11-24T17:07:06Z",
    "relevance": 14.2,
    "weight": 0.85,
-   "score": 81.9,
+   "score": 78.7,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -287,7 +432,7 @@
    "published": "2026-11-24T16:54:37Z",
    "relevance": 36.2,
    "weight": 0.85,
-   "score": 92.4,
+   "score": 89.2,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -313,7 +458,7 @@
    "published": "2026-11-24T16:41:01Z",
    "relevance": 10.8,
    "weight": 0.85,
-   "score": 72.4,
+   "score": 69.2,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -340,7 +485,7 @@
    "published": "2026-11-24T16:35:25Z",
    "relevance": 14.2,
    "weight": 0.85,
-   "score": 81.8,
+   "score": 78.6,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -370,7 +515,7 @@
    "published": "2026-11-24T16:22:59Z",
    "relevance": 12.0,
    "weight": 0.85,
-   "score": 75.6,
+   "score": 72.4,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -390,7 +535,7 @@
    "published": "2026-11-24T16:13:08Z",
    "relevance": 11.4,
    "weight": 0.95,
-   "score": 80.9,
+   "score": 77.7,
    "first_seen": "2026-11-24T22:30:35Z"
   },
   {
@@ -419,7 +564,7 @@
    "published": "2026-11-24T16:06:53Z",
    "relevance": 26.8,
    "weight": 0.85,
-   "score": 92.2,
+   "score": 89.0,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -445,7 +590,7 @@
    "published": "2026-11-24T16:06:35Z",
    "relevance": 21.6,
    "weight": 0.9,
-   "score": 93.2,
+   "score": 90.0,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -471,7 +616,7 @@
    "published": "2026-11-24T15:54:46Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 87.7,
+   "score": 84.5,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -498,7 +643,7 @@
    "published": "2026-11-24T15:52:31Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 86.6,
+   "score": 83.4,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -526,65 +671,7 @@
    "published": "2026-11-24T15:27:06Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 87.6,
-   "first_seen": "2026-11-25T08:43:11Z"
-  },
-  {
-   "id": "e87731b4e11976ea",
-   "title": "Sample-Efficient In-Context Adaptation via Sleep",
-   "url": "https://arxiv.org/abs/2611.32802",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.LG",
-    "cs.AI",
-    "ssm",
-    "transformer",
-    "long-context",
-    "language models"
-   ],
-   "summary": "The ability to learn and generalize from limited experience, or sample efficiency, is a cornerstone of intelligence. How can we build language models that turn a few user interactions, a few snippets of unfamiliar code, or a handful of experimental results provided in context into knowledge that generalizes?\n\nPrior work has found that sleep, a process where the model performs $N$ recurrent forward passes to refine its representations of a chunk of context, can improve long-context reasoning (specifically, within SSM-attention hybrid models). We study whether this method also improves in-context adaptation on general, non-synthetic tasks for transformer language models.\n\nTo this end, we pre-train language models up to 1.2B-parameters on up to 100B tokens with sleep mechanisms. Notably, longer sleep (i.e., using a larger number of recurrent forward passes $N$) enables the model to learn faster in-context on multiple few-shot algorithmic, question-answering tasks, while also achieving lower next-token prediction loss on out-of-distribution evaluations.\n\nOn held-out code, models with $N=2$ and $N=4$ match the no-sleep baseline's loss using $2.10\\times$ and $2.39\\times$ fewer tokens in-context, respectively. More broadly, we view our work as a step toward building models that have better tradeoffs between in-context adaptation and decoding latency.",
-   "authors": [
-    "Sangyun Lee",
-    "Zhang Enyan",
-    "Michael Xu",
-    "Hao Tang",
-    "et al."
-   ],
-   "published": "2026-11-24T15:24:19Z",
-   "relevance": 8.4,
-   "weight": 0.85,
-   "score": 65.4,
-   "first_seen": "2026-11-25T08:43:11Z"
-  },
-  {
-   "id": "0f88c5cdb50ac389",
-   "title": "Programmable multipartite entanglement analogues",
-   "url": "https://arxiv.org/abs/2611.32759",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "physics.optics",
-    "entanglement",
-    "quantum"
-   ],
-   "summary": "Quantum entanglement underpins the quantum information science. Its multipartite forms distribute coherence across several subsystems, but controlling their composition and order is increasingly difficult as more subsystems participate.\n\nClassical nonseparable waves provide accessible analogues of these structures, although existing implementations largely fix the participating degrees of freedom through their generating architectures. Here we overcome this constraint by making multipartiteness itself programmable in electromagnetic fields.\n\nA spatiotemporal metasurface reconfigures the identity and number of coherently linked state spaces independently across polarization, frequency, orbital angular momentum, wavevector direction, and orthogonal envelope modes. We realize complete Bell-like and Greenberger-Horne-Zeilinger-like families from bipartite to five-partite order and exchange constituents at fixed order.\n\nTo our knowledge, the five-partite state has the highest multipartite order experimentally realized in classical electromagnetic fields. These results establish the distribution of coherence across physical state spaces as a programmable property of classical waves and provide a platform for studying selected structures of multipartite quantum states without invoking quantum entanglement or nonlocality.",
-   "authors": [
-    "Long Chen",
-    "Qing Chun Yin",
-    "Zi Xuan Cai",
-    "Zhou He",
-    "et al."
-   ],
-   "published": "2026-11-24T15:00:58Z",
-   "relevance": 8.2,
-   "weight": 0.85,
-   "score": 64.7,
+   "score": 84.4,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -612,7 +699,7 @@
    "published": "2026-11-24T15:00:29Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 86.4,
+   "score": 83.2,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -639,7 +726,7 @@
    "published": "2026-11-24T15:00:23Z",
    "relevance": 21.6,
    "weight": 0.85,
-   "score": 91.9,
+   "score": 88.8,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -660,7 +747,7 @@
    "published": "2026-11-24T14:54:13Z",
    "relevance": 12.2,
    "weight": 0.7,
-   "score": 72.8,
+   "score": 69.6,
    "first_seen": "2026-11-24T22:30:35Z"
   },
   {
@@ -688,7 +775,7 @@
    "published": "2026-11-24T13:48:35Z",
    "relevance": 14.4,
    "weight": 0.85,
-   "score": 81.6,
+   "score": 78.5,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -711,7 +798,7 @@
    "published": "2026-11-24T13:34:16Z",
    "relevance": 14.6,
    "weight": 0.7,
-   "score": 79.1,
+   "score": 76.0,
    "first_seen": "2026-11-24T22:30:35Z"
   },
   {
@@ -733,7 +820,7 @@
    "published": "2026-11-24T13:33:45Z",
    "relevance": 43.2,
    "weight": 0.7,
-   "score": 88.6,
+   "score": 85.4,
    "first_seen": "2026-11-24T22:30:35Z"
   },
   {
@@ -759,7 +846,7 @@
    "published": "2026-11-24T13:15:59Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 91.5,
+   "score": 88.4,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -784,7 +871,7 @@
    "published": "2026-11-24T13:09:43Z",
    "relevance": 15.2,
    "weight": 0.85,
-   "score": 83.7,
+   "score": 80.6,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -810,7 +897,7 @@
    "published": "2026-11-24T12:24:59Z",
    "relevance": 9.6,
    "weight": 0.9,
-   "score": 68.9,
+   "score": 65.9,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -833,7 +920,7 @@
    "published": "2026-11-24T12:23:46Z",
    "relevance": 29.4,
    "weight": 0.7,
-   "score": 88.3,
+   "score": 85.2,
    "first_seen": "2026-11-24T22:30:35Z"
   },
   {
@@ -856,7 +943,7 @@
    "published": "2026-11-24T12:23:06Z",
    "relevance": 18.8,
    "weight": 0.7,
-   "score": 88.3,
+   "score": 85.2,
    "first_seen": "2026-11-24T22:30:35Z"
   },
   {
@@ -885,7 +972,7 @@
    "published": "2026-11-24T11:53:18Z",
    "relevance": 38.2,
    "weight": 0.85,
-   "score": 91.1,
+   "score": 88.1,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -910,7 +997,7 @@
    "published": "2026-11-24T11:51:19Z",
    "relevance": 13.2,
    "weight": 0.9,
-   "score": 78.8,
+   "score": 75.7,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -938,7 +1025,7 @@
    "published": "2026-11-24T11:20:02Z",
    "relevance": 14.8,
    "weight": 0.85,
-   "score": 82.1,
+   "score": 79.1,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -967,7 +1054,7 @@
    "published": "2026-11-24T10:52:54Z",
    "relevance": 18.2,
    "weight": 0.85,
-   "score": 90.9,
+   "score": 87.9,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -995,33 +1082,7 @@
    "published": "2026-11-24T09:39:12Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 85.0,
-   "first_seen": "2026-11-25T08:43:11Z"
-  },
-  {
-   "id": "6056c3a43dd83494",
-   "title": "Hochschild operations and other invariants of stable equivalences of Morita type",
-   "url": "https://arxiv.org/abs/2611.32253",
-   "source": "arXiv math.RT",
-   "also_in": [],
-   "type": "paper",
-   "domain": "math",
-   "tags": [
-    "math.RT",
-    "math.CT",
-    "commutative ring",
-    "noetherian",
-    "gorenstein",
-    "cohomology"
-   ],
-   "summary": "We study stable equivalences defined by bimodule tensor identities over a commutative ring $R$. For the $R$-split exact structure, these identities preserve positive Hochschild homology and positive Hochschild cohomology with its cup product, Gerstenhaber bracket and, in prime characteristic, restricted power. A triangular comparison also identifies the relative singular Hochschild cochain complexes as $B_\\infty$-algebras.\n\nFor reduced pairs of finite-dimensional Frobenius algebras over an algebraically closed field, with diagonalizable Nakayama automorphisms, we construct compatible Frobenius functionals and compare the Tate--Hochschild BV operators in all degrees. For flat algebras over $R$ we give a Hochschild-cohomological criterion for comparing marked associative deformations. It applies to biadjoint Morita-type pairs and, by reduction, to all stable equivalences of Morita type between finite-dimensional algebras over any field.\n\nWe compare the Bezrukavnikov--Ginzburg maps in characteristic zero by using a common triangular deformation or by lifting a two-sided tilting complex. We also compare marked module deformations over local Artin rings and their augmented universal rings. Further applications concern connected outer automorphism group schemes over perfect fields, the kernels of the quotient maps on ordinary algebraic $K$-theory, and the nonconnective $K$-theory of enhanced relative singularity categories.\n\nWe construct biadjoint representatives over Henselian Noetherian local rings and relative stable tensor functors for almost $ν$-stable derived equivalences. We also answer a question of Abe and Hoshino about preservation of the Gorenstein condition in a fixed codimension.",
-   "authors": [
-    "Shengyong Pan"
-   ],
-   "published": "2026-11-24T09:29:22Z",
-   "relevance": 8.4,
-   "weight": 0.9,
-   "score": 64.9,
+   "score": 82.0,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -1049,7 +1110,7 @@
    "published": "2026-11-24T09:07:34Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 76.6,
+   "score": 73.6,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -1071,7 +1132,7 @@
    "published": "2026-11-24T08:52:49Z",
    "relevance": 13.8,
    "weight": 0.7,
-   "score": 75.7,
+   "score": 72.8,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1092,7 +1153,7 @@
    "published": "2026-11-24T08:43:08Z",
    "relevance": 20.6,
    "weight": 0.7,
-   "score": 87.4,
+   "score": 84.4,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1121,7 +1182,7 @@
    "published": "2026-11-24T07:43:22Z",
    "relevance": 10.8,
    "weight": 0.85,
-   "score": 70.1,
+   "score": 67.2,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -1149,7 +1210,7 @@
    "published": "2026-11-24T07:42:23Z",
    "relevance": 22.8,
    "weight": 0.85,
-   "score": 90.1,
+   "score": 87.2,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -1177,7 +1238,7 @@
    "published": "2026-11-24T06:51:43Z",
    "relevance": 14.4,
    "weight": 0.85,
-   "score": 79.9,
+   "score": 77.0,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -1204,31 +1265,7 @@
    "published": "2026-11-24T06:50:52Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 89.9,
-   "first_seen": "2026-11-25T08:43:11Z"
-  },
-  {
-   "id": "73fd5110cce65a80",
-   "title": "A machine learning architecture for scaling of holographic quantum circuits",
-   "url": "https://arxiv.org/abs/2611.31867",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "qubits",
-    "quantum"
-   ],
-   "summary": "We describe an architecture and workflow for learning and generalizing the syntax and parameters of holographic quantum circuits (HQCs), which are natural quantum circuit analogs of classical tensor networks. An HQC uses mid-circuit measurements and resets on a small subset of \"physical\" qubits whose measurement outcomes become correlated through coupling with a register of persistent \"ancilla\" qubits, analogous to the physical and bond indices of a tensor network.\n\nHence, an HQC with fixed qubit resources can efficiently generate samples from a large quantum state, and adding qubits to the HQC ansatz has the effect of exponentially increasing the effective bond dimension. Our machine learning approach provides mechanisms for harnessing both features of HQCs by extrapolating the syntax (e.g., a sequence of gates, measurements, and resets) and parameters (e.g., the angles appearing in single-qubit rotations) from a dataset of HQCs to longer or more expressive HQCs.\n\nWe demonstrate the methodology and its performance on an analytically solvable dataset formed by a vector-valued generalization of the W-state. Finally, we provide an outlook for usage of the methodology for scaling the effective bond dimensions of HQCs in quantum simulation.",
-   "authors": [
-    "Cliff Sun",
-    "Michael L. Wall"
-   ],
-   "published": "2026-11-24T03:18:06Z",
-   "relevance": 9.2,
-   "weight": 0.85,
-   "score": 64.6,
+   "score": 87.0,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -1258,7 +1295,7 @@
    "published": "2026-11-24T00:49:10Z",
    "relevance": 32.0,
    "weight": 0.85,
-   "score": 88.5,
+   "score": 85.8,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -1278,7 +1315,7 @@
    "published": "2026-11-24T00:00:00Z",
    "relevance": 25.8,
    "weight": 1.0,
-   "score": 91.3,
+   "score": 88.6,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1297,7 +1334,7 @@
    "published": "2026-11-24T00:00:00Z",
    "relevance": 19.2,
    "weight": 1.0,
-   "score": 91.3,
+   "score": 88.6,
    "first_seen": "2026-11-24T22:30:35Z"
   },
   {
@@ -1324,7 +1361,7 @@
    "published": "2026-11-23T22:28:36Z",
    "relevance": 25.0,
    "weight": 0.85,
-   "score": 88.0,
+   "score": 85.3,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -1350,7 +1387,7 @@
    "published": "2026-11-23T21:47:40Z",
    "relevance": 13.8,
    "weight": 0.9,
-   "score": 77.2,
+   "score": 74.5,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -1374,7 +1411,7 @@
    "published": "2026-11-23T19:16:45Z",
    "relevance": 15.0,
    "weight": 0.85,
-   "score": 79.0,
+   "score": 76.4,
    "first_seen": "2026-11-25T08:43:11Z"
   },
   {
@@ -1397,7 +1434,7 @@
    "published": "2026-11-23T18:39:43Z",
    "relevance": 38.4,
    "weight": 0.7,
-   "score": 84.2,
+   "score": 81.6,
    "first_seen": "2026-11-23T23:58:34Z"
   },
   {
@@ -1422,7 +1459,7 @@
    "published": "2026-11-23T18:39:21Z",
    "relevance": 15.0,
    "weight": 0.85,
-   "score": 78.8,
+   "score": 76.3,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1448,7 +1485,7 @@
    "published": "2026-11-23T18:34:44Z",
    "relevance": 13.2,
    "weight": 0.85,
-   "score": 73.8,
+   "score": 71.3,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1477,34 +1514,7 @@
    "published": "2026-11-23T18:22:25Z",
    "relevance": 12.2,
    "weight": 0.85,
-   "score": 71.0,
-   "first_seen": "2026-11-24T09:59:17Z"
-  },
-  {
-   "id": "7fd35eed398116cb",
-   "title": "Attention Latent Feedback",
-   "url": "https://arxiv.org/abs/2611.31154",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.LG",
-    "mixture-of-experts",
-    "self-attention"
-   ],
-   "summary": "During autoregressive decoding, the deeper representations of the previous token have already been computed, yet shallow layers at the current token cannot read them directly because standard self-attention connects positions only at the same depth. We introduce Attention Latent Feedback (ALF), an architecture that allows every sublayer to attend to the outputs of the deeper layers at the previous position.\n\nTraining unrolls this cross-position recurrence into two parallel passes, whereas decoding remains single-pass using cached previous-token states. Across mixture-of-experts models with up to 4.0B parameters, ALF lowers held-out loss by 0.022-0.024 nats over the standard residual with about 1.1% decoding FLOP overhead, and consistently outperforms prior final-state feedback across all three scales on both standard and attention residual backbones.\n\nOn MoE-1.6B, ALF matches a $1.38\\times$ larger baseline token budget, and on MoE-4.0B it lifts average accuracy across seventeen downstream benchmarks from 45.1% to 47.0%. Analysis further reveals that intermediate and nearby deeper layers drive most of this benefit, allowing a fixed nearest-window variant to retain 89%-94% of the gain at linear read cost while learned attention widens its margin with scale.",
-   "authors": [
-    "Xuyuan Xiong",
-    "Siyu Chen",
-    "Mengzhao Chen",
-    "Yue Su",
-    "et al."
-   ],
-   "published": "2026-11-23T18:21:05Z",
-   "relevance": 10.2,
-   "weight": 0.85,
-   "score": 65.4,
+   "score": 68.5,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1529,33 +1539,7 @@
    "published": "2026-11-23T18:18:43Z",
    "relevance": 11.4,
    "weight": 0.9,
-   "score": 69.8,
-   "first_seen": "2026-11-24T09:59:17Z"
-  },
-  {
-   "id": "e2fd41073e22ebaf",
-   "title": "Look Back, Draft Ahead: Corrective Prefix Attention for Parallel Speculative Decoding",
-   "url": "https://arxiv.org/abs/2611.31112",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.CL",
-    "speculative decoding"
-   ],
-   "summary": "Parallel speculative decoders propose an entire token block at once, yet one early inconsistency can cause the target to reject its remaining suffix. We introduce Corrective Prefix Attention (CPA), which combines prefix-aware selection with autoregressive supervision to improve these parallel drafts.\n\nCPA lets each candidate attend to earlier choices within the block. Fixed candidate shortlists allow all pairwise interactions to be computed before selection, reducing the sequential walk to table lookups, accumulation and lightweight scoring rather than repeated neural evaluations.\n\nAn auxiliary autoregressive loss trains the shared backbone on clean prefixes without adding an inference pass. Across eight math, code and dialogue benchmarks with Qwen3-4B and Qwen3-8B targets on Ascend NPUs, CPA commits 13--15\\% more tokens per verification round than DSpark and 25--26\\% more than DFlash.\n\nIts mean speedups reach $3.35\\times$ and $3.37\\times$ under greedy decoding and $2.86\\times$ under sampling for both targets. Ablations support both components, while capacity sweeps demonstrate that greater acceptance alone does not guarantee faster decoding.\n\nThese results motivate correcting parallel proposals with causal information while keeping sequential computation inexpensive.",
-   "authors": [
-    "Mohammad Mahdi Moradi",
-    "Ali Pourranjbar",
-    "Zongzuo Wang",
-    "Mingming Zhu",
-    "et al."
-   ],
-   "published": "2026-11-23T17:52:33Z",
-   "relevance": 10.0,
-   "weight": 0.85,
-   "score": 64.8,
+   "score": 67.2,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1584,7 +1568,7 @@
    "published": "2026-11-23T17:43:16Z",
    "relevance": 23.2,
    "weight": 0.85,
-   "score": 87.0,
+   "score": 84.4,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1611,7 +1595,7 @@
    "published": "2026-11-23T17:36:37Z",
    "relevance": 16.2,
    "weight": 0.85,
-   "score": 82.0,
+   "score": 79.4,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1640,7 +1624,7 @@
    "published": "2026-11-23T16:35:53Z",
    "relevance": 20.6,
    "weight": 0.85,
-   "score": 86.8,
+   "score": 84.2,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1663,7 +1647,7 @@
    "published": "2026-11-23T16:25:00Z",
    "relevance": 11.8,
    "weight": 0.85,
-   "score": 69.5,
+   "score": 67.0,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1691,7 +1675,7 @@
    "published": "2026-11-23T16:20:24Z",
    "relevance": 14.4,
    "weight": 0.85,
-   "score": 76.7,
+   "score": 74.2,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1718,7 +1702,7 @@
    "published": "2026-11-23T15:45:43Z",
    "relevance": 13.4,
    "weight": 0.85,
-   "score": 73.8,
+   "score": 71.3,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1745,7 +1729,7 @@
    "published": "2026-11-23T15:27:20Z",
    "relevance": 26.8,
    "weight": 0.85,
-   "score": 86.5,
+   "score": 84.0,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1773,7 +1757,7 @@
    "published": "2026-11-23T14:48:55Z",
    "relevance": 15.6,
    "weight": 0.85,
-   "score": 79.7,
+   "score": 77.3,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1801,7 +1785,7 @@
    "published": "2026-11-23T14:18:27Z",
    "relevance": 11.6,
    "weight": 0.85,
-   "score": 68.5,
+   "score": 66.1,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1825,7 +1809,7 @@
    "published": "2026-11-23T14:01:47Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 86.2,
+   "score": 83.8,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1855,7 +1839,7 @@
    "published": "2026-11-23T13:29:40Z",
    "relevance": 25.4,
    "weight": 0.85,
-   "score": 86.1,
+   "score": 83.7,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1884,7 +1868,7 @@
    "published": "2026-11-23T13:15:47Z",
    "relevance": 20.0,
    "weight": 0.85,
-   "score": 86.1,
+   "score": 83.7,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1910,30 +1894,8 @@
    "published": "2026-11-23T13:00:54Z",
    "relevance": 12.6,
    "weight": 0.85,
-   "score": 71.0,
+   "score": 68.6,
    "first_seen": "2026-11-24T09:59:17Z"
-  },
-  {
-   "id": "4d007f40ddca1038",
-   "title": "planqc Expands Into the UK With New Cambridge Site",
-   "url": "https://thequantuminsider.com/2026/11/23/planqc-expands-into-the-uk-with-new-cambridge-site",
-   "source": "The Quantum Insider",
-   "also_in": [],
-   "type": "blog",
-   "domain": "quantum",
-   "tags": [
-    "quantum hardware",
-    "neutral atom",
-    "quantum computing",
-    "quantum"
-   ],
-   "summary": "Insider Brief\n\nGerman quantum computing company planqc is expanding into the United Kingdom with a new subsidiary and a neutral-atom quantum computing site in Cambridge.\n\nThe Cambridge site will house a laboratory to assemble, integrate and test quantum computers, with planqc aiming to build a team of about 20 people.\n\nplanqc will work with the University of Cambridge’s Cavendish Laboratory to develop optical lattices, which use laser light to arrange atoms and could help scale quantum processors.\n\nPRESS RELEASE — planqc , one of Europe’s leading developers of neutral-atom quantum computers, is expanding into the United Kingdom with the establishment of planqc UK Ltd and a new site in Cambridge. The company is investing in the double-digit millions in the UK.\n\nCambridge will host a full neutral-atom laboratory for the assembly, integration and commissioning of quantum computing systems, including laser and optical subsystems, with the aim of delivering systems from the UK. planqc is building a team of specialists in Cambridge over the next two years: quantum hardware engineers, error-correction and system-integration engineers, software and FPGA engineers, plus site management and back-office support. Several of these roles are already filled by colleagues transferring from Munich and Cambridge. The company’s medium-term ambition for the site is in the order of 20 people.\n\nIn collaboration with Professor Ulrich Schneider’s group at the University of Cambridge’s Cavendish Laboratory, planqc will develop next-generation optical lattice technology. Alongside its Germany headquarters in Garching, Cambridge will become another centre where planqc works with academic and industry partners to advance neutral-atom quantum computing.",
-   "authors": [],
-   "published": "2026-11-23T12:36:39Z",
-   "relevance": 11.4,
-   "weight": 0.7,
-   "score": 64.6,
-   "first_seen": "2026-11-23T23:58:34Z"
   },
   {
    "id": "f7f4fe765edf8fa4",
@@ -1959,7 +1921,7 @@
    "published": "2026-11-23T12:27:42Z",
    "relevance": 11.2,
    "weight": 0.85,
-   "score": 67.0,
+   "score": 64.6,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -1986,7 +1948,7 @@
    "published": "2026-11-23T12:00:27Z",
    "relevance": 11.8,
    "weight": 0.85,
-   "score": 68.6,
+   "score": 66.2,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2013,7 +1975,7 @@
    "published": "2026-11-23T11:49:19Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 85.8,
+   "score": 83.4,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2042,7 +2004,7 @@
    "published": "2026-11-23T11:25:49Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 82.9,
+   "score": 80.6,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2069,7 +2031,7 @@
    "published": "2026-11-23T11:07:26Z",
    "relevance": 14.4,
    "weight": 0.85,
-   "score": 75.7,
+   "score": 73.3,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2096,7 +2058,7 @@
    "published": "2026-11-23T10:07:24Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 71.6,
+   "score": 69.2,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2122,7 +2084,7 @@
    "published": "2026-11-23T09:15:41Z",
    "relevance": 15.6,
    "weight": 0.9,
-   "score": 79.6,
+   "score": 77.3,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2145,7 +2107,7 @@
    "published": "2026-11-23T08:57:29Z",
    "relevance": 26.0,
    "weight": 0.7,
-   "score": 82.2,
+   "score": 79.9,
    "first_seen": "2026-11-23T23:58:34Z"
   },
   {
@@ -2174,7 +2136,7 @@
    "published": "2026-11-23T08:54:02Z",
    "relevance": 24.6,
    "weight": 0.85,
-   "score": 85.2,
+   "score": 82.9,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2197,7 +2159,7 @@
    "published": "2026-11-23T08:40:28Z",
    "relevance": 26.0,
    "weight": 0.7,
-   "score": 82.2,
+   "score": 79.9,
    "first_seen": "2026-11-23T23:58:34Z"
   },
   {
@@ -2224,7 +2186,7 @@
    "published": "2026-11-23T08:03:39Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 85.1,
+   "score": 82.8,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2249,32 +2211,7 @@
    "published": "2026-11-23T07:42:44Z",
    "relevance": 12.6,
    "weight": 0.85,
-   "score": 70.0,
-   "first_seen": "2026-11-24T09:59:17Z"
-  },
-  {
-   "id": "e207e7beb9300ef6",
-   "title": "Quantum simulation of low-temperature impurity models",
-   "url": "https://arxiv.org/abs/2611.30187",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "cond-mat.str-el",
-    "quantum algorithms",
-    "quantum"
-   ],
-   "summary": "Quantum impurity models, which describe a small but strongly-interacting subsystem coupled to a large noninteracting bath, are the computational core of dynamical mean field theory and play an important role in simulating strongly correlated materials. We develop quantum algorithms for efficiently simulating these models at low temperatures and with high precision.\n\nFor any impurity model on $n$ fermionic modes with fixed impurity size: (1) We give a quantum algorithm that prepares the thermal state at inverse temperature $β$ to precision $δ$ in time $\\mathrm{poly}(n,β,\\log(1/δ))$. This algorithm is the first to achieve both polynomial scaling in the inverse temperature and polylogarithmic scaling in the precision.\n\nWhen the Hamiltonian has an inverse-polynomial spectral gap, our quantum algorithm prepares its ground state to precision $δ$ in time $\\mathrm{poly}(n,\\log(1/δ))$. (2) We further give a quantum algorithm that prepares a purification of the thermal state in time $\\mathrm{poly}(n,β,\\log(1/δ))$.\n\nUsing this purification, we estimate static and dynamical properties with error $δ$ in time polynomial in $n$ and $β$ and linear in $1/δ$ up to polylogarithmic factors, achieving the Heisenberg scaling. Our algorithms build on quantum Gibbs samplers, which are quantum analogues of Markov chain Monte Carlo methods.\n\nBy using global jump operators instead of local ones, we avoid the $\\exp(β)$ overhead commonly associated with quantum Gibbs samplers, making them efficient for impurity models even at low temperatures.",
-   "authors": [
-    "Jiaqing Jiang",
-    "Nathan Ju"
-   ],
-   "published": "2026-11-23T07:31:07Z",
-   "relevance": 11.0,
-   "weight": 0.85,
-   "score": 65.5,
+   "score": 67.7,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2298,7 +2235,7 @@
    "published": "2026-11-23T04:31:32Z",
    "relevance": 14.6,
    "weight": 0.85,
-   "score": 75.0,
+   "score": 72.8,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2324,34 +2261,7 @@
    "published": "2026-11-23T04:29:01Z",
    "relevance": 36.4,
    "weight": 0.85,
-   "score": 84.4,
-   "first_seen": "2026-11-24T09:59:17Z"
-  },
-  {
-   "id": "0855f32983c14fd7",
-   "title": "Spin-adapted state preparation for quantum chemistry",
-   "url": "https://arxiv.org/abs/2611.30014",
-   "source": "arXiv quant-ph",
-   "also_in": [],
-   "type": "paper",
-   "domain": "quantum",
-   "tags": [
-    "quant-ph",
-    "fault-tolerant",
-    "quantum phase estimation",
-    "qubits",
-    "quantum"
-   ],
-   "summary": "Quantum phase estimation for strongly-correlated molecules requires an initial state of high overlap with the true ground state, and preparing one is a significant fault-tolerant cost. Matrix product states (MPS) produced by the density matrix renormalisation group (DMRG) are a leading choice, yet existing circuits treat their tensors as dense or do not use the full symmetries present in molecular electronic Hamiltonians.\n\nIn quantum chemistry, DMRG also exploits total spin, a non-abelian symmetry, storing one amplitude per spin multiplet instead of one per state. We show that the reduced tensors of such a spin-adapted MPS, labelled by the steps of the unitary group approach, form an abelian-symmetric MPS, which existing block-sparse preparation protocols can load at a cost set by the multiplet count.\n\nOne state-independent rotation per site, determined by a Clebsch-Gordan coefficient, then returns the state to the occupation basis. We provide resource estimates for our circuits on singlet ground states of active space models of iron-sulphur clusters, finding improvements in Toffoli count up to $135\\times$ compared to dense methods and $4.9\\times$ compared to block-sparse methods applied to the same states, with up to $3.7\\times$ fewer ancilla qubits required.",
-   "authors": [
-    "Matthew L. Sims-Goh",
-    "Fredrik Hasselgren",
-    "Hamza Jnane"
-   ],
-   "published": "2026-11-23T04:17:08Z",
-   "relevance": 11.0,
-   "weight": 0.85,
-   "score": 64.9,
+   "score": 82.2,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2377,7 +2287,7 @@
    "published": "2026-11-23T03:48:06Z",
    "relevance": 29.6,
    "weight": 0.85,
-   "score": 84.3,
+   "score": 82.1,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2401,7 +2311,7 @@
    "published": "2026-11-23T02:54:37Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 70.2,
+   "score": 68.1,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2421,7 +2331,7 @@
    "published": "2026-11-23T00:00:00Z",
    "relevance": 13.6,
    "weight": 1.0,
-   "score": 74.4,
+   "score": 72.3,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -2445,7 +2355,7 @@
    "published": "2026-11-22T21:50:27Z",
    "relevance": 12.0,
    "weight": 0.85,
-   "score": 66.6,
+   "score": 64.5,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2472,7 +2382,7 @@
    "published": "2026-11-22T21:50:14Z",
    "relevance": 22.8,
    "weight": 0.85,
-   "score": 83.2,
+   "score": 81.2,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2498,7 +2408,7 @@
    "published": "2026-11-22T21:31:05Z",
    "relevance": 11.4,
    "weight": 0.9,
-   "score": 65.9,
+   "score": 63.8,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2524,7 +2434,7 @@
    "published": "2026-11-22T21:28:54Z",
    "relevance": 19.4,
    "weight": 0.9,
-   "score": 84.2,
+   "score": 82.1,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2549,7 +2459,7 @@
    "published": "2026-11-22T19:52:40Z",
    "relevance": 13.4,
    "weight": 0.85,
-   "score": 70.1,
+   "score": 68.1,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2575,7 +2485,7 @@
    "published": "2026-11-22T19:26:48Z",
    "relevance": 18.0,
    "weight": 0.9,
-   "score": 83.8,
+   "score": 81.8,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2601,7 +2511,7 @@
    "published": "2026-11-22T18:06:09Z",
    "relevance": 37.0,
    "weight": 0.85,
-   "score": 82.6,
+   "score": 80.6,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2625,33 +2535,7 @@
    "published": "2026-11-22T15:00:07Z",
    "relevance": 17.2,
    "weight": 0.85,
-   "score": 79.9,
-   "first_seen": "2026-11-24T09:59:17Z"
-  },
-  {
-   "id": "0ff6ebd12ed0bb4f",
-   "title": "BQDNA: Multi-Head Binary Spherical Quantization for Genomic Sequence Modeling",
-   "url": "https://arxiv.org/abs/2611.29395",
-   "source": "arXiv cs.CL/LG/AI",
-   "also_in": [],
-   "type": "paper",
-   "domain": "ai",
-   "tags": [
-    "cs.LG",
-    "cs.AI",
-    "quantization",
-    "language models"
-   ],
-   "summary": "Decoding biological information from long, repetitive DNA remains challenging. Genomic language models (gLMs) often follow the conventional language-model pretrain-and-adapt paradigm.\n\nHowever, the lack of inherent semantic segmentation and prior rules makes hand-crafted tokenizers like k-mer and BPE suboptimal. We introduce context-aware \\textbf{BQVAE} for scalar quantization of DNA and \\textbf{BQDNA}, an autoregressive gLM supporting multi-head codebooks.\n\nComprehensive experiments reveal that: (1) unique training dynamics of vector quantization in DNA space, including the importance of alignment between training corpus and downstream data. (2) superior performance of BQVAE over hand-crafted tokenizers and vanilla VQVAE.\n\n(3) remarkable cross-species generalization capability of BQDNA, which achieves state-of-the-art performance with merely 0.1B multi-species training for BQVAE and 1 epoch training on hg38 for BQDNA, outperforming gLMs pretrained with 10$\\sim$100x more tokens. Our findings underscore the potential of learned vector quantization for genomic sequence representation.\n\nCode is available at https://github.com/Sophie10001b/BQDNA",
-   "authors": [
-    "Xudong Wang",
-    "Siwei Cheng",
-    "Haozhe Hu"
-   ],
-   "published": "2026-11-22T11:12:24Z",
-   "relevance": 12.0,
-   "weight": 0.85,
-   "score": 64.9,
+   "score": 78.0,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2676,7 +2560,7 @@
    "published": "2026-11-22T09:31:43Z",
    "relevance": 15.6,
    "weight": 0.9,
-   "score": 75.6,
+   "score": 73.8,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2706,7 +2590,7 @@
    "published": "2026-11-22T04:58:09Z",
    "relevance": 12.4,
    "weight": 0.85,
-   "score": 65.1,
+   "score": 63.3,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2734,7 +2618,7 @@
    "published": "2026-11-21T23:32:01Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 79.3,
+   "score": 77.7,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2763,7 +2647,7 @@
    "published": "2026-11-21T22:10:33Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 65.8,
+   "score": 64.2,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2786,7 +2670,7 @@
    "published": "2026-11-21T19:36:14Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 65.5,
+   "score": 63.9,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2809,7 +2693,7 @@
    "published": "2026-11-21T15:00:25Z",
    "relevance": 13.0,
    "weight": 0.85,
-   "score": 64.9,
+   "score": 63.4,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2830,7 +2714,7 @@
    "published": "2026-11-21T12:43:39Z",
    "relevance": 12.6,
    "weight": 0.95,
-   "score": 70.5,
+   "score": 69.0,
    "first_seen": "2026-11-21T19:21:42Z"
   },
   {
@@ -2859,7 +2743,7 @@
    "published": "2026-11-21T12:09:36Z",
    "relevance": 25.0,
    "weight": 0.85,
-   "score": 78.4,
+   "score": 77.0,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2883,7 +2767,7 @@
    "published": "2026-11-21T10:42:51Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 78.3,
+   "score": 76.8,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2913,7 +2797,7 @@
    "published": "2026-11-21T08:50:10Z",
    "relevance": 17.4,
    "weight": 0.85,
-   "score": 76.4,
+   "score": 75.0,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2942,7 +2826,7 @@
    "published": "2026-11-21T06:36:41Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 72.2,
+   "score": 70.9,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2970,7 +2854,7 @@
    "published": "2026-11-21T03:18:37Z",
    "relevance": 38.2,
    "weight": 0.85,
-   "score": 77.4,
+   "score": 76.1,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -2997,7 +2881,7 @@
    "published": "2026-11-20T22:00:38Z",
    "relevance": 20.2,
    "weight": 0.85,
-   "score": 76.9,
+   "score": 75.6,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -3025,7 +2909,7 @@
    "published": "2026-11-20T20:06:38Z",
    "relevance": 17.4,
    "weight": 0.85,
-   "score": 75.0,
+   "score": 73.8,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -3050,7 +2934,7 @@
    "published": "2026-11-20T19:02:38Z",
    "relevance": 24.4,
    "weight": 0.85,
-   "score": 76.6,
+   "score": 75.4,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -3079,7 +2963,7 @@
    "published": "2026-11-20T18:51:29Z",
    "relevance": 16.2,
    "weight": 0.85,
-   "score": 71.6,
+   "score": 70.3,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3103,7 +2987,7 @@
    "published": "2026-11-20T18:23:42Z",
    "relevance": 15.0,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 67.0,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3127,7 +3011,7 @@
    "published": "2026-11-20T17:04:16Z",
    "relevance": 13.8,
    "weight": 0.85,
-   "score": 64.7,
+   "score": 63.5,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3152,7 +3036,7 @@
    "published": "2026-11-20T16:34:21Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 76.3,
+   "score": 75.1,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3175,7 +3059,7 @@
    "published": "2026-11-20T16:05:47Z",
    "relevance": 17.6,
    "weight": 0.7,
-   "score": 72.2,
+   "score": 71.0,
    "first_seen": "2026-11-20T20:27:13Z"
   },
   {
@@ -3201,7 +3085,7 @@
    "published": "2026-11-20T15:46:35Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 76.3,
+   "score": 75.1,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3226,7 +3110,7 @@
    "published": "2026-11-20T15:25:06Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 73.4,
+   "score": 72.3,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3251,7 +3135,7 @@
    "published": "2026-11-20T14:17:08Z",
    "relevance": 14.8,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 66.1,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3278,7 +3162,7 @@
    "published": "2026-11-20T13:59:06Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 75.5,
+   "score": 74.4,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3306,7 +3190,7 @@
    "published": "2026-11-20T11:55:14Z",
    "relevance": 14.2,
    "weight": 0.85,
-   "score": 65.3,
+   "score": 64.2,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3331,7 +3215,7 @@
    "published": "2026-11-20T11:26:57Z",
    "relevance": 18.4,
    "weight": 0.85,
-   "score": 75.8,
+   "score": 74.7,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3357,7 +3241,7 @@
    "published": "2026-11-20T10:24:25Z",
    "relevance": 17.2,
    "weight": 0.85,
-   "score": 73.5,
+   "score": 72.4,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3385,7 +3269,7 @@
    "published": "2026-11-20T10:10:07Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 72.9,
+   "score": 71.8,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3408,7 +3292,7 @@
    "published": "2026-11-20T08:58:59Z",
    "relevance": 24.8,
    "weight": 0.7,
-   "score": 72.6,
+   "score": 71.5,
    "first_seen": "2026-11-20T20:27:13Z"
   },
   {
@@ -3433,7 +3317,7 @@
    "published": "2026-11-20T08:37:23Z",
    "relevance": 15.8,
    "weight": 0.85,
-   "score": 69.5,
+   "score": 68.4,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3459,7 +3343,7 @@
    "published": "2026-11-20T04:18:17Z",
    "relevance": 18.4,
    "weight": 0.85,
-   "score": 75.2,
+   "score": 74.2,
    "first_seen": "2026-11-24T09:59:17Z"
   },
   {
@@ -3487,7 +3371,7 @@
    "published": "2026-11-20T04:07:37Z",
    "relevance": 17.2,
    "weight": 0.85,
-   "score": 73.0,
+   "score": 71.9,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3508,7 +3392,7 @@
    "published": "2026-11-20T00:00:00Z",
    "relevance": 21.6,
    "weight": 1.0,
-   "score": 77.8,
+   "score": 76.9,
    "first_seen": "2026-11-20T20:27:13Z"
   },
   {
@@ -3538,7 +3422,7 @@
    "published": "2026-11-19T21:37:17Z",
    "relevance": 17.6,
    "weight": 0.85,
-   "score": 73.5,
+   "score": 72.6,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3561,7 +3445,7 @@
    "published": "2026-11-19T20:31:49Z",
    "relevance": 21.8,
    "weight": 0.7,
-   "score": 71.6,
+   "score": 70.6,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3588,7 +3472,7 @@
    "published": "2026-11-19T19:35:51Z",
    "relevance": 14.6,
    "weight": 0.85,
-   "score": 65.1,
+   "score": 64.1,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3612,7 +3496,7 @@
    "published": "2026-11-19T19:03:02Z",
    "relevance": 18.0,
    "weight": 0.85,
-   "score": 74.5,
+   "score": 73.5,
    "first_seen": "2026-11-23T07:45:56Z"
   },
   {
@@ -3638,7 +3522,7 @@
    "published": "2026-11-19T18:55:54Z",
    "relevance": 22.0,
    "weight": 0.85,
-   "score": 74.4,
+   "score": 73.5,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3667,7 +3551,7 @@
    "published": "2026-11-19T18:43:32Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 74.4,
+   "score": 73.5,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3695,7 +3579,7 @@
    "published": "2026-11-19T17:55:21Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 74.4,
+   "score": 73.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3723,7 +3607,7 @@
    "published": "2026-11-19T17:16:21Z",
    "relevance": 30.6,
    "weight": 0.85,
-   "score": 74.3,
+   "score": 73.4,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3748,7 +3632,7 @@
    "published": "2026-11-19T16:33:25Z",
    "relevance": 18.0,
    "weight": 0.85,
-   "score": 74.3,
+   "score": 73.3,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3776,7 +3660,7 @@
    "published": "2026-11-19T16:31:46Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 69.8,
+   "score": 68.9,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3806,7 +3690,7 @@
    "published": "2026-11-19T16:28:23Z",
    "relevance": 15.6,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 66.7,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3834,7 +3718,7 @@
    "published": "2026-11-19T16:25:45Z",
    "relevance": 19.8,
    "weight": 0.85,
-   "score": 74.3,
+   "score": 73.3,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3855,7 +3739,7 @@
    "published": "2026-11-19T16:16:38Z",
    "relevance": 18.8,
    "weight": 0.7,
-   "score": 71.2,
+   "score": 70.3,
    "first_seen": "2026-11-19T20:42:44Z"
   },
   {
@@ -3882,7 +3766,7 @@
    "published": "2026-11-19T16:14:13Z",
    "relevance": 32.2,
    "weight": 0.85,
-   "score": 74.2,
+   "score": 73.3,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3907,7 +3791,7 @@
    "published": "2026-11-19T16:10:42Z",
    "relevance": 26.0,
    "weight": 0.85,
-   "score": 74.2,
+   "score": 73.3,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -3930,7 +3814,7 @@
    "published": "2026-11-19T16:07:22Z",
    "relevance": 21.8,
    "weight": 0.7,
-   "score": 71.2,
+   "score": 70.3,
    "first_seen": "2026-11-19T20:42:44Z"
   },
   {
@@ -3951,7 +3835,7 @@
    "published": "2026-11-19T15:45:03Z",
    "relevance": 17.0,
    "weight": 0.7,
-   "score": 68.4,
+   "score": 67.5,
    "first_seen": "2026-11-19T20:42:44Z"
   },
   {
@@ -3978,7 +3862,7 @@
    "published": "2026-11-19T15:40:24Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 68.6,
+   "score": 67.7,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4008,7 +3892,7 @@
    "published": "2026-11-19T14:57:16Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 74.1,
+   "score": 73.2,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4033,7 +3917,7 @@
    "published": "2026-11-19T14:24:36Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 69.7,
+   "score": 68.8,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4060,7 +3944,7 @@
    "published": "2026-11-19T13:16:58Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 70.1,
+   "score": 69.2,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4086,7 +3970,7 @@
    "published": "2026-11-19T12:34:25Z",
    "relevance": 17.2,
    "weight": 0.85,
-   "score": 71.7,
+   "score": 70.9,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4115,7 +3999,7 @@
    "published": "2026-11-19T10:54:57Z",
    "relevance": 25.6,
    "weight": 0.85,
-   "score": 73.8,
+   "score": 73.0,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4143,7 +4027,7 @@
    "published": "2026-11-19T10:36:21Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 73.8,
+   "score": 73.0,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4164,7 +4048,7 @@
    "published": "2026-11-19T10:26:06Z",
    "relevance": 20.6,
    "weight": 0.7,
-   "score": 70.8,
+   "score": 69.9,
    "first_seen": "2026-11-19T20:42:44Z"
   },
   {
@@ -4189,7 +4073,7 @@
    "published": "2026-11-19T09:11:52Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 73.7,
+   "score": 72.9,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4216,7 +4100,7 @@
    "published": "2026-11-19T09:10:09Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 73.7,
+   "score": 72.9,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4243,7 +4127,7 @@
    "published": "2026-11-19T09:03:43Z",
    "relevance": 15.4,
    "weight": 0.85,
-   "score": 66.5,
+   "score": 65.6,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4272,7 +4156,7 @@
    "published": "2026-11-19T08:49:01Z",
    "relevance": 50.0,
    "weight": 0.85,
-   "score": 73.7,
+   "score": 72.8,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4300,7 +4184,7 @@
    "published": "2026-11-19T08:29:39Z",
    "relevance": 16.8,
    "weight": 0.85,
-   "score": 70.3,
+   "score": 69.5,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4330,7 +4214,7 @@
    "published": "2026-11-19T07:47:07Z",
    "relevance": 22.6,
    "weight": 0.85,
-   "score": 73.6,
+   "score": 72.8,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4358,7 +4242,7 @@
    "published": "2026-11-19T06:13:48Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 70.7,
+   "score": 69.9,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4388,7 +4272,7 @@
    "published": "2026-11-19T03:16:18Z",
    "relevance": 41.6,
    "weight": 0.85,
-   "score": 73.3,
+   "score": 72.5,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4414,7 +4298,7 @@
    "published": "2026-11-19T02:23:25Z",
    "relevance": 20.0,
    "weight": 0.85,
-   "score": 73.3,
+   "score": 72.5,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4441,7 +4325,7 @@
    "published": "2026-11-18T21:10:41Z",
    "relevance": 21.0,
    "weight": 0.9,
-   "score": 73.9,
+   "score": 73.2,
    "first_seen": "2026-11-20T07:24:21Z"
   },
   {
@@ -4464,7 +4348,7 @@
    "published": "2026-11-18T21:02:33Z",
    "relevance": 43.8,
    "weight": 1.0,
-   "score": 80.9,
+   "score": 80.2,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -4494,7 +4378,7 @@
    "published": "2026-11-18T18:29:52Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 68.3,
+   "score": 67.6,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4517,7 +4401,7 @@
    "published": "2026-11-18T17:03:12Z",
    "relevance": 36.2,
    "weight": 0.7,
-   "score": 69.7,
+   "score": 69.0,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -4547,7 +4431,7 @@
    "published": "2026-11-18T16:18:37Z",
    "relevance": 22.0,
    "weight": 0.85,
-   "score": 72.6,
+   "score": 71.9,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4573,7 +4457,7 @@
    "published": "2026-11-18T15:52:07Z",
    "relevance": 15.0,
    "weight": 0.85,
-   "score": 64.3,
+   "score": 63.6,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4603,7 +4487,7 @@
    "published": "2026-11-18T15:18:58Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 68.1,
+   "score": 67.4,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4624,7 +4508,7 @@
    "published": "2026-11-18T14:24:48Z",
    "relevance": 17.0,
    "weight": 0.7,
-   "score": 66.8,
+   "score": 66.1,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -4654,7 +4538,7 @@
    "published": "2026-11-18T14:24:23Z",
    "relevance": 22.4,
    "weight": 0.85,
-   "score": 72.5,
+   "score": 71.8,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4683,7 +4567,7 @@
    "published": "2026-11-18T13:56:37Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 68.6,
+   "score": 67.9,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4712,7 +4596,7 @@
    "published": "2026-11-18T12:30:48Z",
    "relevance": 22.8,
    "weight": 0.85,
-   "score": 72.4,
+   "score": 71.7,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4742,7 +4626,7 @@
    "published": "2026-11-18T12:11:43Z",
    "relevance": 38.2,
    "weight": 0.85,
-   "score": 72.4,
+   "score": 71.7,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4765,7 +4649,7 @@
    "published": "2026-11-18T12:03:29Z",
    "relevance": 51.4,
    "weight": 0.7,
-   "score": 69.4,
+   "score": 68.7,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -4794,7 +4678,7 @@
    "published": "2026-11-18T09:03:03Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 68.3,
+   "score": 67.7,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4824,7 +4708,7 @@
    "published": "2026-11-18T08:31:41Z",
    "relevance": 23.4,
    "weight": 0.85,
-   "score": 72.2,
+   "score": 71.5,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4850,7 +4734,7 @@
    "published": "2026-11-18T06:45:03Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 71.6,
+   "score": 70.9,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4878,7 +4762,7 @@
    "published": "2026-11-18T06:09:26Z",
    "relevance": 35.4,
    "weight": 0.85,
-   "score": 72.1,
+   "score": 71.4,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4906,7 +4790,7 @@
    "published": "2026-11-18T04:40:10Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 66.4,
+   "score": 65.8,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4933,7 +4817,7 @@
    "published": "2026-11-18T04:12:31Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 72.0,
+   "score": 71.3,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4960,7 +4844,7 @@
    "published": "2026-11-18T03:16:56Z",
    "relevance": 29.8,
    "weight": 0.85,
-   "score": 71.9,
+   "score": 71.3,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -4989,7 +4873,7 @@
    "published": "2026-11-18T03:05:15Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 68.0,
+   "score": 67.4,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -5015,7 +4899,7 @@
    "published": "2026-11-18T01:36:56Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 69.1,
+   "score": 68.4,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -5034,7 +4918,7 @@
    "published": "2026-11-18T00:00:00Z",
    "relevance": 15.6,
    "weight": 1.0,
-   "score": 68.1,
+   "score": 67.5,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -5054,7 +4938,7 @@
    "published": "2026-11-18T00:00:00Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 66.2,
+   "score": 65.6,
    "first_seen": "2026-11-18T20:37:11Z"
   },
   {
@@ -5077,7 +4961,7 @@
    "published": "2026-11-17T19:34:26Z",
    "relevance": 26.6,
    "weight": 0.7,
-   "score": 68.5,
+   "score": 68.0,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -5106,7 +4990,7 @@
    "published": "2026-11-17T19:00:09Z",
    "relevance": 27.4,
    "weight": 0.85,
-   "score": 71.5,
+   "score": 70.9,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -5136,7 +5020,7 @@
    "published": "2026-11-17T18:38:14Z",
    "relevance": 24.6,
    "weight": 0.85,
-   "score": 71.5,
+   "score": 70.9,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5166,7 +5050,7 @@
    "published": "2026-11-17T18:17:01Z",
    "relevance": 52.0,
    "weight": 0.85,
-   "score": 71.5,
+   "score": 70.9,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5195,7 +5079,7 @@
    "published": "2026-11-17T17:08:28Z",
    "relevance": 15.8,
    "weight": 0.85,
-   "score": 65.3,
+   "score": 64.8,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5221,7 +5105,7 @@
    "published": "2026-11-17T16:36:28Z",
    "relevance": 24.6,
    "weight": 0.85,
-   "score": 71.4,
+   "score": 70.8,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5250,7 +5134,7 @@
    "published": "2026-11-17T16:20:46Z",
    "relevance": 22.8,
    "weight": 0.85,
-   "score": 71.4,
+   "score": 70.8,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5272,7 +5156,7 @@
    "published": "2026-11-17T15:40:15Z",
    "relevance": 19.4,
    "weight": 0.7,
-   "score": 68.4,
+   "score": 67.8,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -5299,7 +5183,7 @@
    "published": "2026-11-17T15:17:10Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 71.3,
+   "score": 70.8,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5321,7 +5205,7 @@
    "published": "2026-11-17T15:02:20Z",
    "relevance": 17.0,
    "weight": 0.7,
-   "score": 65.6,
+   "score": 65.0,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -5351,7 +5235,7 @@
    "published": "2026-11-17T14:17:08Z",
    "relevance": 25.6,
    "weight": 0.85,
-   "score": 71.3,
+   "score": 70.8,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5376,7 +5260,7 @@
    "published": "2026-11-17T14:02:20Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 71.3,
+   "score": 70.7,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5401,7 +5285,7 @@
    "published": "2026-11-17T13:40:59Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 67.4,
+   "score": 66.8,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5424,7 +5308,7 @@
    "published": "2026-11-17T12:42:28Z",
    "relevance": 34.4,
    "weight": 0.7,
-   "score": 68.2,
+   "score": 67.7,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -5447,7 +5331,7 @@
    "published": "2026-11-17T12:38:47Z",
    "relevance": 35.0,
    "weight": 0.7,
-   "score": 68.2,
+   "score": 67.7,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -5469,7 +5353,7 @@
    "published": "2026-11-17T12:31:04Z",
    "relevance": 25.0,
    "weight": 0.7,
-   "score": 68.2,
+   "score": 67.7,
    "first_seen": "2026-11-17T20:59:44Z"
   },
   {
@@ -5497,7 +5381,7 @@
    "published": "2026-11-17T11:36:12Z",
    "relevance": 19.8,
    "weight": 0.85,
-   "score": 71.2,
+   "score": 70.7,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5523,7 +5407,7 @@
    "published": "2026-11-17T11:25:44Z",
    "relevance": 21.0,
    "weight": 0.85,
-   "score": 71.2,
+   "score": 70.6,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5550,7 +5434,7 @@
    "published": "2026-11-17T07:33:56Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 67.7,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5580,7 +5464,7 @@
    "published": "2026-11-17T07:14:52Z",
    "relevance": 26.4,
    "weight": 0.85,
-   "score": 71.0,
+   "score": 70.5,
    "first_seen": "2026-11-19T07:32:28Z"
   },
   {
@@ -5608,7 +5492,7 @@
    "published": "2026-11-17T06:53:30Z",
    "relevance": 23.8,
    "weight": 0.85,
-   "score": 71.0,
+   "score": 70.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5638,7 +5522,7 @@
    "published": "2026-11-17T06:32:15Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 71.0,
+   "score": 70.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5668,7 +5552,7 @@
    "published": "2026-11-17T05:31:01Z",
    "relevance": 24.0,
    "weight": 0.85,
-   "score": 70.9,
+   "score": 70.4,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5697,7 +5581,7 @@
    "published": "2026-11-17T04:52:41Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 70.9,
+   "score": 70.4,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5722,7 +5606,7 @@
    "published": "2026-11-17T04:30:11Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 70.9,
+   "score": 70.4,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5748,7 +5632,7 @@
    "published": "2026-11-17T03:02:41Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 66.9,
+   "score": 66.5,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5778,7 +5662,7 @@
    "published": "2026-11-17T03:00:51Z",
    "relevance": 28.2,
    "weight": 0.85,
-   "score": 70.8,
+   "score": 70.3,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5806,7 +5690,7 @@
    "published": "2026-11-17T02:47:09Z",
    "relevance": 25.4,
    "weight": 0.85,
-   "score": 70.8,
+   "score": 70.3,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5836,7 +5720,7 @@
    "published": "2026-11-17T02:14:54Z",
    "relevance": 25.8,
    "weight": 0.85,
-   "score": 70.8,
+   "score": 70.3,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5863,7 +5747,7 @@
    "published": "2026-11-17T01:40:53Z",
    "relevance": 35.8,
    "weight": 0.85,
-   "score": 70.8,
+   "score": 70.3,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5892,7 +5776,7 @@
    "published": "2026-11-17T00:56:04Z",
    "relevance": 28.4,
    "weight": 0.85,
-   "score": 70.7,
+   "score": 70.3,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5918,7 +5802,7 @@
    "published": "2026-11-16T22:58:32Z",
    "relevance": 26.2,
    "weight": 0.85,
-   "score": 70.7,
+   "score": 70.2,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5942,7 +5826,7 @@
    "published": "2026-11-16T22:26:10Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 70.6,
+   "score": 70.2,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5972,7 +5856,7 @@
    "published": "2026-11-16T21:32:01Z",
    "relevance": 16.0,
    "weight": 0.85,
-   "score": 65.1,
+   "score": 64.6,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -5998,7 +5882,7 @@
    "published": "2026-11-16T21:13:54Z",
    "relevance": 24.8,
    "weight": 0.9,
-   "score": 71.6,
+   "score": 71.1,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -6025,7 +5909,7 @@
    "published": "2026-11-16T20:16:09Z",
    "relevance": 28.0,
    "weight": 0.85,
-   "score": 70.6,
+   "score": 70.1,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -6054,7 +5938,7 @@
    "published": "2026-11-16T19:57:35Z",
    "relevance": 18.4,
    "weight": 0.85,
-   "score": 70.6,
+   "score": 70.1,
    "first_seen": "2026-11-18T07:36:19Z"
   },
   {
@@ -6084,7 +5968,7 @@
    "published": "2026-11-16T18:59:38Z",
    "relevance": 21.2,
    "weight": 0.85,
-   "score": 70.5,
+   "score": 70.1,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6114,7 +5998,7 @@
    "published": "2026-11-16T18:49:49Z",
    "relevance": 29.4,
    "weight": 0.85,
-   "score": 70.5,
+   "score": 70.1,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6142,7 +6026,7 @@
    "published": "2026-11-16T16:51:20Z",
    "relevance": 21.8,
    "weight": 0.85,
-   "score": 70.4,
+   "score": 70.0,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6163,7 +6047,7 @@
    "published": "2026-11-16T16:30:50Z",
    "relevance": 20.0,
    "weight": 0.7,
-   "score": 67.4,
+   "score": 67.0,
    "first_seen": "2026-11-16T22:11:30Z"
   },
   {
@@ -6186,7 +6070,7 @@
    "published": "2026-11-16T16:24:01Z",
    "relevance": 30.8,
    "weight": 0.7,
-   "score": 67.4,
+   "score": 67.0,
    "first_seen": "2026-11-16T22:11:30Z"
   },
   {
@@ -6210,7 +6094,7 @@
    "published": "2026-11-16T15:23:24Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 69.8,
+   "score": 69.4,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6238,7 +6122,7 @@
    "published": "2026-11-16T15:20:32Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.2,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6267,7 +6151,7 @@
    "published": "2026-11-16T15:07:41Z",
    "relevance": 33.4,
    "weight": 0.85,
-   "score": 70.4,
+   "score": 70.0,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6292,7 +6176,7 @@
    "published": "2026-11-16T14:05:04Z",
    "relevance": 16.4,
    "weight": 0.85,
-   "score": 65.9,
+   "score": 65.5,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6314,7 +6198,7 @@
    "published": "2026-11-16T14:05:00Z",
    "relevance": 24.2,
    "weight": 0.7,
-   "score": 67.3,
+   "score": 66.9,
    "first_seen": "2026-11-16T22:11:30Z"
   },
   {
@@ -6336,7 +6220,7 @@
    "published": "2026-11-16T12:44:27Z",
    "relevance": 22.4,
    "weight": 0.7,
-   "score": 67.3,
+   "score": 66.9,
    "first_seen": "2026-11-16T22:11:30Z"
   },
   {
@@ -6363,7 +6247,7 @@
    "published": "2026-11-16T11:40:43Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 70.3,
+   "score": 69.8,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6388,7 +6272,7 @@
    "published": "2026-11-16T11:06:34Z",
    "relevance": 17.2,
    "weight": 0.85,
-   "score": 68.0,
+   "score": 67.6,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6412,7 +6296,7 @@
    "published": "2026-11-16T07:26:03Z",
    "relevance": 29.2,
    "weight": 0.85,
-   "score": 70.1,
+   "score": 69.7,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6438,7 +6322,7 @@
    "published": "2026-11-16T05:44:21Z",
    "relevance": 35.6,
    "weight": 0.85,
-   "score": 70.1,
+   "score": 69.7,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6468,7 +6352,7 @@
    "published": "2026-11-16T02:16:37Z",
    "relevance": 33.8,
    "weight": 0.85,
-   "score": 70.0,
+   "score": 69.6,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6496,7 +6380,7 @@
    "published": "2026-11-16T02:15:03Z",
    "relevance": 36.0,
    "weight": 0.85,
-   "score": 70.0,
+   "score": 69.6,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6523,7 +6407,7 @@
    "published": "2026-11-16T01:21:50Z",
    "relevance": 24.6,
    "weight": 0.85,
-   "score": 69.9,
+   "score": 69.6,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6553,7 +6437,7 @@
    "published": "2026-11-15T22:37:14Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 69.8,
+   "score": 69.5,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6581,7 +6465,7 @@
    "published": "2026-11-15T16:47:29Z",
    "relevance": 24.2,
    "weight": 0.85,
-   "score": 69.7,
+   "score": 69.3,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6611,7 +6495,7 @@
    "published": "2026-11-15T16:14:14Z",
    "relevance": 28.8,
    "weight": 0.85,
-   "score": 69.7,
+   "score": 69.3,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6634,7 +6518,7 @@
    "published": "2026-11-15T12:10:37Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 69.6,
+   "score": 69.2,
    "first_seen": "2026-11-15T18:55:20Z"
   },
   {
@@ -6664,7 +6548,7 @@
    "published": "2026-11-15T05:20:54Z",
    "relevance": 21.6,
    "weight": 0.85,
-   "score": 69.4,
+   "score": 69.1,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6692,7 +6576,7 @@
    "published": "2026-11-14T22:35:41Z",
    "relevance": 23.8,
    "weight": 0.85,
-   "score": 69.2,
+   "score": 68.9,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6720,7 +6604,7 @@
    "published": "2026-11-14T13:09:50Z",
    "relevance": 19.4,
    "weight": 0.85,
-   "score": 69.0,
+   "score": 68.8,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6750,7 +6634,7 @@
    "published": "2026-11-14T11:40:22Z",
    "relevance": 23.4,
    "weight": 0.85,
-   "score": 69.0,
+   "score": 68.7,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6779,7 +6663,7 @@
    "published": "2026-11-14T03:28:05Z",
    "relevance": 24.8,
    "weight": 0.85,
-   "score": 68.8,
+   "score": 68.6,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6804,7 +6688,7 @@
    "published": "2026-11-13T22:07:20Z",
    "relevance": 22.6,
    "weight": 0.85,
-   "score": 68.7,
+   "score": 68.5,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6833,7 +6717,7 @@
    "published": "2026-11-13T21:40:06Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 68.7,
+   "score": 68.5,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6860,7 +6744,7 @@
    "published": "2026-11-13T21:20:46Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 68.7,
+   "score": 68.5,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -6887,7 +6771,7 @@
    "published": "2026-11-13T18:58:59Z",
    "relevance": 23.8,
    "weight": 0.9,
-   "score": 69.7,
+   "score": 69.5,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -6910,7 +6794,7 @@
    "published": "2026-11-13T18:36:11Z",
    "relevance": 26.4,
    "weight": 0.7,
-   "score": 65.7,
+   "score": 65.4,
    "first_seen": "2026-11-13T19:47:03Z"
   },
   {
@@ -6937,7 +6821,7 @@
    "published": "2026-11-13T18:20:23Z",
    "relevance": 24.6,
    "weight": 0.85,
-   "score": 68.7,
+   "score": 68.4,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -6963,7 +6847,7 @@
    "published": "2026-11-13T17:28:37Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 68.6,
+   "score": 68.4,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -6988,7 +6872,7 @@
    "published": "2026-11-13T17:15:22Z",
    "relevance": 18.2,
    "weight": 0.85,
-   "score": 68.6,
+   "score": 68.4,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -7015,7 +6899,7 @@
    "published": "2026-11-13T16:58:35Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 68.6,
+   "score": 68.4,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -7041,7 +6925,7 @@
    "published": "2026-11-13T15:09:22Z",
    "relevance": 18.6,
    "weight": 0.85,
-   "score": 68.6,
+   "score": 68.4,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -7064,7 +6948,7 @@
    "published": "2026-11-13T14:10:57Z",
    "relevance": 18.0,
    "weight": 0.95,
-   "score": 75.6,
+   "score": 75.4,
    "first_seen": "2026-11-13T19:47:03Z"
   },
   {
@@ -7089,7 +6973,7 @@
    "published": "2026-11-13T13:59:45Z",
    "relevance": 18.0,
    "weight": 0.85,
-   "score": 68.6,
+   "score": 68.4,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -7118,7 +7002,7 @@
    "published": "2026-11-13T12:52:16Z",
    "relevance": 18.6,
    "weight": 0.85,
-   "score": 68.6,
+   "score": 68.4,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -7147,7 +7031,7 @@
    "published": "2026-11-13T12:16:00Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 65.8,
+   "score": 65.6,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -7173,7 +7057,7 @@
    "published": "2026-11-13T10:27:33Z",
    "relevance": 25.6,
    "weight": 0.85,
-   "score": 68.5,
+   "score": 68.3,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -7202,7 +7086,7 @@
    "published": "2026-11-13T07:43:04Z",
    "relevance": 27.4,
    "weight": 0.85,
-   "score": 68.5,
+   "score": 68.3,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -7225,7 +7109,7 @@
    "published": "2026-11-13T02:40:00Z",
    "relevance": 23.0,
    "weight": 0.7,
-   "score": 65.4,
+   "score": 65.2,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7253,7 +7137,7 @@
    "published": "2026-11-12T22:35:16Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 68.3,
+   "score": 68.2,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -7282,7 +7166,7 @@
    "published": "2026-11-12T20:46:31Z",
    "relevance": 17.4,
    "weight": 0.85,
-   "score": 66.7,
+   "score": 66.5,
    "first_seen": "2026-11-16T06:38:01Z"
   },
   {
@@ -7304,7 +7188,7 @@
    "published": "2026-11-12T16:04:33Z",
    "relevance": 21.6,
    "weight": 0.7,
-   "score": 65.3,
+   "score": 65.1,
    "first_seen": "2026-11-12T19:59:39Z"
   },
   {
@@ -7326,7 +7210,7 @@
    "published": "2026-11-12T15:54:57Z",
    "relevance": 27.8,
    "weight": 0.7,
-   "score": 65.3,
+   "score": 65.1,
    "first_seen": "2026-11-12T19:59:39Z"
   },
   {
@@ -7351,7 +7235,7 @@
    "published": "2026-11-12T15:41:36Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.5,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7378,7 +7262,7 @@
    "published": "2026-11-12T15:22:52Z",
    "relevance": 21.6,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.1,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7401,7 +7285,7 @@
    "published": "2026-11-12T14:12:15Z",
    "relevance": 32.8,
    "weight": 0.7,
-   "score": 65.2,
+   "score": 65.1,
    "first_seen": "2026-11-12T19:59:39Z"
   },
   {
@@ -7429,7 +7313,7 @@
    "published": "2026-11-12T13:04:34Z",
    "relevance": 27.0,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.1,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7453,7 +7337,7 @@
    "published": "2026-11-12T12:34:08Z",
    "relevance": 26.4,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.1,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7478,7 +7362,7 @@
    "published": "2026-11-12T12:32:14Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.1,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7508,7 +7392,7 @@
    "published": "2026-11-12T10:45:24Z",
    "relevance": 33.2,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.0,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7531,7 +7415,7 @@
    "published": "2026-11-12T10:02:05Z",
    "relevance": 24.6,
    "weight": 0.7,
-   "score": 65.2,
+   "score": 65.0,
    "first_seen": "2026-11-12T19:59:39Z"
   },
   {
@@ -7557,7 +7441,7 @@
    "published": "2026-11-12T09:05:14Z",
    "relevance": 16.6,
    "weight": 0.85,
-   "score": 64.3,
+   "score": 64.1,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7586,7 +7470,7 @@
    "published": "2026-11-12T07:45:46Z",
    "relevance": 27.0,
    "weight": 0.85,
-   "score": 68.2,
+   "score": 68.0,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7610,7 +7494,7 @@
    "published": "2026-11-12T07:09:05Z",
    "relevance": 16.8,
    "weight": 0.85,
-   "score": 64.8,
+   "score": 64.7,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7634,7 +7518,7 @@
    "published": "2026-11-12T05:44:19Z",
    "relevance": 27.0,
    "weight": 0.85,
-   "score": 68.1,
+   "score": 68.0,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7664,7 +7548,7 @@
    "published": "2026-11-12T04:17:09Z",
    "relevance": 23.4,
    "weight": 0.85,
-   "score": 68.1,
+   "score": 68.0,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7691,7 +7575,7 @@
    "published": "2026-11-12T03:10:15Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 67.5,
+   "score": 67.4,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7711,7 +7595,7 @@
    "published": "2026-11-12T00:00:00Z",
    "relevance": 18.6,
    "weight": 1.0,
-   "score": 71.1,
+   "score": 70.9,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7730,7 +7614,7 @@
    "published": "2026-11-12T00:00:00Z",
    "relevance": 15.6,
    "weight": 1.0,
-   "score": 64.4,
+   "score": 64.3,
    "first_seen": "2026-11-17T08:00:11Z"
   },
   {
@@ -7757,7 +7641,7 @@
    "published": "2026-11-11T16:15:08Z",
    "relevance": 24.0,
    "weight": 0.85,
-   "score": 68.0,
+   "score": 67.9,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7780,7 +7664,7 @@
    "published": "2026-11-11T15:48:13Z",
    "relevance": 24.2,
    "weight": 0.7,
-   "score": 65.0,
+   "score": 64.9,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -7803,7 +7687,7 @@
    "published": "2026-11-11T15:23:36Z",
    "relevance": 24.8,
    "weight": 0.7,
-   "score": 65.0,
+   "score": 64.8,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -7830,7 +7714,7 @@
    "published": "2026-11-11T14:54:19Z",
    "relevance": 22.2,
    "weight": 0.85,
-   "score": 68.0,
+   "score": 67.8,
    "first_seen": "2026-11-13T06:52:12Z"
   },
   {
@@ -7852,7 +7736,7 @@
    "published": "2026-11-11T14:03:23Z",
    "relevance": 25.4,
    "weight": 0.7,
-   "score": 65.0,
+   "score": 64.8,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -7874,7 +7758,7 @@
    "published": "2026-11-11T11:51:36Z",
    "relevance": 20.0,
    "weight": 0.7,
-   "score": 64.9,
+   "score": 64.8,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -7897,7 +7781,7 @@
    "published": "2026-11-11T09:30:09Z",
    "relevance": 21.8,
    "weight": 0.7,
-   "score": 64.9,
+   "score": 64.8,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -7917,7 +7801,7 @@
    "published": "2026-11-11T00:00:00Z",
    "relevance": 21.6,
    "weight": 1.0,
-   "score": 70.8,
+   "score": 70.7,
    "first_seen": "2026-11-11T19:40:09Z"
   },
   {
@@ -7940,7 +7824,7 @@
    "published": "2026-11-10T18:23:52Z",
    "relevance": 47.0,
    "weight": 0.7,
-   "score": 64.8,
+   "score": 64.7,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -7963,7 +7847,7 @@
    "published": "2026-11-10T18:10:47Z",
    "relevance": 32.0,
    "weight": 0.7,
-   "score": 64.8,
+   "score": 64.7,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -7988,7 +7872,7 @@
    "published": "2026-11-10T17:45:12Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8016,7 +7900,7 @@
    "published": "2026-11-10T17:44:52Z",
    "relevance": 26.4,
    "weight": 0.85,
-   "score": 67.8,
+   "score": 67.7,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8045,7 +7929,7 @@
    "published": "2026-11-10T17:42:14Z",
    "relevance": 26.6,
    "weight": 0.85,
-   "score": 67.8,
+   "score": 67.7,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8068,7 +7952,7 @@
    "published": "2026-11-10T17:32:31Z",
    "relevance": 26.6,
    "weight": 0.7,
-   "score": 64.8,
+   "score": 64.7,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -8095,7 +7979,7 @@
    "published": "2026-11-10T16:36:18Z",
    "relevance": 20.4,
    "weight": 0.9,
-   "score": 68.8,
+   "score": 68.7,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8125,7 +8009,7 @@
    "published": "2026-11-10T15:57:35Z",
    "relevance": 31.0,
    "weight": 0.85,
-   "score": 67.8,
+   "score": 67.7,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8178,7 +8062,7 @@
    "published": "2026-11-10T13:09:20Z",
    "relevance": 21.6,
    "weight": 0.7,
-   "score": 64.7,
+   "score": 64.6,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -8199,7 +8083,7 @@
    "published": "2026-11-10T13:01:26Z",
    "relevance": 21.2,
    "weight": 0.7,
-   "score": 64.7,
+   "score": 64.6,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -8222,7 +8106,7 @@
    "published": "2026-11-10T12:51:41Z",
    "relevance": 20.0,
    "weight": 0.7,
-   "score": 64.7,
+   "score": 64.6,
    "first_seen": "2026-11-10T19:47:56Z"
   },
   {
@@ -8250,7 +8134,7 @@
    "published": "2026-11-10T12:14:57Z",
    "relevance": 21.0,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.6,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8278,7 +8162,7 @@
    "published": "2026-11-10T09:45:02Z",
    "relevance": 25.6,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.6,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8307,7 +8191,7 @@
    "published": "2026-11-10T08:54:35Z",
    "relevance": 20.0,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.6,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8337,7 +8221,7 @@
    "published": "2026-11-10T06:18:48Z",
    "relevance": 20.6,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.6,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8362,7 +8246,7 @@
    "published": "2026-11-10T03:48:51Z",
    "relevance": 18.4,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.6,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8389,7 +8273,7 @@
    "published": "2026-11-10T03:41:59Z",
    "relevance": 22.8,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.6,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8419,7 +8303,7 @@
    "published": "2026-11-10T01:37:38Z",
    "relevance": 22.6,
    "weight": 0.85,
-   "score": 67.7,
+   "score": 67.6,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8503,7 +8387,7 @@
    "published": "2026-11-09T23:46:26Z",
    "relevance": 17.4,
    "weight": 0.85,
-   "score": 66.0,
+   "score": 65.9,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8589,7 +8473,7 @@
    "published": "2026-11-09T20:06:38Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-11T06:33:42Z"
   },
   {
@@ -8611,7 +8495,7 @@
    "published": "2026-11-09T19:52:56Z",
    "relevance": 22.4,
    "weight": 0.7,
-   "score": 64.6,
+   "score": 64.5,
    "first_seen": "2026-11-09T22:26:17Z"
   },
   {
@@ -8639,7 +8523,7 @@
    "published": "2026-11-09T18:31:41Z",
    "relevance": 18.0,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8664,7 +8548,7 @@
    "published": "2026-11-09T17:34:12Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8692,7 +8576,7 @@
    "published": "2026-11-09T17:21:17Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8719,7 +8603,7 @@
    "published": "2026-11-09T16:11:49Z",
    "relevance": 21.8,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8742,7 +8626,7 @@
    "published": "2026-11-09T14:52:08Z",
    "relevance": 36.2,
    "weight": 0.7,
-   "score": 64.6,
+   "score": 64.5,
    "first_seen": "2026-11-09T22:26:17Z"
   },
   {
@@ -8765,7 +8649,7 @@
    "published": "2026-11-09T14:37:31Z",
    "relevance": 27.2,
    "weight": 0.7,
-   "score": 64.6,
+   "score": 64.5,
    "first_seen": "2026-11-09T22:26:17Z"
   },
   {
@@ -8792,7 +8676,7 @@
    "published": "2026-11-09T13:08:01Z",
    "relevance": 17.8,
    "weight": 0.9,
-   "score": 68.0,
+   "score": 67.9,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8819,7 +8703,7 @@
    "published": "2026-11-09T11:30:23Z",
    "relevance": 26.0,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8845,7 +8729,7 @@
    "published": "2026-11-09T11:27:18Z",
    "relevance": 20.8,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8875,7 +8759,7 @@
    "published": "2026-11-09T09:18:12Z",
    "relevance": 30.0,
    "weight": 0.85,
-   "score": 67.6,
+   "score": 67.5,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8957,7 +8841,7 @@
    "published": "2026-11-09T02:03:03Z",
    "relevance": 26.0,
    "weight": 0.85,
-   "score": 67.5,
+   "score": 67.4,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -8982,7 +8866,7 @@
    "published": "2026-11-08T23:31:46Z",
    "relevance": 19.6,
    "weight": 0.85,
-   "score": 67.5,
+   "score": 67.4,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -9004,7 +8888,7 @@
    "published": "2026-11-08T21:44:31Z",
    "relevance": 21.6,
    "weight": 0.9,
-   "score": 68.5,
+   "score": 68.4,
    "first_seen": "2026-11-08T22:11:47Z"
   },
   {
@@ -9032,7 +8916,7 @@
    "published": "2026-11-08T18:22:36Z",
    "relevance": 35.2,
    "weight": 0.85,
-   "score": 67.5,
+   "score": 67.4,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -9055,7 +8939,7 @@
    "published": "2026-11-08T18:17:32Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 67.5,
+   "score": 67.4,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -9083,7 +8967,7 @@
    "published": "2026-11-08T15:28:33Z",
    "relevance": 20.2,
    "weight": 0.85,
-   "score": 67.5,
+   "score": 67.4,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -9193,7 +9077,7 @@
    "published": "2026-11-07T20:57:33Z",
    "relevance": 19.0,
    "weight": 0.85,
-   "score": 67.4,
+   "score": 67.3,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -9220,7 +9104,7 @@
    "published": "2026-11-07T14:21:18Z",
    "relevance": 27.8,
    "weight": 0.85,
-   "score": 67.4,
+   "score": 67.3,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -9279,7 +9163,7 @@
    "published": "2026-11-07T09:27:01Z",
    "relevance": 17.8,
    "weight": 0.85,
-   "score": 66.8,
+   "score": 66.7,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -9441,7 +9325,7 @@
    "published": "2026-11-06T17:07:35Z",
    "relevance": 36.8,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -9471,7 +9355,7 @@
    "published": "2026-11-06T17:00:25Z",
    "relevance": 18.0,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-09T06:43:18Z"
   },
   {
@@ -9501,7 +9385,7 @@
    "published": "2026-11-06T15:27:24Z",
    "relevance": 36.4,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-09T06:43:18Z"
   },
   {
@@ -9523,7 +9407,7 @@
    "published": "2026-11-06T15:23:58Z",
    "relevance": 24.8,
    "weight": 0.7,
-   "score": 64.3,
+   "score": 64.2,
    "first_seen": "2026-11-06T19:28:22Z"
   },
   {
@@ -9553,7 +9437,7 @@
    "published": "2026-11-06T15:01:03Z",
    "relevance": 20.0,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-09T06:43:18Z"
   },
   {
@@ -9610,7 +9494,7 @@
    "published": "2026-11-06T12:44:53Z",
    "relevance": 20.0,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-09T06:43:18Z"
   },
   {
@@ -9639,7 +9523,7 @@
    "published": "2026-11-06T07:34:40Z",
    "relevance": 25.4,
    "weight": 0.85,
-   "score": 67.3,
+   "score": 67.2,
    "first_seen": "2026-11-09T06:43:18Z"
   },
   {
@@ -9686,7 +9570,7 @@
    "published": "2026-11-05T22:21:29Z",
    "relevance": 17.0,
    "weight": 0.85,
-   "score": 64.5,
+   "score": 64.4,
    "first_seen": "2026-11-10T07:25:26Z"
   },
   {
@@ -9710,7 +9594,7 @@
    "published": "2026-11-05T21:49:55Z",
    "relevance": 17.4,
    "weight": 0.85,
-   "score": 65.6,
+   "score": 65.5,
    "first_seen": "2026-11-09T06:43:18Z"
   },
   {
@@ -10355,7 +10239,7 @@
    "published": "2026-11-04T16:11:30Z",
    "relevance": 21.4,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -10379,7 +10263,7 @@
    "published": "2026-11-04T16:01:20Z",
    "relevance": 22.0,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -10409,7 +10293,7 @@
    "published": "2026-11-04T13:33:10Z",
    "relevance": 30.6,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -10430,7 +10314,7 @@
    "published": "2026-11-04T12:06:23Z",
    "relevance": 26.6,
    "weight": 0.7,
-   "score": 64.2,
+   "score": 64.1,
    "first_seen": "2026-11-04T19:50:27Z"
   },
   {
@@ -10460,7 +10344,7 @@
    "published": "2026-11-04T10:11:13Z",
    "relevance": 29.6,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -10489,7 +10373,7 @@
    "published": "2026-11-04T09:28:08Z",
    "relevance": 24.2,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -10519,7 +10403,7 @@
    "published": "2026-11-04T08:31:01Z",
    "relevance": 42.2,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -10545,7 +10429,7 @@
    "published": "2026-11-04T05:37:14Z",
    "relevance": 22.0,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -10574,7 +10458,7 @@
    "published": "2026-11-04T05:34:19Z",
    "relevance": 23.4,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -10599,7 +10483,7 @@
    "published": "2026-11-04T04:16:48Z",
    "relevance": 26.8,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -10625,7 +10509,7 @@
    "published": "2026-11-04T04:13:02Z",
    "relevance": 20.2,
    "weight": 0.85,
-   "score": 67.2,
+   "score": 67.1,
    "first_seen": "2026-11-05T06:55:17Z"
   },
   {
@@ -10705,6 +10589,25 @@
    "weight": 1.0,
    "score": 70.1,
    "first_seen": "2026-11-04T19:50:27Z"
+  },
+  {
+   "id": "84a771cab178aa38",
+   "title": "Introducing Kinference: An Open Source Inference Control Plane for vLLM and Kubernetes",
+   "url": "https://vllm.ai/blog/2026-11-04-introducing-kinference",
+   "source": "vLLM Blog",
+   "also_in": [],
+   "type": "blog",
+   "domain": "ai",
+   "tags": [
+    "vllm"
+   ],
+   "summary": "Kinference is a new open source inference control plane for building scalable inference platforms with vLLM and Kubernetes, providing token rate limiting, tenant usage and cost tracking, intelligent load balancing, and inference policies.\n\nWe’re excited to announce Kinference [kay-inference] , a new open source project for building scalable inference platforms with vLLM.\n\nWe created Kinference at Buoyant after watching our customers struggle to run open weight models in their environments. We designed Kinference to be the control plane layer for the platform you need to build. It uses vLLM to do the underlying inference, and provides the set of features necessary for building an inference platform in practice. This includes token rate limiting, tenant usage and cost tracking, intelligent load balancing, and inference policies.\n\nKinference can be paired with your existing stack. Using Kinference is simply a matter of pointing inference clients to its HTTP endpoint and sending OpenAI or Anthropic-compatible inference traffic there.\n\nKinference serves a heterogeneous, evolving set of models running on a heterogeneous, evolving pool of GPUs, to a heterogenous, evolving set of clients..",
+   "authors": [],
+   "published": "2026-11-04T00:00:00Z",
+   "relevance": 15.6,
+   "weight": 1.0,
+   "score": 63.5,
+   "first_seen": "2026-11-25T21:46:13Z"
   },
   {
    "id": "f1f285c73d37ed87",
@@ -12231,7 +12134,7 @@
    "published": "2026-10-31T05:34:54Z",
    "relevance": 19.2,
    "weight": 0.85,
-   "score": 67.1,
+   "score": 67.0,
    "first_seen": "2026-11-03T14:23:54Z"
   },
   {
@@ -12260,7 +12163,7 @@
    "published": "2026-10-31T04:55:14Z",
    "relevance": 22.8,
    "weight": 0.85,
-   "score": 67.1,
+   "score": 67.0,
    "first_seen": "2026-11-03T14:23:54Z"
   },
   {
@@ -12316,7 +12219,7 @@
    "published": "2026-10-31T02:13:33Z",
    "relevance": 18.4,
    "weight": 0.85,
-   "score": 67.1,
+   "score": 67.0,
    "first_seen": "2026-11-03T14:23:54Z"
   },
   {
@@ -12344,7 +12247,7 @@
    "published": "2026-10-31T00:18:06Z",
    "relevance": 18.2,
    "weight": 0.85,
-   "score": 67.1,
+   "score": 67.0,
    "first_seen": "2026-11-03T14:23:54Z"
   },
   {
@@ -12372,7 +12275,7 @@
    "published": "2026-10-30T20:13:17Z",
    "relevance": 22.6,
    "weight": 0.85,
-   "score": 67.1,
+   "score": 67.0,
    "first_seen": "2026-11-03T14:23:54Z"
   },
   {
@@ -15647,6 +15550,25 @@
    "first_seen": "2026-10-24T12:50:45Z"
   },
   {
+   "id": "17df05176d894256",
+   "title": "Day-0 Support for Flint on vLLM",
+   "url": "https://vllm.ai/blog/2026-10-21-flint",
+   "source": "vLLM Blog",
+   "also_in": [],
+   "type": "blog",
+   "domain": "ai",
+   "tags": [
+    "vllm"
+   ],
+   "summary": "vLLM supports both Flint checkpoints (40B total, 2.5B active) from day 0, decoding a single request at about 500 tokens/s on one GPU.\n\nvLLM supports Recursive's Flint from day 0 . Both its NVFP4 and BF16 checkpoints run on a single GPU, and a single request decodes at about 500 tokens/s on one GB200, even with 100K tokens of context.\n\nFlint is a 40B-parameter MoE that activates only about 2.5B parameters per token, with sliding-window attention in most layers and a 262K-token context. It ships as two separate checkpoints: NVFP4 (quantization-aware trained) and BF16.\n\nThe day-0 Docker image vllm/vllm-openai:flint (x86_64 and arm64, CUDA 13.0) has Flint support built in:\n\nFlint support is being merged into vLLM ( #62938 ). With a vLLM build that includes it, serve the same way:",
+   "authors": [],
+   "published": "2026-10-21T00:00:00Z",
+   "relevance": 15.6,
+   "weight": 1.0,
+   "score": 63.3,
+   "first_seen": "2026-11-25T21:46:13Z"
+  },
+  {
    "id": "0c3bd6fa2fe8a7eb",
    "title": "Is 2:4 Sparsity Still Worth It? Semi-Structured Sparsity versus Quantization in LLM Inference",
    "url": "https://arxiv.org/abs/2610.28947",
@@ -16023,6 +15945,25 @@
    "weight": 1.0,
    "score": 70.0,
    "first_seen": "2026-11-02T06:15:58Z"
+  },
+  {
+   "id": "5e35138a35013d6a",
+   "title": "Improve TTFT for Multi-Turn Agentic Workloads with Bi-Directional KV Transfer in vLLM",
+   "url": "https://vllm.ai/blog/2026-10-12-bidirectional-kvxfer-multiturn-agentic-workload",
+   "source": "vLLM Blog",
+   "also_in": [],
+   "type": "blog",
+   "domain": "ai",
+   "tags": [
+    "vllm"
+   ],
+   "summary": "Bi-directional KV transfer lets vLLM prefill nodes reuse previously computed KV from decode nodes on later conversation turns, cutting redundant prefill recompute and reducing TTFT by up to 3.3x on long multi-turn prompts.\n\nMulti-turn agentic workloads build on accumulated context as an agent reasons, invokes tools, and incorporates earlier results. With each new turn, the client resends the conversation history, including system instructions, prior prompts, tool results, and model responses, causing the growing context to be processed repeatedly. In Prefill-decode (P-D) disaggregation , each request is split across specialized nodes: the prefill node processes the prompt and builds its KV cache, then the decode node retrieves those KV blocks and generates the response.\n\nConventional disaggregated serving, however, only transfers KV cache in one direction: from prefill to decode node. This one-directional flow creates two inefficiencies for multi-turn workloads. First, after generating a response, the decode node holds KV cache entries for both the prompt and the newly generated tokens. When processing the next turn, the prefill node cannot retrieve those entries, so it must recompute the KV projections for the previous response tokens. Second, the decode node maintains the session state while the prefill nodes do not, increasing the probability of cache eviction for active sessions on the prefill nodes. On a full cache miss, the prefill node must recompute KV projections for the entire conversation history, including system instructions, prior user requests, tool results, and model-generated responses. As the conversation grows, this redundant work consumes more accelerator capacity and increases time to first token (TTFT).\n\nFor customers building conversational assistants and agentic applications, longer interaction histories can increase latency and consume accelerator capacity through repeated prefill computation. In this post, we show how bi-directional KV cache transfer enables prefill and decode nodes to reuse previously computed context across turns, improving accelerator utilization and helping applications sustain responsive TTFT as conversations grow.\n\nIn our multi-turn benchmarks on a 1P1D deployment using Amazon EC2 P5en instances connected with AWS Elastic Fabric Adapter ( AWS EFA , the low latency RDMA network used across servers in AWS), bi-directional KV transfer reduced TTFT by up to 1.6x for Qwen3-32B and up to 3.3x for zai-org/GLM-5-FP8 (see the Performance data section); results depend on workload and configuration.",
+   "authors": [],
+   "published": "2026-10-12T00:00:00Z",
+   "relevance": 15.6,
+   "weight": 1.0,
+   "score": 63.3,
+   "first_seen": "2026-11-25T21:46:13Z"
   }
  ]
 }
